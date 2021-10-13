@@ -2,6 +2,7 @@ import { update as updateSnake, draw as drawSnake, SNAKE_SPEED,
 getSnakeHead, snakeIntersection } from './snake.js'
 import { update as updateFood, draw as drawFood } from './food.js'
 import { GRID_SIZE, outsideGrid} from './grid.js'
+import { draw as drawBoard } from './board'
 
 //const tmp = `repeat(${GRID_SIZE}, 1fr)`
 
@@ -20,10 +21,10 @@ const gameBoard = document.getElementById('game-board')
 
 function main(currentTime) {
     if (gameOver) {
-        // if (confirm('you lost! press ok to restart')) {
-        //     window.location = ''
-        // }
-        // return
+        if (confirm('you lost! press ok to restart')) {
+            window.location = ''
+        }
+        return
     }
 
     window.requestAnimationFrame(main)
@@ -49,6 +50,7 @@ function update() {
 
 function draw() {
     gameBoard.innerHTML = ''
+    drawBoard(gameBoard)
     drawSnake(gameBoard)
     drawFood(gameBoard)
 }
