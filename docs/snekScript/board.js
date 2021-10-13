@@ -1,4 +1,4 @@
-import { GRID_SIZE } from './grid.js'
+import { GRID_SIZE } from 'grid.js'
 
 export function draw(gameBoard) {
    for (let j = 1; j <= GRID_SIZE; j++) {

@@ -1,5 +1,5 @@
-import { getInputDirection } from "./input.js"
-import { GRID_SIZE } from "./grid.js"
+import { getInputDirection } from "input.js"
+import { GRID_SIZE } from "grid.js"
 
 
 

@@ -1,8 +1,8 @@
 import { update as updateSnake, draw as drawSnake, SNAKE_SPEED,
-getSnakeHead, snakeIntersection } from './snake.js'
-import { update as updateFood, draw as drawFood } from './food.js'
-import { GRID_SIZE, outsideGrid} from './grid.js'
-import { draw as drawBoard } from './board.js'
+getSnakeHead, snakeIntersection } from 'snake.js'
+import { update as updateFood, draw as drawFood } from 'food.js'
+import { GRID_SIZE, outsideGrid} from 'grid.js'
+import { draw as drawBoard } from 'board.js'
 
 //const tmp = `repeat(${GRID_SIZE}, 1fr)`
 
