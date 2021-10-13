@@ -1,4 +1,3 @@
-import { getInputDirection } from 'input.js'
 import { onSnake, expandSnake } from './snake.js'
 import { randomGridPosition } from './grid.js'
 

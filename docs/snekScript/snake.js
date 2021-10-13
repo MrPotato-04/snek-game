@@ -3,9 +3,10 @@ import { GRID_SIZE } from "./grid.js"
 
 
 
-export const SNAKE_SPEED = 5
+export const SNAKE_SPEED = 3
 const snakeBody = [{ x: Math.floor(GRID_SIZE / 2), y: Math.floor(GRID_SIZE / 2) }]
 let newSegments = 0
+
 
 export function update() {
     addSegments()
@@ -14,8 +15,28 @@ export function update() {
         snakeBody[i + 1] = { ...snakeBody[i] }
     }
 
-    snakeBody[0].x += inputDirection.x
-    snakeBody[0].y += inputDirection.y
+
+    //  checks if snake out of bounds for infinite loop
+    if (snakeBody[0].x === GRID_SIZE && inputDirection.x === 1) {
+        snakeBody[0].x = 1  
+    } else if (snakeBody[0].x === 1 && inputDirection.x === -1) {
+        snakeBody[0].x = GRID_SIZE
+    } else if (snakeBody[0].y === GRID_SIZE && inputDirection.y === 1) {
+        snakeBody[0].y = 1
+    } else if (snakeBody[0].y === 1 && inputDirection.y === -1) {
+        snakeBody[0].y = GRID_SIZE
+    } 
+    // sets direction of snake
+    else {
+        snakeBody[0].x += inputDirection.x
+        snakeBody[0].y += inputDirection.y
+    }
+    
+    
+
+        
+
+    
 }
 
 export function draw(gameBoard) {
@@ -25,6 +46,7 @@ export function draw(gameBoard) {
         snakeElement.style.gridColumnStart = segment.x
         snakeElement.classList.add('snake')
         gameBoard.appendChild(snakeElement)
+        
     })
 }
 

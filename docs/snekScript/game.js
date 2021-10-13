@@ -13,7 +13,6 @@ window.onload = function() {
 };
 
 
-
 let lastRenderTime = 0
 let gameOver = false
 const gameBoard = document.getElementById('game-board')
@@ -33,8 +32,9 @@ function main(currentTime) {
 
 
     console.log('Render')
+    
     lastRenderTime = currentTime
-
+    
 
     update()
     draw()
@@ -46,6 +46,8 @@ function update() {
     updateSnake()
     updateFood()
     checkDeath()
+
+
 }
 
 function draw() {
