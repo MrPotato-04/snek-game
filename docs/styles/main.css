@@ -13,7 +13,7 @@ body {
     display: flex;
     /* justify-content: center;
     align-items: center; */
-    background-color: silver;
+    background-color: darkslateblue;
 }
 #wrapper {
     float: left;
@@ -63,7 +63,7 @@ footer {
 }
 
 #game-board {
-    background-color: #CCC;
+    background-color: rgb(46, 46, 46);
     /* top: ; */
     display: grid;
     width: 80vmin;

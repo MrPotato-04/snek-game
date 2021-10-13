@@ -4,7 +4,7 @@ import { update as updateFood, draw as drawFood } from './food.js'
 import { GRID_SIZE, outsideGrid} from './grid.js'
 import { draw as drawBoard } from './board.js'
 
-//const tmp = `repeat(${GRID_SIZE}, 1fr)`
+//const tmp = `repeat(${GRID_SIZE}, 1fr)` 
 
 window.onload = function() {
     gameBoard.style.gridTemplateColumns = `repeat(${GRID_SIZE}, 1fr)`;
