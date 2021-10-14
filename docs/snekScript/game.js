@@ -1,17 +1,21 @@
-import { update as updateSnake, draw as drawSnake, SNAKE_SPEED,
-getSnakeHead, snakeIntersection } from './snake.js'
+import { update as updateSnake_1, draw as drawSnake_1,
+getSnakeHead as getSnakeHead_1, snakeIntersection as snakeIntersection_1 } from './snake.js'
+
+import { update as updateSnake_2, draw as drawSnake_2, getSnakeHead as getSnakeHead_2,
+    snakeIntersection as snakeIntersection_2 } from './snake2.js'
+
 import { update as updateFood, draw as drawFood } from './food.js'
-import { GRID_SIZE, outsideGrid} from './grid.js'
+import { GRID_HEIGTH, GRID_WIDTH, outsideGrid} from './grid.js'
 import { draw as drawBoard } from './board.js'
 
 //const tmp = `repeat(${GRID_SIZE}, 1fr)` 
 
 window.onload = function() {
-    gameBoard.style.gridTemplateColumns = `repeat(${GRID_SIZE}, 1fr)`;
-    gameBoard.style.gridTemplateRows = `repeat(${GRID_SIZE}, 1fr)`;
-    console.log("Grid size: "+GRID_SIZE);
+    gameBoard.style.gridTemplateColumns = `repeat(${GRID_WIDTH}, 1fr)`;
+    gameBoard.style.gridTemplateRows = `repeat(${GRID_HEIGTH}, 1fr)`;
 };
 
+const SNAKE_SPEED = 10
 
 let lastRenderTime = 0
 let gameOver = false
@@ -43,7 +47,8 @@ function main(currentTime) {
 window.requestAnimationFrame(main)
 
 function update() {
-    updateSnake()
+    updateSnake_1()
+    updateSnake_2()
     updateFood()
     checkDeath()
 
@@ -53,10 +58,11 @@ function update() {
 function draw() {
     gameBoard.innerHTML = ''
     drawBoard(gameBoard)
-    drawSnake(gameBoard)
+    drawSnake_1(gameBoard)
+    drawSnake_2(gameBoard)
     drawFood(gameBoard)
 }
 
 function checkDeath() {
-    gameOver = outsideGrid(getSnakeHead()) || snakeIntersection()
+    gameOver = outsideGrid(getSnakeHead_1()) || snakeIntersection_1()
 }
