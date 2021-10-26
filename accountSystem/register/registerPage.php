@@ -7,8 +7,9 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="login.php" method="POST" enctype="multipart/form">
-        <input type="text" autocomplete="off" name="username">
+    <form action="register.php" method="post" enctype="multipart/form">
+        <input type="text" name="email">
+        <input type="text" name="username">
         <input type="password" name="password">
         <input type="submit" name="button">
     </form>
