@@ -1,15 +1,15 @@
-import {  getInputDirection_snake1 } from "./input.js"
+import { getInputDirection_snake2 } from "./input.js"
 import { GRID_HEIGTH, GRID_WIDTH } from "./grid.js"
 
 
 
-const snakeBody = [{ x: Math.floor(GRID_WIDTH / 3), y: Math.floor(GRID_HEIGTH / 2) }]
+const snakeBody = [{ x: Math.floor(GRID_WIDTH / 3 * 2), y: Math.floor(GRID_HEIGTH / 2) }]
 let newSegments = 0
 
 
 export function update() {
     addSegments()
-    const inputDirection = getInputDirection_snake1()
+    const inputDirection = getInputDirection_snake2()
     for (let i = snakeBody.length - 2; i >= 0; i-- ) {
         snakeBody[i + 1] = { ...snakeBody[i] }
     }
@@ -43,7 +43,7 @@ export function draw(gameBoard) {
         const snakeElement = document.createElement('div')
         snakeElement.style.gridRowStart = segment.y
         snakeElement.style.gridColumnStart = segment.x
-        snakeElement.classList.add('snake_1')
+        snakeElement.classList.add('snake_2')
         gameBoard.appendChild(snakeElement)
         
     })

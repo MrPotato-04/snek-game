@@ -1,30 +1,60 @@
 
-let inptutDirection = { x: 0, y: 0}
-let lastInputDirection = 0
+let inptutDirection_snake_1 = { x: 0, y: 0}
+let lastInputDirection_snake_1 = 0
+
+
+let inptutDirection_snake_2 = { x: 0, y: 0}
+let lastInputDirection_snake_2 = 0
 
 window.addEventListener('keydown', e => {
     
     switch (e.key) {
         case 'ArrowUp':
-            if (lastInputDirection.y !== 0) break
-            inptutDirection = { x: 0, y: -1 }
+            if (lastInputDirection_snake_1.y !== 0) break
+            inptutDirection_snake_1 = { x: 0, y: -1 }
             break
         case 'ArrowDown':
-            if (lastInputDirection.y !== 0) break
-            inptutDirection = { x: 0, y: 1 }
+            if (lastInputDirection_snake_1.y !== 0) break
+            inptutDirection_snake_1 = { x: 0, y: 1 }
             break
         case 'ArrowRight':
-            if (lastInputDirection.x !== 0) break
-            inptutDirection = { x: 1, y: 0 }
+            if (lastInputDirection_snake_1.x !== 0) break
+            inptutDirection_snake_1 = { x: 1, y: 0 }
             break
         case 'ArrowLeft':
-            if (lastInputDirection.x !== 0) break
-            inptutDirection = { x: -1, y: 0 }
+            if (lastInputDirection_snake_1.x !== 0) break
+            inptutDirection_snake_1 = { x: -1, y: 0 }
             break
     }
 })
 
-export function getInputDirection() {
-    lastInputDirection = inptutDirection
-    return inptutDirection
+window.addEventListener('keydown', e => {
+    
+    switch (e.key) {
+        case 'w':
+            if (lastInputDirection_snake_2.y !== 0) break
+            inptutDirection_snake_2 = { x: 0, y: -1 }
+            break
+        case 's':
+            if (lastInputDirection_snake_2.y !== 0) break
+            inptutDirection_snake_2 = { x: 0, y: 1 }
+            break
+        case 'd':
+            if (lastInputDirection_snake_2.x !== 0) break
+            inptutDirection_snake_2 = { x: 1, y: 0 }
+            break
+        case 'a':
+            if (lastInputDirection_snake_2.x !== 0) break
+            inptutDirection_snake_2 = { x: -1, y: 0 }
+            break
+    }
+})
+
+export function getInputDirection_snake1() {
+    lastInputDirection_snake_1 = inptutDirection_snake_1
+    return inptutDirection_snake_1
+}
+export function getInputDirection_snake2() {
+    lastInputDirection_snake_2 = inptutDirection_snake_2
+    return inptutDirection_snake_2
 }
