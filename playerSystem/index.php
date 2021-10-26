@@ -8,9 +8,9 @@
 </head>
 <body>
     <form action="login.php" method="POST" enctype="multipart/form">
-        <input type="text">
-        <input type="password">
-        <input type="submit">
+        <input type="text" autocomplete="off" name="username">
+        <input type="password" name="password">
+        <input type="submit" name="button">
     </form>
 </body>
 </html>
