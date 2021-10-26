@@ -19,7 +19,7 @@ const SNAKE_SPEED = 10
 
 let lastRenderTime = 0
 let redGameOver = false
-let redGameOver = true
+let blueGameOver = true
 const gameBoard = document.getElementById('game-board')
 
 
