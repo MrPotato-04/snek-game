@@ -24,8 +24,14 @@ const gameBoard = document.getElementById('game-board')
 
 
 function main(currentTime) {
-    if (gameOver) {
-        if (confirm('you lost! press ok to restart')) {
+    if (redGameOver) {
+        if (confirm('Red lost! press ok to restart')) {
+            window.location = ''
+        }
+        return
+    }
+    if (blueGameOver) {
+        if (confirm('Blue lost! press ok to restart')) {
             window.location = ''
         }
         return
