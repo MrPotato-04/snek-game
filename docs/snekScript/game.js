@@ -18,7 +18,8 @@ window.onload = function() {
 const SNAKE_SPEED = 10
 
 let lastRenderTime = 0
-let gameOver = false
+let redGameOver = false
+let redGameOver = true
 const gameBoard = document.getElementById('game-board')
 
 
@@ -64,5 +65,6 @@ function draw() {
 }
 
 function checkDeath() {
-    gameOver = outsideGrid(getSnakeHead_1()) || snakeIntersection_1()
+    redGameOver = outsideGrid(getSnakeHead_1()) || snakeIntersection_1()
+    blueGameOver = outsideGrid(getSnakeHead_2()) || snakeIntersection_2()
 }
