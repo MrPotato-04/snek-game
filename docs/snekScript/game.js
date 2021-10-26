@@ -66,5 +66,5 @@ function draw() {
 }
 
 function checkDeath() {
-    GameOver = outsideGrid(getSnakeHead_1()) || snakeIntersection_1() || outsideGrid(getSnakeHead_2()) || snakeIntersection_2()
+    gameOver = outsideGrid(getSnakeHead_1()) || snakeIntersection_1() || outsideGrid(getSnakeHead_2()) || snakeIntersection_2()
 }
