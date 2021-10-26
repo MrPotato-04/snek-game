@@ -14,7 +14,8 @@ window.onload = function() {
 
 
 let lastRenderTime = 0
-let gameOver = false
+let redGameOver = false
+let redGameOver = true
 const gameBoard = document.getElementById('game-board')
 
 
@@ -58,5 +59,10 @@ function draw() {
 }
 
 function checkDeath() {
+<<<<<<< Updated upstream
     gameOver = outsideGrid(getSnakeHead()) || snakeIntersection()
+=======
+    redGameOver = outsideGrid(getSnakeHead_1()) || snakeIntersection_1()
+    blueGameOver = outsideGrid(getSnakeHead_2()) || snakeIntersection_2()
+>>>>>>> Stashed changes
 }
