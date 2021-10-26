@@ -24,7 +24,7 @@ const gameBoard = document.getElementById('game-board')
 
 
 function main(currentTime) {
-    if (GameOver) {
+    if (gameOver) {
         if (confirm('Game over! press ok to restart')) {
             window.location = ''
         }
