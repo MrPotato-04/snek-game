@@ -24,18 +24,13 @@ const gameBoard = document.getElementById('game-board')
 
 
 function main(currentTime) {
-    if (redGameOver) {
-        if (confirm('Red lost! press ok to restart')) {
+    if (GameOver) {
+        if (confirm('Game over! press ok to restart')) {
             window.location = ''
         }
         return
     }
-    if (blueGameOver) {
-        if (confirm('Blue lost! press ok to restart')) {
-            window.location = ''
-        }
-        return
-    }
+
 
     window.requestAnimationFrame(main)
     const secondsSinceLastRender = (currentTime - lastRenderTime) / 1000
@@ -71,6 +66,5 @@ function draw() {
 }
 
 function checkDeath() {
-    redGameOver = outsideGrid(getSnakeHead_1()) || snakeIntersection_1()
-    blueGameOver = outsideGrid(getSnakeHead_2()) || snakeIntersection_2()
+    GameOver = outsideGrid(getSnakeHead_1()) || snakeIntersection_1() || outsideGrid(getSnakeHead_2()) || snakeIntersection_2()
 }
