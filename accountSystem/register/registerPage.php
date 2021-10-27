@@ -10,7 +10,7 @@
     <?php
     session_start();
     if(isset($_SESSION['errors'])){
-        $error_output = implode("", $_SESSION['errors']);
+        $error_output = $_SESSION['errors'];
         echo $error_output;
         unset ($_SESSION['errors']);
     }

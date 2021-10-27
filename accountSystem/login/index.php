@@ -8,7 +8,7 @@
 </head>
 <body>
     <form action="login.php" method="POST" enctype="multipart/form">
-        <input type="text" autocomplete="off" name="username" placeholder="Username">
+        <input type="text" autocomplete="off" name="username" placeholder="Email">
         <input type="password" name="password" placeholder="Password">
         <input type="submit" name="button" value="Sign in">
     </form>

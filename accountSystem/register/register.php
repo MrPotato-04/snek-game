@@ -16,24 +16,26 @@ if (mysqli_connect_errno()) {
 }
 
 //initializing variables
-$errors = array();
 
 $username = $_POST['username'];
 $email = $_POST['email'];
 $remail = $_POST['remail'];
 $password = $_POST['password'];
 
-//Insert into database
-$username = mysqli_real_escape_string($dbc, $_POST['username']);
-$email = mysqli_real_escape_string($dbc, $_POST['email']);
-$password = mysqli_real_escape_string($dbc, $_POST['password']);
-
 //form validation
-if(empty($username)) array_push($errors, "Username required"); $_SESSION['errors']=$errors; header("location: registerPage.php");
-if(empty($email)) array_push($errors, "Email required"); $_SESSION['errors']=$errors; header("location: registerPage.php");
-if(empty($password)) array_push($errors, "Password required"); $_SESSION['errors']=$errors; header("location: registerPage.php");
-if($email !== $remail) array_push($errors, "Emails don't match"); $_SESSION['errors']=$errors; header("location: registerPage.php");
+if(empty($username)) $_SESSION['errors']="Username required"; header("location: registerPage.php");
+if(empty($email)) $_SESSION['errors']="Email required"; header("location: registerPage.php");
+if(empty($password)) $_SESSION['errors']="Password required"; header("location: registerPage.php");
+if($email !== $remail) $_SESSION['errors']="Emails don't match"; header("location: registerPage.php");
 
+//insert into db 
+if(count($_SESSION['errors']) == 0) {
+    
+    $query = "INSERT INTO user (username, email, password) VALUES ('$username', '$email', '$password')";
+
+    mysqli_query($dbc, $query);
+
+}
 //email check
 // function emailCheck($email, $remail) {
 //     $error = false;

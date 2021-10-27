@@ -8,7 +8,7 @@
     $DB_PASSWORD = "";
 
     $dbc = new mysqli($DB_HOST, $DB_USERNAME, $DB_PASSWORD, $DB_DATABASE);
-    $res = $dbc->query("SELECT * FROM user WHERE username='{$_POST['username']}' AND password='{$_POST['password']}' ORDER BY username");
+    $res = $dbc->query("SELECT * FROM user WHERE email='{$_POST['email']}' AND password='{$_POST['password']}' ORDER BY email");
     $row = $res->fetch_assoc();
 
     if (mysqli_connect_errno()) {
@@ -18,7 +18,7 @@
 
     if($row) {
         $_SESSION["userid"] = $row['id'];
-        $_SESSION["username"] = $row['username'];
+        $_SESSION["email"] = $row['email'];
         header("location: ./../docs/index.html");
     } else {
         echo "shit don't work";
