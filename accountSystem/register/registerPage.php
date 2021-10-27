@@ -8,10 +8,11 @@
 </head>
 <body>
     <form action="register.php" method="post" enctype="multipart/form">
-        <input type="text" name="email">
-        <input type="text" name="username">
-        <input type="password" name="password">
-        <input type="submit" name="button">
+        <input type="text" name="email" placeholder="Email">
+        <input type="text" name="remail" placeholder="Confirm Email">
+        <input type="text" name="username" placeholder="Username">
+        <input type="password" name="password" placeholder="Password">
+        <input type="submit" name="button" value="Register">
     </form>
 </body>
 </html>
