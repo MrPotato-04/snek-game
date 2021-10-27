@@ -25,9 +25,11 @@ $password = $_POST['password'];
 //Insert into database
 $username = mysqli_real_escape_string($dbc, $_POST['username']);
 $email = mysqli_real_escape_string($dbc, $_POST['email']);
-$password = mysqli_real_escape_string($dbc, $_POST['password')];
+$password = mysqli_real_escape_string($dbc, $_POST['password']);
 
 //email check
-function emailCheck()
+function emailCheck() {
+    
+}
 
 ?>
