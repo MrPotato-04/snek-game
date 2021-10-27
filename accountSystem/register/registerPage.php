@@ -7,6 +7,14 @@
     <title>Register</title>
 </head>
 <body>
+    <?php
+    session_start();
+    if(isset($_SESSION['errors'])){
+        $error_output = implode("", $_SESSION['errors']);
+        echo $error_output;
+        unset ($_SESSION['errors']);
+    }
+    ?>
     <form action="register.php" method="post" enctype="multipart/form">
         <input type="text" name="email" placeholder="Email">
         <input type="text" name="remail" placeholder="Confirm Email">

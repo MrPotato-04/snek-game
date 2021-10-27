@@ -16,10 +16,11 @@ if (mysqli_connect_errno()) {
 }
 
 //initializing variables
-$error = array();
+$errors = array();
 
 $username = $_POST['username'];
 $email = $_POST['email'];
+$remail = $_POST['remail'];
 $password = $_POST['password'];
 
 //Insert into database
@@ -27,9 +28,38 @@ $username = mysqli_real_escape_string($dbc, $_POST['username']);
 $email = mysqli_real_escape_string($dbc, $_POST['email']);
 $password = mysqli_real_escape_string($dbc, $_POST['password']);
 
-//email check
-function emailCheck() {
+//form validation
+if(empty($username)) array_push($errors, "Username required"); $_SESSION['errors']=$errors; header("location: registerPage.php");
+if(empty($email)) array_push($errors, "Email required"); $_SESSION['errors']=$errors; header("location: registerPage.php");
+if(empty($password)) array_push($errors, "Password required"); $_SESSION['errors']=$errors; header("location: registerPage.php");
+if($email !== $remail) array_push($errors, "Emails don't match"); $_SESSION['errors']=$errors; header("location: registerPage.php");
 
-}
+//email check
+// function emailCheck($email, $remail) {
+//     $error = false;
+//     $errorMessage = "";
+
+//     if($email === "" || $remail === "") {
+//         $error = true;
+//         $errorMessage = "Email is niet ingevuld";
+//     }
+
+//     $splitEmail = explode('@', $email);
+//     if (count($splitEmail) > 2 && !$error) {
+//         $error = true;
+//         $errorMessage = 'Vul een geldige email in';
+//     }
+
+//     if($email !== $remail && !error) {
+//         $error = true;
+//         $errorMessage = "Emails zijn niet hetzelfde";
+//     }
+
+//     if($error) {
+//         return $errorMessage;
+//     } else {
+//         return false;
+//     }
+// }
 
 ?>
