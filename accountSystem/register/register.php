@@ -8,7 +8,7 @@ $DB_HOST = "localhost";
 $DB_USERNAME = "root";
 $DB_PASSWORD = "";
 
-$dbc = mysqli_connect($DB_DATABASE, $DB_HOST, $DB_USERNAME, $DB_PASSWORD) or die("Couldn't connect to database");
+$dbc = mysqli_connect($DB_HOST, $DB_USERNAME, $DB_PASSWORD, $DB_DATABASE) or die("Couldn't connect to database");
 
 if (mysqli_connect_errno()) {
     printf("Connection failed: ", mysqli_connect_errno());
@@ -29,7 +29,7 @@ $password = mysqli_real_escape_string($dbc, $_POST['password']);
 
 //email check
 function emailCheck() {
-    
+
 }
 
 ?>
