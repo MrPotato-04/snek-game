@@ -17,9 +17,9 @@
     ?>
     <form action="register.php" method="post" enctype="multipart/form">
         <input type="text" name="email" placeholder="Email">
-        <input type="text" name="remail" placeholder="Confirm Email">
         <input type="text" name="username" placeholder="Username">
         <input type="password" name="password" placeholder="Password">
+        <input type="password" name="repass" placeholder="Confirm Password">
         <input type="submit" name="button" value="Register">
     </form>
 </body>

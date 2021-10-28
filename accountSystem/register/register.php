@@ -18,14 +18,14 @@ if (mysqli_connect_errno()) {
 //global variables
 $username = $_POST['username'];
 $email = $_POST['email'];
-$remail = $_POST['remail'];
+$repass = $_POST['repass'];
 $password = $_POST['password'];
 
 //if field is empty
 if(empty($username)) $_SESSION['errors']="Username required"; header("location: registerPage.php");
 if(empty($email)) $_SESSION['errors']="Email required"; header("location: registerPage.php");
 if(empty($password)) $_SESSION['errors']="Password required"; header("location: registerPage.php");
-if($email !== $remail) $_SESSION['errors']="Emails don't match"; header("location: registerPage.php");
+if($password !== $repass) $_SESSION['errors']="Passwords don't match"; header("location: registerPage.php");
 
 //insert into db 
 if(count($_SESSION['errors']) == 0) {
