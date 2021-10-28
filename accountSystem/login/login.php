@@ -18,14 +18,24 @@
     }
 
     //variables
-    
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+    //form validation errors
+    if(empty($email)) {
+        $_SESSION['errors'] = 'Wrong Email';
+        header("location: ../login");
+        exit();
+    }
+    if(empty($password)) {
+        $_SESSION['errors'] = 'Wrong Password';
+        header("location: ../login");
+        exit();
+    }
 
     //data validation
-    if($row) {
-        $_SESSION["userid"] = $row['id'];
-        $_SESSION["email"] = $row['email'];
-        header("location: ./../../docs/index.php");
-    } else {
-        echo "shit don't work";
-    }
+    $_SESSION["userid"] = $row['id'];
+    $_SESSION["email"] = $row['email'];
+    header("location: ./../../docs/index.php");
+
 ?>
