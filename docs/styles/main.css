@@ -33,14 +33,20 @@ h1 {
     font-family: 'ZCOOL', cursive;
     font-weight: 400;
     font-size: 20px;
+    text-align: right;
+    margin-right: 15px;
 }
 .wrapper2 {
     display: inline-block;
     margin: 0 auto;
 }
-a {
+footer a {
     float: left;
     margin: 10px;
+}
+
+.header a {
+    
 }
 
 .header {
@@ -51,9 +57,12 @@ a {
     background-color: #101010;
     
 }
+
 .footer-wrapper {
 
 }
+
+
 
 footer {
     height: 3vh;

@@ -19,7 +19,7 @@
     if($row) {
         $_SESSION["userid"] = $row['id'];
         $_SESSION["email"] = $row['email'];
-        header("location: ./../docs/index.html");
+        header("location: ./../../docs/index.php");
     } else {
         echo "shit don't work";
     }

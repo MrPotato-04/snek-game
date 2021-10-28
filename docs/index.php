@@ -1,3 +1,9 @@
+<?php
+
+
+?> 
+
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -16,7 +22,7 @@
             <div class="header">
                 <div class="inner_header">
                     <h3>Basic Snek</h3>
-                    <h1>Project by: O'nyll, Kevin, Alec, Karsten and Anton</h1>
+                    <a href="./../accountSystem/login/index.php">Login</a>
                 </div>
             </div>
             <div class="wrapper2">
@@ -24,7 +30,7 @@
             </div> 
             <div class="wrapper-footer">  
                 <footer>
-                    <a>Blue = W,A,S,D & Red = Up,Down,Left,Right</a>
+                    <a>Blue = W,A,S,D & Red = Up,Down,Left,Right</a><h1>Project by: O'nyll, Kevin, Alec, Karsten and Anton</h1>
                 </footer>
             </div>
         </div>
