@@ -26,6 +26,7 @@ if(empty($username)) $_SESSION['errors']="Username required"; header("location: 
 if(empty($email)) $_SESSION['errors']="Email required"; header("location: registerPage.php");
 if(empty($password)) $_SESSION['errors']="Password required"; header("location: registerPage.php");
 if($password !== $repass) $_SESSION['errors']="Passwords don't match"; header("location: registerPage.php");
+if(!filter_var($email, FILTER_VALIDATE_EMAIL)) $_SESSION['errors']="email is invalid"; header("location: registerPage.php");
 
 //insert into db 
 if(count($_SESSION['errors']) == 0) {
