@@ -1,7 +1,7 @@
 import { getInputDirection_snake2 } from "./input.js"
 import { GRID_HEIGTH, GRID_WIDTH } from "./grid.js"
 
-
+export let blueScore = 0;
 
 const snakeBody = [{ x: Math.floor(GRID_WIDTH / 3 * 2), y: Math.floor(GRID_HEIGTH / 2) }]
 let newSegments = 0
@@ -50,7 +50,8 @@ export function draw(gameBoard) {
 }
 
 export function expandSnake(amount) {
-    newSegments += amount
+    newSegments += amount;
+    blueScore++;
 }
 export function onSnake(position, { ignoreHead = false } = { }) {
     return snakeBody.some((segment, index) => {
