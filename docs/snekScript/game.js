@@ -30,6 +30,8 @@ const gameBoard = document.getElementById('game-board')
 
 function main(currentTime) {
     if (redGameOver) {
+        sendHighscore(redScore)
+        // createCookie("highscore", redScore, "86400");
         if (confirm('Red lost! press ok to restart')) {
             window.location = ''
         }
@@ -86,10 +88,31 @@ function checkDeath() {
     
  }
 
- function sendHighscore(str) {
+function sendHighscore(str) {
     if (str == "") {
       var xmlhttp = new XMLHttpRequest();
-      xmlhttp.open("GET","./../highscore.php?q="+str,true);
+      xmlhttp.open("GET","./../highscore.php?score="+str,true);
       xmlhttp.send();
   }
 }
+
+
+
+   
+// // Function to create the cookie
+// function createCookie(name, value, days) {
+//     var expires;
+      
+//     if (days) {
+//         var date = new Date();
+//         date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+//         expires = "; expires=" + date.toGMTString();
+//     }
+//     else {
+//         expires = "";
+//     }
+      
+//     document.cookie = escape(name) + "=" + 
+//         escape(value) + expires + "; path=/";
+// }
+  
