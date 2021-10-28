@@ -36,6 +36,7 @@
     //data validation
     $_SESSION["userid"] = $row['id'];
     $_SESSION["email"] = $row['email'];
+    setcookie("userid", $row['id'], time() + 86400, "/");
     header("location: ./../../docs/index.php");
 
 ?>
