@@ -22,12 +22,12 @@
     $password = $_POST['password'];
 
     //form validation errors
-    if(empty($email)) {
+    if(!$row['email']) {
         $_SESSION['errors'] = 'Wrong Email';
         header("location: ../login");
         exit();
     }
-    if(empty($password)) {
+    if(!$row['password']) {
         $_SESSION['errors'] = 'Wrong Password';
         header("location: ../login");
         exit();
