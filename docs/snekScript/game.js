@@ -1,8 +1,8 @@
-import { update as updateSnake_1, draw as drawSnake_1,
+import { update as updateSnake_1, draw as drawSnake_1, redScore,
 getSnakeHead as getSnakeHead_1, snakeIntersection as snakeIntersection_1 } from './snake.js'
 
-import { update as updateSnake_2, draw as drawSnake_2, getSnakeHead as getSnakeHead_2,
-    snakeIntersection as snakeIntersection_2 } from './snake2.js'
+import { update as updateSnake_2, draw as drawSnake_2, blueScore,
+    getSnakeHead as getSnakeHead_2, snakeIntersection as snakeIntersection_2 } from './snake2.js'
 
 import { update as updateFood, draw as drawFood } from './food.js'
 import { GRID_HEIGTH, GRID_WIDTH, outsideGrid} from './grid.js'
@@ -15,7 +15,12 @@ window.onload = function() {
     gameBoard.style.gridTemplateRows = `repeat(${GRID_HEIGTH}, 1fr)`;
 };
 
+const scores = document.getElementById('scores');
+
 const SNAKE_SPEED = 10
+
+// let blueScore = 0;
+// let redScore = 0;
 
 let lastRenderTime = 0
 let redGameOver = false
@@ -42,7 +47,7 @@ function main(currentTime) {
     if (secondsSinceLastRender < 1 / SNAKE_SPEED) return
 
 
-    console.log('Render')
+    // console.log('Render')
     
     lastRenderTime = currentTime
     
@@ -58,8 +63,9 @@ function update() {
     updateSnake_2()
     updateFood()
     checkDeath()
+    updateScores(redScore, blueScore)
 
-
+    
 }
 
 function draw() {
@@ -74,4 +80,16 @@ function checkDeath() {
 
     redGameOver = outsideGrid(getSnakeHead_1()) || snakeIntersection_1()
     blueGameOver = outsideGrid(getSnakeHead_2()) || snakeIntersection_2()
+}
+ function updateScores(score1, score2) {
+    scores.innerHTML = `Red score: ${score1}, Blue score: ${score2}`
+    
+ }
+
+ function sendHighscore(str) {
+    if (str == "") {
+      var xmlhttp = new XMLHttpRequest();
+      xmlhttp.open("GET","./../highscore.php?q="+str,true);
+      xmlhttp.send();
+  }
 }

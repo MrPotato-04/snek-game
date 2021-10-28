@@ -1,7 +1,4 @@
-<?php
 
-
-?> 
 
 
 <!DOCTYPE html>
@@ -30,7 +27,10 @@
             </div> 
             <div class="wrapper-footer">  
                 <footer>
-                    <a>Blue = W,A,S,D & Red = Up,Down,Left,Right</a><h1>Project by: O'nyll, Kevin, Alec, Karsten and Anton</h1>
+                    <a>Blue = W,A,S,D & Red = Up,Down,Left,Right</a>
+                    <div id="scores">
+                        
+                    </div>
                 </footer>
             </div>
         </div>
