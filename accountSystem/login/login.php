@@ -11,11 +11,16 @@
     $res = $dbc->query("SELECT * FROM user WHERE email='{$_POST['email']}' AND password='{$_POST['password']}' ORDER BY email");
     $row = $res->fetch_assoc();
 
+    //connection error
     if (mysqli_connect_errno()) {
         printf("Connection failed: ", mysqli_connect_errno());
         exit();
     }
 
+    //variables
+    
+
+    //data validation
     if($row) {
         $_SESSION["userid"] = $row['id'];
         $_SESSION["email"] = $row['email'];
