@@ -17,7 +17,7 @@ $dbc = mysqli_connect('localhost','root','','snekdatabase') or die('Could not co
 
 
 
-$query = "INSERT INTO scores (`scores`, `user_iduser`) VALUES ('$highscore', '$userid') ON DUPLICATE KEY UPDATE scores=$highscore" or die("frank");
+$query = "INSERT INTO scores (`scores`, `user_iduser`) VALUES ('$highscore', '$userid') ON DUPLICATE KEY UPDATE scores=GREATEST($highscore, scores)" or die("frank");
 mysqli_query($dbc, $query);
 
 mysqli_close($dbc);
