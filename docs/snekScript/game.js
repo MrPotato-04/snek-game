@@ -38,7 +38,7 @@ function main(currentTime) {
         // sendHighscore(redScore)
         setCookie("highscore", redScore, "1");
         if (confirm('Red lost! press ok to restart')) {
-            window.location = ''
+            window.location = 'highscore.php'
         }
         return
     }
