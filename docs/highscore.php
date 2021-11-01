@@ -1,11 +1,11 @@
 <?php
-$highscore = intval($_GET['score']);
+$highscore = $_COOKIE['highscore'];
 $userid = $_COOKIE["userid"];
 
-$con = mysqli_connect('localhost','root','','snekdatabase');
-if (!$con) {
-  die('Could not connect: ' . mysqli_error($con));
-}
+
+
+$dbc = mysqli_connect('localhost','root','','snekdatabase') or die('Could not connect: ' . mysqli_error($con));
+
 
 
 $query = "INSERT INTO scores (scores, user_id) VALUES ('$highscore', '$userid')";

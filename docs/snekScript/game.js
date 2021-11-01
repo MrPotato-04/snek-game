@@ -13,6 +13,8 @@ import { draw as drawBoard } from './board.js'
 window.onload = function() {
     gameBoard.style.gridTemplateColumns = `repeat(${GRID_WIDTH}, 1fr)`;
     gameBoard.style.gridTemplateRows = `repeat(${GRID_HEIGTH}, 1fr)`;
+    console.log(multiplayer)
+    
 };
 
 const scores = document.getElementById('scores');
@@ -22,16 +24,19 @@ const SNAKE_SPEED = 10
 // let blueScore = 0;
 // let redScore = 0;
 
+let multiplayer = false
 let lastRenderTime = 0
 let redGameOver = false
 let blueGameOver = false
 const gameBoard = document.getElementById('game-board')
 
 
+
+//check if gameboard is pressent
 function main(currentTime) {
     if (redGameOver) {
-        sendHighscore(redScore)
-        // createCookie("highscore", redScore, "86400");
+        // sendHighscore(redScore)
+        createCookie("highscore", redScore, "500", "/");
         if (confirm('Red lost! press ok to restart')) {
             window.location = ''
         }
@@ -50,9 +55,9 @@ function main(currentTime) {
 
 
     // console.log('Render')
-    
+        
     lastRenderTime = currentTime
-    
+        
 
     update()
     draw()
@@ -61,58 +66,49 @@ function main(currentTime) {
 window.requestAnimationFrame(main)
 
 function update() {
-    updateSnake_1()
-    updateSnake_2()
-    updateFood()
-    checkDeath()
-    updateScores(redScore, blueScore)
+        updateSnake_1()
+        updateSnake_2()
+        updateFood()
+        checkDeath()
+        updateScores(redScore, blueScore)
 
-    
+        
 }
 
 function draw() {
-    gameBoard.innerHTML = ''
-    drawBoard(gameBoard)
-    drawSnake_1(gameBoard)
-    drawSnake_2(gameBoard)
-    drawFood(gameBoard)
+        gameBoard.innerHTML = ''
+        drawBoard(gameBoard)
+        drawSnake_1(gameBoard)
+        drawSnake_2(gameBoard)
+        drawFood(gameBoard)
 }
 
 function checkDeath() {
 
-    redGameOver = outsideGrid(getSnakeHead_1()) || snakeIntersection_1()
-    blueGameOver = outsideGrid(getSnakeHead_2()) || snakeIntersection_2()
+        redGameOver = outsideGrid(getSnakeHead_1()) || snakeIntersection_1()
+        blueGameOver = outsideGrid(getSnakeHead_2()) || snakeIntersection_2()
 }
- function updateScores(score1, score2) {
-    scores.innerHTML = `Red score: ${score1}, Blue score: ${score2}`
-    
- }
-
+function updateScores(score1, score2) {
+        scores.innerHTML = `Red score: ${score1}, Blue score: ${score2}`
+        
+}
 function sendHighscore(str) {
-    if (str == "") {
-      var xmlhttp = new XMLHttpRequest();
-      xmlhttp.open("GET","./../highscore.php?score="+str,true);
-      xmlhttp.send();
-  }
+        if (str == "") {
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.open("GET","./../highscore.php?score="+str,true);
+        xmlhttp.send();
+    } 
 }
 
-
-
-   
-// // Function to create the cookie
-// function createCookie(name, value, days) {
-//     var expires;
-      
-//     if (days) {
-//         var date = new Date();
-//         date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-//         expires = "; expires=" + date.toGMTString();
-//     }
-//     else {
-//         expires = "";
-//     }
-      
-//     document.cookie = escape(name) + "=" + 
-//         escape(value) + expires + "; path=/";
-// }
-  
+function createCookie(name, value, days) {
+        var expires;
+        if (days) {
+        var date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        expires = "; expires=" + date.toGMTString();
+        }
+        else {
+        expires = "";
+        }
+        document.cookie = escape(name) + "=" + escape(value) + expires + "; path=/";
+}
