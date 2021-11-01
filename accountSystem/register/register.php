@@ -36,7 +36,9 @@ if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
 }
 
 $userCheck ="SELECT COUNT(*) FROM user WHERE email = '$_POST[email]'";
-if(mysqli_query($dbc, $userCheck)) {
+$rs= mysqli_query($dbc, $userCheck);
+$data= mysqli_fetch_array($rs, MYSQLI_NUM);
+if($data[0] >=1) {
     $_SESSION['errors']="An account with that email already exists.";
     header("location: registerPage.php");
 }
