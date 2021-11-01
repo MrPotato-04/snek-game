@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -6,11 +5,10 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>snekgame</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="styles/main.css">
-        <script src="snekScript/game.js" defer type="module"></script>
+        <link rel="stylesheet" href="styles/redirect.css">
+        <script src="snekScript/gamemode.js" defer type="module"></script>
         
     </head>
-    
     <body>
 
         <div id="wrapper">
@@ -40,19 +38,22 @@
                             echo "<a>Logged in as: ". $row['username'] .", Highscore = ".$row_scores['scores']."</a>";
                         }
 
-                    ?>               
+                    ?>    
                 </div>
             </div>
-            <div class="wrapper2">
-                <div id="game-board" class="game-board"></div>
-            </div> 
+            <div class="content">
+
+                <div class="buttons-mid">
+                    <button id="button-multiplayer">Multiplayer</button>
+                </div>
+
+                <div class="buttons-mid">
+                    <button id="button-singleplayer""'>Singleplayer</button>
+                </div>    
+
+            </div>
             <div class="wrapper-footer">  
                 <footer>
-                    <a>Blue = W,A,S,D & Red = Up,Down,Left,Right </a>
-                    <!-- <button onclick="">Multiplayer</button> -->
-                    <div id="scores">
-                        
-                    </div>
                 </footer>
             </div>
         </div>

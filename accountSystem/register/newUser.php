@@ -7,8 +7,8 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Registraton Succesful!</h1>
-    <a href="./../../docs/index.php">
+    <h1>Registraton Succesful! You can now log in</h1>
+    <a href="./../login/index.php">
     <input type="submit" name="button" value="Main Menu">
     </a>
 </body>

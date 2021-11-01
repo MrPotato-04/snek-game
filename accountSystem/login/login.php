@@ -31,7 +31,7 @@
     //data validation
     $_SESSION["userid"] = $row['iduser'];
     $_SESSION["email"] = $row['email'];
-    setcookie("userid", $row['iduser'], time() + (86400 * 30), "/", "localhost");
-    header("location: ./../../docs/index.php");
+    setcookie("userid", $row['iduser'], time() + (86400), "/", "localhost");
+    header("location: ./../../docs/gamemode.php");
 
 ?>
