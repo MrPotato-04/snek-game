@@ -35,6 +35,12 @@ if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     header("location: registerPage.php");
 }
 
+$userCheck ="SELECT COUNT(*) FROM user WHERE email = '$_POST[email]'";
+if(mysqli_query($dbc, $userCheck)) {
+    $_SESSION['errors']="An account with that email already exists.";
+    header("location: registerPage.php");
+}
+
 //insert into db 
 if(count($_SESSION['errors']) == 0) {
     $query = "INSERT INTO user (username, email, password) VALUES ('$username', '$email', '$password')";
