@@ -22,13 +22,8 @@
     $password = $_POST['password'];
 
     //form validation errors
-    if(!$row['email']) {
-        $_SESSION['errors'] = 'Wrong Email';
-        header("location: ../login");
-        exit();
-    }
-    if(!$row['password']) {
-        $_SESSION['errors'] = 'Wrong Password';
+    if(!$row['email'] || !$row['password']) {
+        $_SESSION['errors'] = 'Email or password is invalid';
         header("location: ../login");
         exit();
     }

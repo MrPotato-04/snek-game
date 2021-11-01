@@ -22,19 +22,24 @@ $repass = $_POST['repass'];
 $password = $_POST['password'];
 
 //if field is empty
-if(empty($username)) $_SESSION['errors']="Username required"; header("location: registerPage.php");
-if(empty($email)) $_SESSION['errors']="Email required"; header("location: registerPage.php");
-if(empty($password)) $_SESSION['errors']="Password required"; header("location: registerPage.php");
-if($password !== $repass) $_SESSION['errors']="Passwords don't match"; header("location: registerPage.php");
-if(!filter_var($email, FILTER_VALIDATE_EMAIL)) $_SESSION['errors']="email is invalid"; header("location: registerPage.php");
+if(empty($username) || empty($email) || empty($password)) {
+    $_SESSION['errors'] = "Please fill all the fields in.";
+    header("location: registerPage.php");
+}
+if($password !== $repass) {
+    $_SESSION['errors']="Passwords don't match"; 
+    header("location: registerPage.php");
+}
+if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    $_SESSION['errors']="email is invalid"; 
+    header("location: registerPage.php");
+}
 
 //insert into db 
 if(count($_SESSION['errors']) == 0) {
-    
     $query = "INSERT INTO user (username, email, password) VALUES ('$username', '$email', '$password')";
-
     mysqli_query($dbc, $query);
-
+    header("location: newUser.php");
 }
 
 ?>
