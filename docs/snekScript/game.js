@@ -30,7 +30,14 @@ let redGameOver = false
 let blueGameOver = false
 const gameBoard = document.getElementById('game-board')
 
-
+window.addEventListener('keydown', e => {
+    
+    switch (e.key) {
+        case 'g' :
+            window.location = './gamemode.php'
+            break
+    }
+})
 
 //check if gameboard is pressent
 function main(currentTime) {
@@ -43,6 +50,7 @@ function main(currentTime) {
         return
     }
     if (blueGameOver) {
+        setCookie("highscore", blueScore, "1");
         if (confirm('Blue lost! press ok to restart')) {
             window.location = ''
         }

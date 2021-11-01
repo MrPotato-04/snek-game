@@ -3,12 +3,8 @@
 session_start();
 
 //connect to database
-$DB_DATABASE = "snekdatabase";
-$DB_HOST = "localhost";
-$DB_USERNAME = "root";
-$DB_PASSWORD = "";
 
-$dbc = mysqli_connect($DB_HOST, $DB_USERNAME, $DB_PASSWORD, $DB_DATABASE) or die("Couldn't connect to database");
+$dbc = require './../../database/db.php';
 
 if (mysqli_connect_errno()) {
     printf("Connection failed: ", mysqli_connect_errno());

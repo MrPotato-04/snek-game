@@ -2,12 +2,7 @@
     session_start();
 
     //connect to database
-    $DB_DATABASE = "snekdatabase";
-    $DB_HOST = "localhost";
-    $DB_USERNAME = "root";
-    $DB_PASSWORD = "";
-
-    $dbc = new mysqli($DB_HOST, $DB_USERNAME, $DB_PASSWORD, $DB_DATABASE);
+    $dbc = require './../../database/db.php';
     $res = $dbc->query("SELECT * FROM user WHERE email='{$_POST['email']}' AND password='{$_POST['password']}' ORDER BY email");
     $row = $res->fetch_assoc();
 
@@ -31,7 +26,7 @@
     //data validation
     $_SESSION["userid"] = $row['iduser'];
     $_SESSION["email"] = $row['email'];
-    setcookie("userid", $row['iduser'], time() + (86400), "/", "localhost");
+    setcookie("userid", $row['iduser'], time() + (86400), "/");
     header("location: ./../../docs/gamemode.php");
 
 ?>

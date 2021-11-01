@@ -1,16 +1,37 @@
+let logged_in = getCookie('userid')
+let multiplayer = false
+
+
+
+console.log(getCookie('userid'))
+
+if (logged_in === null) {
+    
+    multiplayer = false
+    setCookie("Multiplayer", multiplayer, 0.25)
+    console.log(getCookie('Multiplayer'))
+    if(confirm('you are not logged in,\nyou cant choose a game mode and you have 5 min of play time')) {
+        window.location = 'index.php'
+    }
+}
+
 
 document.getElementById('button-multiplayer').addEventListener("click", setMultiplayer)
-document.getElementById('button-singleplayer').addEventListener("click", setSingleplayer())
-let multiplayer = false
+document.getElementById('button-singleplayer').addEventListener("click", setSingleplayer)
 
 function setMultiplayer() {
     multiplayer = true
-    setCookie("Multiplayer", )
-    window.location = 'index.html'
+    setCookie("Multiplayer", multiplayer, 0.25)
+    window.location = 'index.php'
 }
 function setSingleplayer() {
-
+    multiplayer = false
+    setCookie("Multiplayer", multiplayer, 0.25)
+    window.location = 'index.php'
+    
 }
+
+
 
 function setCookie(name,value,days) {
     var expires = "";
@@ -21,6 +42,7 @@ function setCookie(name,value,days) {
     }
     document.cookie = name + "=" + (value || "")  + expires + "; path=/";
 }
+
 function getCookie(name) {
     var nameEQ = name + "=";
     var ca = document.cookie.split(';');

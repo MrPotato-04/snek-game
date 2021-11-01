@@ -24,13 +24,8 @@
                         if ($userID === null) {
                             echo "<a href=\"./../accountSystem/login/index.php\">Login</a>"; 
                         } else {
-                            // session_start();
-                            $DB_DATABASE = "snekdatabase";
-                            $DB_HOST = "localhost";
-                            $DB_USERNAME = "root";
-                            $DB_PASSWORD = "";
-
-                            $dbc = new mysqli($DB_HOST, $DB_USERNAME, $DB_PASSWORD, $DB_DATABASE);
+                            
+                            $dbc = require("./../database/db.php");
                             $res = $dbc->query("SELECT * FROM user WHERE iduser = $userID");
                             $row = $res->fetch_assoc();
                             $res_scores = $dbc->query("SELECT * FROM scores WHERE user_iduser = $userID");
@@ -48,7 +43,7 @@
                 </div>
 
                 <div class="buttons-mid">
-                    <button id="button-singleplayer""'>Singleplayer</button>
+                    <button id="button-singleplayer">Singleplayer</button>
                 </div>    
 
             </div>
