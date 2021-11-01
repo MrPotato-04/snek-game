@@ -8,7 +8,7 @@ $dbc = mysqli_connect('localhost','root','','snekdatabase') or die('Could not co
 
 
 
-$query = "INSERT INTO scores (scores, user_id) VALUES ('$highscore', '$userid')";
+$query = "INSERT INTO scores (`scores`, `user_iduser`) VALUES ('$highscore', '$userid')";
 mysqli_query($dbc, $query);
 
 mysqli_close($con);
