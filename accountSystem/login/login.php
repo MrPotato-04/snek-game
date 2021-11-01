@@ -29,9 +29,9 @@
     }
 
     //data validation
-    $_SESSION["userid"] = $row['id'];
+    $_SESSION["userid"] = $row['iduser'];
     $_SESSION["email"] = $row['email'];
-    setcookie("userid", $row['id'], time() + 86400, "/");
-    header("location: ./../../docs/index.html");
+    setcookie("userid", $row['iduser'], time() + (86400 * 30), "/", "localhost");
+    header("location: ./../../docs/index.php");
 
 ?>

@@ -1,3 +1,11 @@
+<?php
+unlink("cookietest.txt");
+$testFile = fopen("cookietest.txt", "w") or die("Unable to open file!");
+fwrite($testFile, $_COOKIE['userid']);
+fclose($testFile);
+?>
+
+
 <!DOCTYPE html>
 <html>
     <head>
