@@ -56,11 +56,14 @@
             </div> 
             <div class="wrapper-footer">  
                 <footer>
-                    <div id="controls">Blue = W,A,S,D & Red = Up,Down,Left,Right </div>
-                    <!-- <button onclick="">Multiplayer</button> -->
-                    <div id="scores">
+                    <div id="footer">
+                        <div id="controls">Blue = W,A,S,D & Red = Up,Down,Left,Right </div>
                         
+                        <div id="scores">
+                            
+                        </div>
                     </div>
+                    <!-- <button onclick="">Multiplayer</button> -->
                 </footer>
             </div>
 
