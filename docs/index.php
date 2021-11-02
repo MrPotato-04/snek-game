@@ -10,44 +10,42 @@
         <script src="snekScript/game.js" defer type="module"></script>
         
     </head>
-    
     <body>
-
         <div id="wrapper">
             <div class="header">
                 <div class="inner_header">
                     <h3>Basic Snek</h3>
                     <?php
-                    
                         $userID = null;
-                            if (isset($_COOKIE['userid'])) {
-                                $userID = $_COOKIE["userid"];
-                            }
-                            if ($userID !== null) {
-                                echo '<form action="index.php" method="post"><input type="submit" name="logout" value="logout"></form>';
-                            
-                            if ($userID === null) {
-                                echo "<a href=\"./../accountSystem/login/index.php\">Login</a>"; 
+                        if (isset($_COOKIE['userid'])) {
+                            $userID = $_COOKIE["userid"];
+                        }
+                        if ($userID !== null) {
+                            echo "<form action=\"index.php\" method=\"post\"><input type=\"submit\" name=\"logout\" value=\"logout\"></form>";
+                        }
+                        if ($userID === null) {
+                            echo "<a href=\"./../accountSystem/login/index.php\">Login</a>"; 
+                        } else {
+                            // session_start();
+                            $dbc = require "./../database/db.php";
+                            $res = $dbc->query("SELECT * FROM user WHERE iduser = $userID");
+                            $row = $res->fetch_assoc();
+                            $res_scores = $dbc->query("SELECT * FROM scores WHERE user_iduser = $userID");
+                            $row_scores = $res_scores->fetch_assoc();
+                            $score = $row_scores['scores'];
+                            if ($score === null) {
+                                $score = 0;
                             } else {
-                                // session_start();
-                                $dbc = require "./../database/db.php";
-                                $res = $dbc->query("SELECT * FROM user WHERE iduser = $userID");
-                                $row = $res->fetch_assoc();
-                                $res_scores = $dbc->query("SELECT * FROM scores WHERE user_iduser = $userID");
-                                $row_scores = $res_scores->fetch_assoc();
                                 $score = $row_scores['scores'];
-                                if ($score === null) {
-                                    $score = 0;
-                                } else {
-                                    $score = $row_scores['scores'];
-                                };
-                                echo "<a>Logged in as: ". $row['username'] .", Highscore = ".$score."</a>";
-
-                            }
-                            if(isset($_POST["logout"])) {
-                                unset($_COOKIE['userid']);
-                                setcookie('userid', null, -1, "/");
-                            }
+                            };
+                            echo "<a>Logged in as: ". $row['username'] .", Highscore = ".$score."</a>";
+                        }
+                        if(isset($_POST["logout"])) {
+                            unset($_COOKIE['userid']);
+                            setcookie('userid', null, -1, "/");
+                            header("Location: index.php");
+                            
+                        }
                             
 
                     ?>               
@@ -65,7 +63,6 @@
                     </div>
                 </footer>
             </div>
-        </div>
-        
+
     </body>
 </html>

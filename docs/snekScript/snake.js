@@ -2,7 +2,7 @@ import {  getInputDirection_snake1 } from "./input.js"
 import { GRID_HEIGTH, GRID_WIDTH } from "./grid.js"
 
 export let redScore = 0;
-
+let index_nr = 1;
 
 
 const snakeBody = [{ x: Math.floor(GRID_WIDTH / 3), y: Math.floor(GRID_HEIGTH / 2) }]
@@ -42,19 +42,28 @@ export function update() {
 
 export function draw(gameBoard) {
     
-    const snakeHead = document.createElement('div')
-    snakeHead.style.gridRowStart = snakeBody[0].y
-    snakeHead.style.gridColumnStart = snakeBody[0].x
-    snakeHead.classList.add('snake_1_head')
-    gameBoard.appendChild(snakeHead)
+    // const snakeHead = document.createElement('div')
+    // snakeHead.style.gridRowStart = snakeBody[0].y
+    // snakeHead.style.gridColumnStart = snakeBody[0].x
+    // snakeHead.classList.add('snake_1_head')
+    // gameBoard.appendChild(snakeHead)
         
-        
-    snakeBody.slice(1).forEach(segment => {
-        const snakeElement = document.createElement('div')
-        snakeElement.style.gridRowStart = segment.y
-        snakeElement.style.gridColumnStart = segment.x
-        snakeElement.classList.add('snake_1')
-        gameBoard.appendChild(snakeElement)
+     
+    snakeBody.forEach(segment => {
+        if (index_nr > 1) {
+            const snakeElement = document.createElement('div')
+            snakeElement.style.gridRowStart = segment.y
+            snakeElement.style.gridColumnStart = segment.x
+            snakeElement.classList.add('snake_1')
+            gameBoard.appendChild(snakeElement)
+        } else {
+            const snakeElement = document.createElement('div')
+            snakeElement.style.gridRowStart = segment.y
+            snakeElement.style.gridColumnStart = segment.x
+            snakeElement.classList.add('head_snake_1')
+            gameBoard.appendChild(snakeElement)
+            
+        }
         
         
     })

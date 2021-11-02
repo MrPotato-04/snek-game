@@ -91,8 +91,8 @@ footer {
     background-color: hsl(0, 57%, 45%);
     border: .25vmin solid black;
 }
-.snake_1_head {
-    background-color: hsl(0, 0%, 100%);
+.head_snake_1 {
+    background-color: hsl(0, 57%, 45%);
     border: .25vmin solid rgb(255, 255, 255);
 }
 
