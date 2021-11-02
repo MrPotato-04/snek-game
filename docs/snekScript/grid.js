@@ -1,5 +1,5 @@
-export const GRID_HEIGTH = 25
-export const GRID_WIDTH = 54
+export const GRID_HEIGTH = 20 //25
+export const GRID_WIDTH = 44 //54
 
 
 export function randomGridPosition() {
