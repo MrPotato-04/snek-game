@@ -21,7 +21,8 @@
                             $userID = $_COOKIE["userid"];
                         }
                         if ($userID !== null) {
-                            echo "<form action=\"index.php\" method=\"post\"><input type=\"submit\" name=\"logout\" value=\"logout\"></form>";
+                            echo "<form action=\"index.php\" method=\"post\"><input type=\"submit\" name=\"logout\" value=\"Logout\"></form>";
+                            echo "<form action=\"gamemode.php\" method=\"post\"><input type=\"submit\" name=\"logout\" value=\"Gamemodes\"></form>";
                         }
                         if ($userID === null) {
                             echo "<a href=\"./../accountSystem/login/index.php\">Login</a>"; 

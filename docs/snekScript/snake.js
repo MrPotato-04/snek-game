@@ -46,7 +46,6 @@ export function draw(gameBoard) {
         const snakeElement = document.createElement('div')
         snakeElement.style.gridRowStart = segment.y
         snakeElement.style.gridColumnStart = segment.x
-        console.log(index)
         if (index === 0) {
             snakeElement.classList.add('snake_1_head')
         } else {

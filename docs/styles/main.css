@@ -119,8 +119,13 @@ footer #scores {
     border: .25vmin solid black;
 }
 .snake_1_head {
-    background-color: hsl(0, 0%, 0%);
+    background-color: hsl(0, 100%, 6%);
     border: .25vmin solid hsl(0, 57%, 45%);
+}
+
+.snake_2_head {
+    background-color: rgb(0, 21, 49);
+    border: .25vmin solid hsl(214, 57%, 45%);
 }
 
 .snake_2 {
