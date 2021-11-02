@@ -17,22 +17,27 @@
                     <h3>Basic Snek</h3>
                     <?php
                     $userID = null;
-                        if (isset($_COOKIE['userid'])) {
-                            $userID = $_COOKIE["userid"];
-                        }
-                        
-                        if ($userID === null) {
-                            echo "<a href=\"./../accountSystem/login/index.php\">Login</a>"; 
+                    if (isset($_COOKIE['userid'])) {
+                        $userID = $_COOKIE["userid"];
+                    }
+                    
+                    if ($userID === null) {
+                        echo "<a href=\"./../accountSystem/login/index.php\">Login</a>"; 
+                    } else {
+                        // session_start();
+                        $dbc = require "./../database/db.php";
+                        $res = $dbc->query("SELECT * FROM user WHERE iduser = $userID");
+                        $row = $res->fetch_assoc();
+                        $res_scores = $dbc->query("SELECT * FROM scores WHERE user_iduser = $userID");
+                        $row_scores = $res_scores->fetch_assoc();
+                        $score = $row_scores['scores'];
+                        if ($score === null) {
+                            $score = 0;
                         } else {
-                            
-                            $dbc = require("./../database/db.php");
-                            $res = $dbc->query("SELECT * FROM user WHERE iduser = $userID");
-                            $row = $res->fetch_assoc();
-                            $res_scores = $dbc->query("SELECT * FROM scores WHERE user_iduser = $userID");
-                            $row_scores = $res_scores->fetch_assoc();
-                            echo "<a>Logged in as: ". $row['username'] .", Highscore = ".$row_scores['scores']."</a>";
-                        }
-
+                            $score = $row_scores['scores'];
+                        };
+                        echo "<a>Logged in as: ". $row['username'] .", Highscore = ".$score."</a>";
+                    }
                     ?>    
                 </div>
             </div>

@@ -1,5 +1,5 @@
 let logged_in = getCookie('userid')
-let multiplayer = false
+export let multiplayer = false
 
 
 

@@ -32,7 +32,13 @@
                             $row = $res->fetch_assoc();
                             $res_scores = $dbc->query("SELECT * FROM scores WHERE user_iduser = $userID");
                             $row_scores = $res_scores->fetch_assoc();
-                            echo "<a>Logged in as: ". $row['username'] .", Highscore = ".$row_scores['scores']."</a>";
+                            $score = $row_scores['scores'];
+                            if ($score === null) {
+                                $score = 0;
+                            } else {
+                                $score = $row_scores['scores'];
+                            };
+                            echo "<a>Logged in as: ". $row['username'] .", Highscore = ".$score."</a>";
                         }
 
                     ?>               
@@ -43,7 +49,7 @@
             </div> 
             <div class="wrapper-footer">  
                 <footer>
-                    <a>Blue = W,A,S,D & Red = Up,Down,Left,Right </a>
+                    <div id="controls">Blue = W,A,S,D & Red = Up,Down,Left,Right </div>
                     <!-- <button onclick="">Multiplayer</button> -->
                     <div id="scores">
                         
