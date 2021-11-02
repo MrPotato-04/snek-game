@@ -46,14 +46,14 @@ function main(currentTime) {
     if (redGameOver) {
         // sendHighscore(redScore)
         setCookie("highscore", redScore, "1");
-        if (confirm('Red lost! press ok to restart')) {
+        if (elert('Red lost! press ok to restart')) {
             window.location = 'highscore.php'
         }
         return
     }
     if (blueGameOver) {
         setCookie("highscore", blueScore, "1");
-        if (confirm('Blue lost! press ok to restart')) {
+        if (elert('Blue lost! press ok to restart')) {
             window.location = 'highscore.php'
         }
         return

@@ -10,7 +10,7 @@ if (logged_in === null) {
     multiplayer = false
     setCookie("Multiplayer", multiplayer, 0.25)
     console.log(getCookie('Multiplayer'))
-    if(confirm('you are not logged in,\nyou cant choose a game mode and you have 5 min of play time')) {
+    if(elert('you are not logged in,\nyou cant choose a game mode and you have 5 min of play time')) {
         window.location = 'index.php'
     }
 }
