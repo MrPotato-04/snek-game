@@ -41,12 +41,21 @@ export function update() {
 }
 
 export function draw(gameBoard) {
-    snakeBody.forEach(segment => {
+    
+    const snakeHead = document.createElement('div')
+    snakeHead.style.gridRowStart = snakeBody[0].y
+    snakeHead.style.gridColumnStart = snakeBody[0].x
+    snakeHead.classList.add('snake_1_head')
+    gameBoard.appendChild(snakeHead)
+        
+        
+    snakeBody.slice(1).forEach(segment => {
         const snakeElement = document.createElement('div')
         snakeElement.style.gridRowStart = segment.y
         snakeElement.style.gridColumnStart = segment.x
         snakeElement.classList.add('snake_1')
         gameBoard.appendChild(snakeElement)
+        
         
     })
 }
