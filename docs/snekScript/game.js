@@ -78,7 +78,7 @@ window.requestAnimationFrame(main)
 
 function update() {
         updateSnake_1()
-        if(multiplayer) {return updateSnake_2()}
+        if(multiplayer) {updateSnake_2()}
         updateFood()
         checkDeath()
         updateScores(redScore, blueScore)
@@ -90,7 +90,7 @@ function draw() {
         gameBoard.innerHTML = ''
         drawBoard(gameBoard)
         drawSnake_1(gameBoard)
-        if(multiplayer){return drawSnake_2(gameBoard)}
+        if(multiplayer) {drawSnake_2(gameBoard)}
         drawFood(gameBoard)
 }
 
