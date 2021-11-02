@@ -7,10 +7,10 @@ import { update as updateSnake_2, draw as drawSnake_2, blueScore,
 import { update as updateFood, draw as drawFood } from './food.js'
 import { GRID_HEIGTH, GRID_WIDTH, outsideGrid} from './grid.js'
 import { draw as drawBoard } from './board.js'
-import { multiplayer as gamemode_multiplayer } from './gamemode.js'
+
 
 //const tmp = `repeat(${GRID_SIZE}, 1fr)` 
-let multiplayer = gamemode_multiplayer;
+let multiplayer
 
 window.onload = function() {
     gameBoard.style.gridTemplateColumns = `repeat(${GRID_WIDTH}, 1fr)`;
