@@ -1,5 +1,5 @@
 <?php
-$dbhost ="92.108.88.71:3306";
+$dbhost ="snekoncrack.privatedns.org:3306";
 $dbuser ="snekuser";
 $dbpass ="";
 $dbname ="snekdatabase";
