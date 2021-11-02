@@ -20,7 +20,7 @@
                         <button type="button" onclick="window.location.href='./../register/registerPage.php'" class="signup">
                             Sign Up
                         </button>
-                        <a href="./resetpassword.php">Forgot your password? </a>
+                        <!--//FIXME: <a href="./resetpassword.php">Forgot your password? </a> -->
             </div>
         </form>
     </body>
