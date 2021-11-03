@@ -15,7 +15,7 @@ if (multiplayer) {
 }
 console.log(startPos)
 const snakeBody = [{ x: Math.floor(GRID_WIDTH / startPos), y: Math.floor(GRID_HEIGTH / 2) }]
-let newSegments = 0
+let newSegments = 2
 
 
 export function update() {
@@ -57,6 +57,9 @@ export function draw(gameBoard) {
         snakeElement.style.gridColumnStart = segment.x
         if (index === 0) {
             snakeElement.classList.add('snake_1_head')
+        } else if(index === snakeBody.length - 1) {
+            console.log('kanker neger')
+            snakeElement.classList.add('snake_1_tail')
         } else {
             snakeElement.classList.add('snake_1')
         }

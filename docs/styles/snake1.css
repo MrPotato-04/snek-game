@@ -1,0 +1,62 @@
+
+.snake_1_boddy_ver {
+    /* background-color: hsl(0, 57%, 45%); */
+    background-image: url('./snake/tile007.png');
+    /* border: .25vmin solid black; */
+    background-size: cover;
+    background-repeat: no-repeat, repeat;
+}
+.snake_1_boddy_hor {
+    /* background-color: hsl(0, 57%, 45%); */
+    background-image: url('./snake/tile001.png');
+    /* border: .25vmin solid black; */
+    background-size: cover;
+    background-repeat: no-repeat, repeat;
+}
+
+.snake_1_head_up {
+    background-image: url('./snake/tile003.png');
+    background-size: cover;
+    background-repeat: no-repeat, repeat;
+    /* border: .25vmin solid hsl(0, 57%, 45%); */
+}
+.snake_1_head_right {
+    background-image: url('./snake/tile004.png');
+    background-size: cover;
+    background-repeat: no-repeat, repeat;
+    /* border: .25vmin solid hsl(0, 57%, 45%); */
+}
+.snake_1_head_down {
+    background-image: url('./snake/tile009.png');
+    background-size: cover;
+    background-repeat: no-repeat, repeat;
+    /* border: 
+    .25vmin solid hsl(0, 57%, 45%); */
+}
+.snake_1_head_left {
+    background-image: url('./snake/tile008.png');
+    background-size: cover;
+    background-repeat: no-repeat, repeat;
+    /* border: .25vmin solid hsl(0, 57%, 45%); */
+}
+
+.snake_1_tail_up {
+    background-image: url('./snake/tile013.png');
+    background-size: cover;
+    background-repeat: no-repeat, repeat;
+}
+.snake_1_tail_right {
+    background-image: url('./snake/tile013.png');
+    background-size: cover;
+    background-repeat: no-repeat, repeat;
+}
+.snake_1_tail_down {
+    background-image: url('./snake/tile013.png');
+    background-size: cover;
+    background-repeat: no-repeat, repeat;
+}
+.snake_1_tail_left {
+    background-image: url('./snake/tile013.png');
+    background-size: cover;
+    background-repeat: no-repeat, repeat;
+}
