@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0efd7bf9-975a-49d9-9790-286ecbd4eff3" name="Changes" comment="css page made and dark switch">
-      <change beforePath="$PROJECT_DIR$/accountSystem/login/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/accountSystem/login/login.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,7 +33,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../bin/php/php7.4.9/php.exe" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="settings.editor.selected.configurable" value="0d570cb2-96df-43cc-80da-7f777e6d0afe" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -48,6 +47,10 @@
       <option name="presentableId" value="Default" />
       <updated>1635407863713</updated>
       <workItem from="1635407864977" duration="16122000" />
+      <workItem from="1635843025954" duration="44000" />
+      <workItem from="1635843169148" duration="32000" />
+      <workItem from="1635843202768" duration="364000" />
+      <workItem from="1635843599687" duration="1849000" />
     </task>
     <task id="LOCAL-00001" summary="test main page made">
       <created>1635409696144</created>
@@ -86,6 +89,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="test main page made" />
