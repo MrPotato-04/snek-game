@@ -11,22 +11,6 @@
     require_once('leadscript.php');
     ?>
     <div>
-        <table>
-            <tr>
-                <th>Player</th>
-                <th>Highscore</th>
-            </tr>
-            <?php
-                // while($row = $res->fetch_assoc()) {
-
-                //     echo"<tr>><td>".$row['username']."</td></tr>";
-                //     echo"<tr>><td>".$row['scores']."</td></tr>";
-
-                // }
-            ?>
-            
-        </table>
-    </div>
     <?php
     echo "________________________________";
     echo "<table>"; // start a table tag in the HTML
@@ -37,5 +21,7 @@
     
     echo "</table>"
     ?>
+    </div>
+    
 </body>
 </html>
