@@ -23,6 +23,7 @@
                         if ($userID !== null) {
                             echo "<form action=\"index.php\" method=\"post\"><input type=\"submit\" name=\"logout\" value=\"Logout\"></form>";
                             echo "<form action=\"gamemode.php\" method=\"post\"><input type=\"submit\" name=\"logout\" value=\"Gamemodes\"></form>";
+                            echo "<form action=\"leaderboards/leadpage.php\" method=\"post\"><input type=\"submit\" name=\"logout\" value=\"Leaderboard\"></form>";
                             if (isset($_COOKIE['demoExpire'])) {
                                 header("Location: ./../accountSystem/login/index.php");
                             }
