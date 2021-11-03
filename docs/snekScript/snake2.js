@@ -39,13 +39,20 @@ export function update() {
 }
 
 export function draw(gameBoard) {
-    snakeBody.forEach(segment => {
+
+    snakeBody.forEach((segment, index) => {
         const snakeElement = document.createElement('div')
         snakeElement.style.gridRowStart = segment.y
         snakeElement.style.gridColumnStart = segment.x
-        snakeElement.classList.add('snake_2')
-        gameBoard.appendChild(snakeElement)
+        if (index === 0) {
+            snakeElement.classList.add('snake_2_head')
+        } else {
+            snakeElement.classList.add('snake_2')
+        }
         
+        gameBoard.appendChild(snakeElement)
+
+
     })
 }
 

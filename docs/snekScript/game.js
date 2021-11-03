@@ -8,7 +8,11 @@ import { update as updateFood, draw as drawFood } from './food.js'
 import { GRID_HEIGTH, GRID_WIDTH, outsideGrid} from './grid.js'
 import { draw as drawBoard } from './board.js'
 
+
 //const tmp = `repeat(${GRID_SIZE}, 1fr)` 
+let multiplayer = false;
+
+multiplayer = getCookie("Multiplayer")
 
 window.onload = function() {
     gameBoard.style.gridTemplateColumns = `repeat(${GRID_WIDTH}, 1fr)`;
@@ -24,7 +28,7 @@ const SNAKE_SPEED = 10
 // let blueScore = 0;
 // let redScore = 0;
 
-let multiplayer = false
+
 let lastRenderTime = 0
 let redGameOver = false
 let blueGameOver = false
@@ -42,17 +46,16 @@ window.addEventListener('keydown', e => {
 //check if gameboard is pressent
 function main(currentTime) {
     if (redGameOver) {
-        // sendHighscore(redScore)
         setCookie("highscore", redScore, "1");
-        if (confirm('Red lost! press ok to restart')) {
+        if (alert('Red lost! press ok to restart')) {
             window.location = 'highscore.php'
         }
         return
     }
     if (blueGameOver) {
         setCookie("highscore", blueScore, "1");
-        if (confirm('Blue lost! press ok to restart')) {
-            window.location = ''
+        if (alert('Blue lost! press ok to restart')) {
+            window.location = 'highscore.php'
         }
         return
     }
@@ -75,7 +78,7 @@ window.requestAnimationFrame(main)
 
 function update() {
         updateSnake_1()
-        updateSnake_2()
+        if(multiplayer) {updateSnake_2()}
         updateFood()
         checkDeath()
         updateScores(redScore, blueScore)
@@ -87,7 +90,7 @@ function draw() {
         gameBoard.innerHTML = ''
         drawBoard(gameBoard)
         drawSnake_1(gameBoard)
-        drawSnake_2(gameBoard)
+        if(multiplayer) {drawSnake_2(gameBoard)}
         drawFood(gameBoard)
 }
 
@@ -100,13 +103,6 @@ function updateScores(score1, score2) {
         scores.innerHTML = `Red score: ${score1}, Blue score: ${score2}`
         
 }
-function sendHighscore(str) {
-        if (str == "") {
-        var xmlhttp = new XMLHttpRequest();
-        xmlhttp.open("GET","./../highscore.php?score="+str,true);
-        xmlhttp.send();
-    } 
-}
 
 function setCookie(name,value,days) {
     var expires = "";
@@ -116,4 +112,14 @@ function setCookie(name,value,days) {
         expires = "; expires=" + date.toUTCString();
     }
     document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+}
+function getCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
 }

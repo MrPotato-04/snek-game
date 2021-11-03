@@ -1,34 +1,27 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <link rel="stylesheet" href="login.css">
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="./styles/login.css">
 </head>
-<header>
-    <a  href="../../docs/index.php">game</a>
-</header>
-<body>
-<?php
-    session_start();
-    if(isset($_SESSION['errors'])){
-        $error_output = $_SESSION['errors'];
-        echo $error_output;
-        unset ($_SESSION['errors']);
-    }
-    ?>
-    <form action="login.php" method="POST" enctype="multipart/form">
-        <input type="text" autocomplete="off" name="email" placeholder="Email">
-        <input type="password" name="password" placeholder="Password">
-        <input type="submit" name="button" value="Sign in">
-    </form>
-<button onclick="myFunction()">Toggle dark mode</button>
-    <div>
-        <p>No account yet? Register </p> <a href="./../register/registerPage.php">here</a>
-    </div>
-<script src="login.js"></script>
-</body>
+    <body>
+        <form action="login.php" method="POST" enctype="multipart/form">
+            <h2>Snek on crack</h2>
+            <p>Sign in</p>
+            <div class="container">
+
+                <label for="email"><b>Email</b></label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email">
+
+                <label for="name"><b>Password</b< /label>
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password" minlength="4" required>
+
+                        <button type="submit">Login</button>
+                        <button type="button" onclick="window.location.href='./../register/registerPage.php'" class="signup">
+                            Sign Up
+                        </button>
+                        <!--//FIXME: <a href="./resetpassword.php">Forgot your password? </a> -->
+            </div>
+        </form>
+    </body>
 </html>

@@ -27,7 +27,7 @@ if(empty($username) || empty($email) || empty($password)) {
     header("location: registerPage.php");
 }
 if($password !== $repass) {
-    $_SESSION['errors']="Passwords don't match"; 
+    $_SESSION['errors']="Passwords don't match ".$repass."/".$password; 
     header("location: registerPage.php");
 }
 if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
