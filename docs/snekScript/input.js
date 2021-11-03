@@ -1,5 +1,5 @@
 
-let inptutDirection_snake_1 = { x: 0, y: 0}
+let inptutDirection_snake_1 = { x: 0, y: -1}
 let lastInputDirection_snake_1 = 0
 
 
