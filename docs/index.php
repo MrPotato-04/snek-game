@@ -23,9 +23,11 @@
                         if ($userID !== null) {
                             echo "<form action=\"index.php\" method=\"post\"><input type=\"submit\" name=\"logout\" value=\"Logout\"></form>";
                             echo "<form action=\"gamemode.php\" method=\"post\"><input type=\"submit\" name=\"logout\" value=\"Gamemodes\"></form>";
+                            
                         }
                         if ($userID === null) {
                             echo "<a href=\"./../accountSystem/login/index.php\">Login</a>"; 
+                            echo "<progress value=\"0\" max=\"300\" id=\"progressBar\"></progress>";
                         } else {
                             // session_start();
                             $dbc = require "./../database/db.php";
