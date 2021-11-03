@@ -1,11 +1,20 @@
 import { getInputDirection_snake1 } from "./input.js"
 import { GRID_HEIGTH, GRID_WIDTH } from "./grid.js"
+import { getCookie } from "./game.js"
 
-export let redScore = 0;
-let index_nr = 1;
+let multiplayer = getCookie("Multiplayer")
+
+export var redScore = 0;
 
 
-const snakeBody = [{ x: Math.floor(GRID_WIDTH / 3), y: Math.floor(GRID_HEIGTH / 2) }]
+console.log("SNAKE.JS "+ multiplayer)
+if (multiplayer) { 
+    var startPos = 3
+} else {
+    var startPos = 2
+}
+console.log(startPos)
+const snakeBody = [{ x: Math.floor(GRID_WIDTH / startPos), y: Math.floor(GRID_HEIGTH / 2) }]
 let newSegments = 0
 
 

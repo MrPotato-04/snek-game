@@ -70,6 +70,8 @@ form {
     font-family: 'ZCOOL', cursive;
     font-weight: 400;
     font-size: 20px;
+    margin: 0 auto;
+    margin-left: 10vw;
 }
 
 .header {
