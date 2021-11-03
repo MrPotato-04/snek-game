@@ -8,7 +8,7 @@
 </head>
 <body>
     <?php
-    require_once('leadscript.php');
+    require_once('leadData.php');
     ?>
     <div>
     <?php
