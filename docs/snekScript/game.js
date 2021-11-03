@@ -37,7 +37,10 @@ var downloadTimer = setInterval(function () {
     if (timeleft <= 0) {
         clearInterval(downloadTimer);
     }
-    document.getElementById("progressBar").value = (60*5) - timeleft;
+    if (document.getElementById("progressBar")) {
+        document.getElementById("progressBar").value = (60*5) - timeleft;
+    }
+
     timeleft -= 1;
 }, 1000);
 
@@ -61,14 +64,18 @@ window.addEventListener('keydown', e => {
 function main(currentTime) {
     if (redGameOver) {
         setCookie("highscore", redScore, "1");
-        if (alert('Red lost! press ok to restart')) {
+        if (confirm('Red lost! press ok to restart')) {
+            window.location = 'highscore.php'
+        } else {
             window.location = 'highscore.php'
         }
         return
     }
     if (blueGameOver) {
         setCookie("highscore", blueScore, "1");
-        if (alert('Blue lost! press ok to restart')) {
+        if (confirm('Blue lost! press ok to restart')) {
+            window.location = 'highscore.php'
+        } else {
             window.location = 'highscore.php'
         }
         return
@@ -86,6 +93,17 @@ function main(currentTime) {
 
     update()
     draw()
+
+    if (timeleft === 0) {
+        console.log("nigga")
+        setCookie("demoExpire", true, 20)
+        if(confirm("Demo time is up")){
+            window.location = "./../accountSystem/login/index.php"
+        } else {
+            window.location = "./../accountSystem/login/index.php"
+        }
+        
+    }
 }
 
 window.requestAnimationFrame(main)
@@ -118,7 +136,7 @@ function updateScores(score1, score2) {
 
 }
 
-function setCookie(name, value, days) {
+export function setCookie(name, value, days) {
     var expires = "";
     if (days) {
         var date = new Date();

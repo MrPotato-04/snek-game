@@ -50,7 +50,10 @@ input[type="submit"] {
     width: 4.5vw;
     height: 2.5vh;
 }
-
+progress {
+    max-width: 5vw;
+    
+}
 
 form {
     max-width: 10vw;
@@ -121,7 +124,9 @@ footer #scores {
     border: .25vmin solid black;
 }
 .snake_1_head {
-    background-color: hsl(0, 100%, 6%);
+    background-image: url('snake-head.jpg');
+    background-size: cover;
+    background-repeat: no-repeat, repeat;
     border: .25vmin solid hsl(0, 57%, 45%);
 }
 

@@ -23,7 +23,9 @@
                         if ($userID !== null) {
                             echo "<form action=\"index.php\" method=\"post\"><input type=\"submit\" name=\"logout\" value=\"Logout\"></form>";
                             echo "<form action=\"gamemode.php\" method=\"post\"><input type=\"submit\" name=\"logout\" value=\"Gamemodes\"></form>";
-                            
+                            if (isset($_COOKIE['demoExpire'])) {
+                                header("Location: ./../accountSystem/login/index.php");
+                            }
                         }
                         if ($userID === null) {
                             echo "<a href=\"./../accountSystem/login/index.php\">Login</a>"; 
