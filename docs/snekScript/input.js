@@ -1,6 +1,6 @@
 
 let inptutDirection_snake_1 = { x: 0, y: -1}
-let lastInputDirection_snake_1 = 0
+export var lastInputDirection_snake_1 = 0
 
 let inptutDirection_snake_2 = { x: 0, y: 0}
 let lastInputDirection_snake_2 = 0
@@ -58,4 +58,8 @@ export function getInputDirection_snake1() {
 export function getInputDirection_snake2() {
     lastInputDirection_snake_2 = inptutDirection_snake_2
     return inptutDirection_snake_2
+}
+export function getLastPos() {
+    lastInputDirection_snake_1 = inptutDirection_snake_1
+    return lastInputDirection_snake_1
 }

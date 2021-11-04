@@ -54,6 +54,7 @@ progress {
     max-width: 5vw;
     margin: 0 auto;
     float: right;
+    margin-right: 10px;
 
 }
 .progress {
