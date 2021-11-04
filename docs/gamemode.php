@@ -22,7 +22,7 @@
                     }
                     
                     if ($userID === null) {
-                        echo "<a href=\"./../accountSystem/login/index.php\">Login</a>"; 
+                        echo "<a class=\"a\" href=\"./../accountSystem/login/index.php\">Login</a>"; 
                     } else {
                         // session_start();
                         $dbc = require "./../database/db.php";
@@ -36,7 +36,7 @@
                         } else {
                             $score = $row_scores['scores'];
                         };
-                        echo "<a>Logged in as: ". $row['username'] .", Highscore = ".$score."</a>";
+                        echo "<a class=\"a\">Logged in as: ". $row['username'] .", Highscore = ".$score."</a>";
                         echo "<form action=\"index.php\" method=\"post\"><input type=\"submit\" name=\"logout\" value=\"Logout\"></form>";
                         echo "<form action=\"gamemode.php\" method=\"post\"><input type=\"submit\" name=\"logout\" value=\"Gamemodes\"></form>";
                         echo "<form action=\"leaderboards/leadpage.php\" method=\"post\"><input type=\"submit\" name=\"logout\" value=\"Leaderboard\"></form>";
