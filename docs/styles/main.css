@@ -52,7 +52,21 @@ input[type="submit"] {
 }
 progress {
     max-width: 5vw;
+    margin: 0 auto;
+    float: right;
 
+}
+.progress {
+    max-width: 5vw;
+    margin: 0 auto;
+    float: left;
+
+}
+.progress_wrapper {
+    height: 2vh;
+    max-width: 11vw;
+    width: 11vw;
+    float: right;
 }
 
 form {
@@ -68,7 +82,7 @@ form {
 }
 
 
-.header a {
+.header .a {
     color: rgb(136, 251, 255);
     font-family: 'ZCOOL', cursive;
     font-weight: 400;

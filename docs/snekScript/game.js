@@ -27,8 +27,8 @@ window.onload = function () {
 
 const scores = document.getElementById('scores');
 
-const SNAKE_SPEED = prompt('type snake speed')
-
+// const SNAKE_SPEED = prompt('type snake speed')
+const SNAKE_SPEED = 3
 // let blueScore = 0;
 // let redScore = 0;
 
@@ -93,17 +93,20 @@ function main(currentTime) {
 
     update()
     draw()
-
-    if (timeleft === 0) {
-        console.log("nigga")
-        setCookie("demoExpire", true, 20)
-        if(confirm("Demo time is up")){
-            window.location = "./../accountSystem/login/index.php"
-        } else {
-            window.location = "./../accountSystem/login/index.php"
+    let userid = getCookie('userid')
+    if (userid === null) {
+        if (timeleft === 0) {
+            console.log("nigga")
+            setCookie("demoExpire", true, 20)
+            if(confirm("Demo time is up")){
+                window.location = "./../accountSystem/login/index.php"
+            } else {
+                window.location = "./../accountSystem/login/index.php"
+            }
+            
         }
-        
     }
+    
 }
 
 window.requestAnimationFrame(main)
