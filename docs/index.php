@@ -34,7 +34,7 @@
                             }
                         }
                         if ($userID === null) {
-                            echo "<a class=\"a\" \"href=\"./../accountSystem/login/index.php\">Login</a>"; 
+                            echo "<a class=\"a\"href=\"./../accountSystem/login/index.php\">Login</a>"; 
                             echo "<div class=\"progress_wrapper\"><a class=\"progress\">Time Left</a><progress value=\"0\" max=\"300\" id=\"progressBar\"></progress></div>";
                         } else {
                             // session_start();

@@ -26,9 +26,12 @@ window.onload = function () {
 };
 
 const scores = document.getElementById('scores');
+let SNAKE_SPEED = 3
+// const SNAKE_SPEED = 
+if (window.location === "./index.php"){
+    SNAKE_SPEED = prompt('type snake speed')
+}
 
-// const SNAKE_SPEED = prompt('type snake speed')
-const SNAKE_SPEED = 3
 // let blueScore = 0;
 // let redScore = 0;
 
