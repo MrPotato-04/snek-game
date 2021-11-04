@@ -1,12 +1,12 @@
 
-.snake_1_boddy_ver {
+.snake_1_body_ver {
     /* background-color: hsl(0, 57%, 45%); */
     background-image: url('./snake/tile007.png');
     /* border: .25vmin solid black; */
     background-size: cover;
     background-repeat: no-repeat, repeat;
 }
-.snake_1_boddy_hor {
+.snake_1_body_hor {
     /* background-color: hsl(0, 57%, 45%); */
     background-image: url('./snake/tile001.png');
     /* border: .25vmin solid black; */
@@ -46,17 +46,17 @@
     background-repeat: no-repeat, repeat;
 }
 .snake_1_tail_right {
-    background-image: url('./snake/tile013.png');
+    background-image: url('./snake/tile014.png');
     background-size: cover;
     background-repeat: no-repeat, repeat;
 }
 .snake_1_tail_down {
-    background-image: url('./snake/tile013.png');
+    background-image: url('./snake/tile019.png');
     background-size: cover;
     background-repeat: no-repeat, repeat;
 }
 .snake_1_tail_left {
-    background-image: url('./snake/tile013.png');
+    background-image: url('./snake/tile018.png');
     background-size: cover;
     background-repeat: no-repeat, repeat;
 }

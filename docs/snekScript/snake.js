@@ -15,6 +15,7 @@ if (multiplayer) {
 }
 console.log(startPos)
 const snakeBody = [{ x: Math.floor(GRID_WIDTH / startPos), y: Math.floor(GRID_HEIGTH / 2) }]
+const snakeSkinRotation = [{ x: 0, y: 0 }]
 let newSegments = 2
 
 
@@ -23,6 +24,7 @@ export function update() {
     const inputDirection = getInputDirection_snake1()
     for (let i = snakeBody.length - 2; i >= 0; i--) {
         snakeBody[i + 1] = { ...snakeBody[i] }
+        snakeSkinRotation[i + 1] = { ...snakeSkinRotation[i] }
     }
 
 
@@ -40,6 +42,8 @@ export function update() {
     else {
         snakeBody[0].x += inputDirection.x
         snakeBody[0].y += inputDirection.y
+        snakeSkinRotation[0].x = inputDirection.x
+        snakeSkinRotation[0].y = inputDirection.y
     }
 
 
@@ -51,17 +55,65 @@ export function update() {
 
 export function draw(gameBoard) {
 
+    const inputDirection = getInputDirection_snake1()
+    let direction = "up"
+
     snakeBody.forEach((segment, index) => {
         const snakeElement = document.createElement('div')
         snakeElement.style.gridRowStart = segment.y
         snakeElement.style.gridColumnStart = segment.x
+        
+
+        switch (snakeSkinRotation[index].y) {
+            case -1:
+                direction = "up"
+                break;
+            case 1:
+                direction = "down"
+                break;
+        }
+        switch (snakeSkinRotation[index].x) {
+            case -1:
+                direction = "left"
+                break;
+            case 1:
+                direction = "right"
+                break;
+        }
+        
+        
         if (index === 0) {
-            snakeElement.classList.add('snake_1_head')
+            snakeElement.classList.add('snake_1_head_'+direction)
+
         } else if(index === snakeBody.length - 1) {
-            console.log('kanker neger')
-            snakeElement.classList.add('snake_1_tail')
+            let tailDir = 'up'
+            if (direction=== 'up' ) {
+                switch (snakeSkinRotation[index - 1].x) {
+                    case -1:
+                        
+
+                }
+                tailDir = 'up'
+            }
+            if (direction === 'down') {
+                tailDir = 'down'
+            }
+            if (direction === 'left') {
+                    tailDir = 'left';
+            }
+            if (direction==='right') {
+                tailDir = 'right'
+            }
+            
+            snakeElement.classList.add('snake_1_tail_'+tailDir)
         } else {
-            snakeElement.classList.add('snake_1')
+            let bodyDir = 'hor'
+            if (direction === "up" || direction === "down") {
+                bodyDir = 'ver'
+            } else {
+                bodyDir = 'hor'
+            }
+            snakeElement.classList.add('snake_1_body_'+bodyDir)
         }
         
         gameBoard.appendChild(snakeElement)
@@ -96,6 +148,7 @@ function equalPositions(pos1, pos2) {
 function addSegments() {
     for (let i = 0; i < newSegments; i++) {
         snakeBody.push({ ...snakeBody[snakeBody.length - 1] })
+        snakeSkinRotation.push({ ...snakeSkinRotation[snakeSkinRotation.length - 1] })
     }
     newSegments = 0
 }
