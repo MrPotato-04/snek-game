@@ -27,7 +27,7 @@ window.onload = function () {
 
 const scores = document.getElementById('scores');
 
-const SNAKE_SPEED = 3
+const SNAKE_SPEED = prompt('type snake speed')
 
 // let blueScore = 0;
 // let redScore = 0;

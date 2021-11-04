@@ -1,10 +1,14 @@
 
 let inptutDirection_snake_1 = { x: 0, y: -1}
 let lastInputDirection_snake_1 = 0
-
+export let lastPosSetCorners_snake_1 = ''
 
 let inptutDirection_snake_2 = { x: 0, y: 0}
 let lastInputDirection_snake_2 = 0
+
+switch (lastInputDirection_snake_1.x, lastInputDirection_snake_1.y) {}, inptutDirection_snake_1) {
+    case 0;
+}
 
 window.addEventListener('keydown', e => {
     
