@@ -107,8 +107,8 @@ export function draw(gameBoard) {
             snakeElement.classList.add('snake_1_tail_'+tailDir)
         } else {
 
+            // console.log(snakeSkinRotation[index].x + " " +snakeSkinRotation[index].y + ' ' + lastInputDirection_snake_1.x + " " + lastInputDirection_snake_1.y)
             
-
             if (snakeSkinRotation[index].x === lastInputDirection_snake_1.x && snakeSkinRotation[index].y === lastInputDirection_snake_1.y) {
                 let bodyDir = 'hor'
 
@@ -121,16 +121,32 @@ export function draw(gameBoard) {
                 snakeElement.classList.add('snake_1_body_'+bodyDir)
                 
             } else {
+                console.log(snakeSkinRotation[index])
+                console.log(lastInputDirection_snake_1)
                 var curve
                 if (lastInputDirection_snake_1.x === -1 && lastInputDirection_snake_1.y === 0 && snakeSkinRotation[index].x === 0 && snakeSkinRotation[index].y === -1) {
                     curve = 'dl'
+                    console.log(curve)
                 } else if (lastInputDirection_snake_1.x === 0 && lastInputDirection_snake_1.y === 1 && snakeSkinRotation[index].x === -1 && snakeSkinRotation[index].y === 0) {
                     curve = 'rd'
+                    console.log(curve)
                 } else if (lastInputDirection_snake_1.x === 1 && lastInputDirection_snake_1.y === 0 && snakeSkinRotation[index].x === 0 && snakeSkinRotation[index].y === 1) {
                     curve = 'tr'
+                    console.log(curve)
                 } else if (lastInputDirection_snake_1.x === 0 && lastInputDirection_snake_1.y === -1 && snakeSkinRotation[index].x === 1 && snakeSkinRotation[index].y === 0) {
                     curve = 'lt'
+                    console.log(curve)
+                } else if (lastInputDirection_snake_1.x === 1 && lastInputDirection_snake_1.y === 0 && snakeSkinRotation[index].x === 0 && snakeSkinRotation[index].y === -1) {
+                    curve = 'rd'
+                    console.log(curve)
+                } else if (lastInputDirection_snake_1.x === 0 && lastInputDirection_snake_1.y === 1 && snakeSkinRotation[index].x === 1 && snakeSkinRotation[index].y === 0) {
+                    curve = 'dl'
+                    console.log(curve)
+                } else if (lastInputDirection_snake_1.x === 0 && lastInputDirection_snake_1.y === -1 && snakeSkinRotation[index].x === -1 && snakeSkinRotation[index].y === 0) {
+                    curve = 'tr'
+                    console.log(curve)
                 }
+                // else if (lastInputDirection_snake_1.x ===)
                 snakeElement.classList.add('snake_1_curve_'+curve)
             }
             
