@@ -1,4 +1,4 @@
-import { getInputDirection_snake1 } from "./input.js"
+import { getInputDirection_snake1, getLastPos } from "./input.js"
 import { GRID_HEIGTH, GRID_WIDTH } from "./grid.js"
 import { getCookie } from "./game.js"
 
@@ -54,8 +54,7 @@ export function update() {
 }
 
 export function draw(gameBoard) {
-
-    const inputDirection = getInputDirection_snake1()
+    var lastInputDirection_snake_1 = getLastPos()
     let direction = "up"
 
     snakeBody.forEach((segment, index) => {
@@ -80,7 +79,7 @@ export function draw(gameBoard) {
                 direction = "right"
                 break;
         }
-        
+
         
         if (index === 0) {
             snakeElement.classList.add('snake_1_head_'+direction)
@@ -90,7 +89,7 @@ export function draw(gameBoard) {
             if (direction=== 'up' ) {
                 switch (snakeSkinRotation[index - 1].x) {
                     case -1:
-                        
+
 
                 }
                 tailDir = 'up'
@@ -107,13 +106,25 @@ export function draw(gameBoard) {
             
             snakeElement.classList.add('snake_1_tail_'+tailDir)
         } else {
-            let bodyDir = 'hor'
-            if (direction === "up" || direction === "down") {
-                bodyDir = 'ver'
+
+            console.log(snakeSkinRotation[index])
+            console.log(lastInputDirection_snake_1)
+
+            if (snakeSkinRotation[index].x === lastInputDirection_snake_1.x && snakeSkinRotation[index].y === lastInputDirection_snake_1.y) {
+                let bodyDir = 'hor'
+
+                if (direction === "up" || direction === "down") {
+                    bodyDir = 'ver'
+                } else {
+                    bodyDir = 'hor'
+                }
+
+                snakeElement.classList.add('snake_1_body_'+bodyDir)
+                
             } else {
-                bodyDir = 'hor'
+                snakeElement.classList.add('snake_1_body_'+bodyDir)
             }
-            snakeElement.classList.add('snake_1_body_'+bodyDir)
+            
         }
         
         gameBoard.appendChild(snakeElement)
