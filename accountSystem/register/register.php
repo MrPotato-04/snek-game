@@ -26,6 +26,8 @@ if(empty($username) || empty($email) || empty($password)) {
     $_SESSION['errors'] = "Please fill all the fields in.";
     header("location: registerPage.php");
 }
+
+//validation errors
 if($password !== $repass) {
     $_SESSION['errors']="Passwords don't match ".$repass."/".$password; 
     header("location: registerPage.php");

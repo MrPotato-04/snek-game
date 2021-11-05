@@ -8,20 +8,21 @@
 </head>
 <body>
     <?php
-        $userID = null;
-        if (isset($_COOKIE['userid'])) {
-            $userID = $_COOKIE["userid"];
+        session_start();
+
+        require_once('accedit.php');
+
+        if (isset($_SESSION['errors'])) {
+            $error_output = $_SESSION['errors'];
+            echo $error_output;
+            unset($_SESSION['errors']);
         }
 
-        $dbc = require './../../database/db.php';
-        $res = $dbc->query("SELECT iduser, username, email, password FROM user WHERE iduser='{$userID}'");
-        $row = $res->fetch_assoc();
-
-        
         if (!isset($_COOKIE['userid'])) {
            echo "you can't acces this page without logging in."; 
         } else {
             ?>
+            <form action="accedit.php" method="post">
             <label for="UniqueID">Unique ID <br>
             <?php echo "<input type='text' value='".$row['iduser']."' disabled>";?>
             </label>
@@ -34,11 +35,13 @@
             <?php echo "<input type='text' value='".$row['username']."'>"; ?>
             <br>
             <label for="Password">Password <br>
-            <?php echo "<input type='password' value='".$row['password']."' disabled>";
+            <?php echo "<input type='password' value='".$row['password']."' disabled>";?>
+            <button type="submit" name="edit" value="edit">Edit</button>
             
+        <?php
         }
-
-    ?>
+        ?>
     </label>
+    </form>
 </body>
 </html>
