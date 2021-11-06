@@ -121,7 +121,6 @@ function update() {
     checkDeath()
     updateScores(redScore, blueScore)
 
-
 }
 
 function draw() {
