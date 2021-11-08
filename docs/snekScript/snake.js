@@ -1,21 +1,21 @@
-import { getInputDirection_snake1, getRotation } from "./input.js"
+import { getInputDirection_snake1, getRotation_snake1 } from "./input.js"
 import { GRID_HEIGTH, GRID_WIDTH } from "./grid.js"
 import { getCookie } from "./game.js"
 
-let multiplayer = getCookie("Multiplayer")
+let gamemode = getCookie("gamemode")
 
 export var redScore = 0;
 
 
-console.log("SNAKE.JS " + multiplayer)
-if (multiplayer) {
+console.log("SNAKE.JS, gamemode: " + gamemode)
+if (gamemode === "multi") {
     var startPos = 3
 } else {
     var startPos = 2
 }
 
 const snakeBody = [{ x: Math.floor(GRID_WIDTH / startPos), y: Math.floor(GRID_HEIGTH / 2), skin: "snake_1", rot: 0 }]
-let snakeSkinRotation = [{ x: 0, y: 0}]
+
 let newSegments = 3
 let missCounter = 0
 
@@ -54,7 +54,7 @@ export function update() {
 }
 
 export function draw(gameBoard) {
-    var rotation = getRotation()
+    var rotation = getRotation_snake1()
     let direction = "up"
     const inputDirection = getInputDirection_snake1()
     snakeBody.forEach((segment, index) => {
@@ -148,7 +148,7 @@ export function onSnake(position, { ignoreHead = false } = {}) {
     })
 }
 
-export function snakeMiss (pos) {
+export function snakeMiss_snake1 (pos) {
     if (equalPositions(snakeBody[0], pos)) {
         missCounter = 0 
     }
@@ -186,7 +186,7 @@ function equalPositions(pos1, pos2) {
 function addSegments() {
     for (let i = 0; i < newSegments; i++) {
         snakeBody.push({ ...snakeBody[snakeBody.length - 1] })
-        snakeSkinRotation.push({ ...snakeSkinRotation[snakeSkinRotation.length - 1] })
+        //snakeSkinRotation.push({ ...snakeSkinRotation[snakeSkinRotation.length - 1] })
     }
     newSegments = 0
 }

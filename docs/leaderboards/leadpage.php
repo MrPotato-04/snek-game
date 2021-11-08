@@ -8,21 +8,33 @@
     <title>leaderboard</title>
 </head>
 <body>
+
     <?php
     require_once('leadData.php');
     ?>
     <div>
     <?php
-    echo "________________________________";
-    echo "<table>"; // start a table tag in the HTML
 
-    while($row = mysqli_fetch_array($res)){   //Creates a loop to loop through results
-    echo "<tr><td>" . $row['username'] . "</td><td>" . $row['scores'] . "</td></tr>";  //$row['index'] the index here is a field name
+    $ranking = 1;
+    echo "<table>"; // start a table tag in the HTML
+   echo "<tr><th>Ranking</th>
+        <th>user</th>
+        <th>high score</th>
+        </tr>
+        <tr>";
+    while ($row = mysqli_fetch_array($res)) {
+        echo " 
+        <td>{$ranking}</td>
+        <td>{$row['username']}</td>
+        <td>{$row['scores']}</td>
+        </tr>
+";
+        $ranking++;
     }
-    
+
     echo "</table>"
     ?>
     </div>
-    
+
 </body>
 </html>

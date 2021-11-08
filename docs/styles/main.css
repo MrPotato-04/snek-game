@@ -156,6 +156,13 @@ footer #scores {
     background-repeat: no-repeat, repeat;
 }
 
+.frank {
+    background-image: url('./snake/frank.png');
+    background-size: cover;
+    background-repeat: no-repeat, repeat;
+}
+
+
 .chunk {
     background-color: hsl(0, 0%, 29%);
     border: .10vmin solid grey;
