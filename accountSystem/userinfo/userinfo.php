@@ -8,10 +8,8 @@
 </head>
 <body>
     <script>
-        function changeEmail() {
+        function changeData() {
             document.getElementById("email").removeAttribute("disabled");
-        }
-        function changeUser() {
             document.getElementById("username").removeAttribute("disabled");
         }
     </script>
@@ -27,38 +25,39 @@
         $res = $dbc->query("SELECT iduser, username, email, password FROM user WHERE iduser='{$userID}'");
         $row = $res->fetch_assoc();
 
-        if (isset($_SESSION['errors'])) {
-            $error_output = $_SESSION['errors'];
-            echo $error_output;
-            unset($_SESSION['errors']);
-        }
+        
 
         if (!isset($_COOKIE['userid'])) {
            echo "you can't acces this page without logging in."; 
         } else {
             ?>
-            <form method="post">
+            <form action="userscript.php" method="post">
             <label for="UniqueID">Unique ID <br>
             <?php echo "<input type='text' value='".$row['iduser']."' disabled>";?>
             </label>
             <br>
             <label for="Email">Email <br>
-            <?php echo "<input id='email' type='text' value='".$row['email']."' disabled>";?>
+            <?php echo "<input id='email' type='email' name='email' value='".$row['email']."' disabled>";?>
             </label>
-            <button type="button" onclick="changeEmail()">Edit Email</button>
             <br>
             <label for="Username">Username <br>
-            <?php echo "<input id='username' type='text' value='".$row['username']."' disabled>"; ?>
-            <button type="button" onclick="changeUser()">Edit Username</button>
+            <?php echo "<input id='username' type='text' name='username' value='".$row['username']."' disabled>"; ?>
             <br>
             <a href="">change Password</a>
             <br>
-            <button type="submit">Save</button>
+            <button type="button" onclick="changeData()">Edit</button> <button type="submit">Save</button>
             
         <?php
         }
         ?>
     </label>
     </form>
+    <?php
+    if (isset($_SESSION['errors'])) {
+        $error_output = $_SESSION['errors'];
+        echo $error_output;
+        unset($_SESSION['errors']);
+    }
+    ?>
 </body>
 </html>
