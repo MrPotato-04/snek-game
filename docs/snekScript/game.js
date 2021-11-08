@@ -14,9 +14,9 @@ import { draw as drawBoard } from './board.js'
 
 
 //const tmp = `repeat(${GRID_SIZE}, 1fr)` 
-var multiplayer = false;
+var gamemode = "";
 
-multiplayer = getCookie("Multiplayer")
+gamemode = getCookie("gamemode")
 
 window.onload = function () {
     gameBoard.style.gridTemplateColumns = `repeat(${GRID_WIDTH}, 1fr)`;
@@ -28,8 +28,13 @@ window.onload = function () {
 const scores = document.getElementById('scores');
 let SNAKE_SPEED = 3
 // const SNAKE_SPEED = 
-if (window.location.href.indexOf("index") > -1) {
-    SNAKE_SPEED = prompt('type snake speed')
+if (window.location.href.indexOf("index") > -1) { 
+    if (gamemode === "speed") {
+        SNAKE_SPEED = prompt('type snake speed')
+    } else {
+        SNAKE_SPEED = 10
+    }
+    
 }
 
 // let blueScore = 0;
@@ -116,7 +121,7 @@ window.requestAnimationFrame(main)
 
 function update() {
     updateSnake_1()
-    if (multiplayer) { updateSnake_2() }
+    if (gamemode === "multi") { updateSnake_2() }
     updateFood()
     checkDeath()
     updateScores(redScore, blueScore)
@@ -127,7 +132,7 @@ function draw() {
     gameBoard.innerHTML = ''
     drawBoard(gameBoard)
     drawSnake_1(gameBoard)
-    if (multiplayer) { drawSnake_2(gameBoard) }
+    if (gamemode === "multi") { drawSnake_2(gameBoard) }
     drawFood(gameBoard)
 }
 

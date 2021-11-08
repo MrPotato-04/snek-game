@@ -52,6 +52,10 @@
 
                 <div class="buttons-mid">
                     <button id="button-singleplayer">Singleplayer</button>
+                </div>
+                
+                <div class="buttons-mid">
+                    <button id="button-speed">User Speed</button>
                 </div>    
 
             </div>
