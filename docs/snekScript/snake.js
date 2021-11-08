@@ -91,22 +91,13 @@ export function draw(gameBoard) {
 
         } else if (index === snakeBody.length - 1) {
             snakeBody[index].skin = "snake_1_tail_" + direction
-        } else if (newSegments > 10) {
-
-        }else {
-            let body = "snake_1_body"
+        } else if (1 === 2){
             let curve = "snake_1_curve"
-            // if (inputDirection.x === 1 && snakeBody[index - 1].y !== snakeBody[index + 1].y ) {
-                
-            //     snakeBody[index].skin = curve + "_tr"
-            //     // console.log("sssssssssssssssssssssssss")
-            // } else if (inputDirection.x === -1 && snakeBody[index - 1].y === snakeBody[index].y) {
-            //     snakeBody[index].skin = body + "_hor"	
-            // } else if (inputDirection.y === 1 && snakeBody[index - 1].x === snakeBody[index].x) {
-            //     snakeBody[index].skin = body + "_ver"	
-            // } else if (inputDirection.y === -1 && snakeBody[index - 1].x === snakeBody[index].x) {
-            //     snakeBody[index].skin = body + "_ver"	
-            // } else 
+            if (snakeBody[index + 1].skin === "") {}
+
+        } else {
+            let body = "snake_1_body"
+
             if (inputDirection.x === 1 && snakeBody[index - 1].y === snakeBody[index].y) {
                 snakeBody[index].skin = body + "_hor"
             } else if (inputDirection.x === -1 && snakeBody[index - 1].y === snakeBody[index].y) {
