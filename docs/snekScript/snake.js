@@ -57,13 +57,12 @@ export function draw(gameBoard) {
     var rotation = getRotation()
     let direction = "up"
     const inputDirection = getInputDirection_snake1()
-    console.log(rotation)
     snakeBody.forEach((segment, index) => {
         const snakeElement = document.createElement('div')
         snakeElement.style.gridRowStart = segment.y
         snakeElement.style.gridColumnStart = segment.x
-        // console.log(snakeBody[index])
         snakeBody[0].rot = rotation
+
         if (index === snakeBody.length - 1) {
             snakeBody[index].rot = snakeBody[index - 1].rot
         }
@@ -84,31 +83,54 @@ export function draw(gameBoard) {
         }
         
         if (index === snakeBody.length - 1) {
-            snakeBody[index].rot = snakeBody[index - 1].rot
+            // snakeBody[index].rot = snakeBody[index - 1].rot
         }
         if (index === 0) {
             snakeBody[0].skin = "snake_1_head_" + direction
 
         } else if (index === snakeBody.length - 1) {
             snakeBody[index].skin = "snake_1_tail_" + direction
-        } else if (1 === 2){
-            let curve = "snake_1_curve"
-            if (snakeBody[index + 1].skin === "") {}
-
-        } else {
+        }else  {
             let body = "snake_1_body"
+            let curve = "snake_1_curve"
 
-            if (inputDirection.x === 1 && snakeBody[index - 1].y === snakeBody[index].y) {
-                snakeBody[index].skin = body + "_hor"
-            } else if (inputDirection.x === -1 && snakeBody[index - 1].y === snakeBody[index].y) {
-                snakeBody[index].skin = body + "_hor"	
-            } else if (inputDirection.y === 1 && snakeBody[index - 1].x === snakeBody[index].x) {
-                snakeBody[index].skin = body + "_ver"	
-            } else if (inputDirection.y === -1 && snakeBody[index - 1].x === snakeBody[index].x) {
-                snakeBody[index].skin = body + "_ver"	
-            }
+            if ((inputDirection.x === 1 || inputDirection.x === -1) && snakeBody[index - 1].y === snakeBody[index].y) {
+                if (snakeBody[index - 1].rot !== snakeBody[index].rot) {
+                    
+                    if(snakeBody[index - 1].rot === 90 && snakeBody[index].rot === 0) {
+                        snakeBody[index].skin = curve + "_rd"
+                    } else if (snakeBody[index - 1].rot === 270 && snakeBody[index].rot === 0) {
+                        snakeBody[index].skin = curve + "_dl"
+                    } else if (snakeBody[index - 1].rot === 270 && snakeBody[index].rot === 180) {
+                        snakeBody[index].skin = curve + "_lt"
+                    } else if (snakeBody[index - 1].rot === 90 && snakeBody[index].rot === 180) {
+                        snakeBody[index].skin = curve + "_tr"
+                    }
+                    
+                } else {
+                    snakeBody[index].skin = body + "_hor"
+                }
+            } else if ((inputDirection.y === 1 || inputDirection.y === -1) && snakeBody[index - 1].x === snakeBody[index].x) {
+                if (snakeBody[index - 1].rot !== snakeBody[index].rot) {
+                    console.log(snakeBody[index-1].rot+" "+snakeBody[index].rot)
+                    
+                    if(snakeBody[index - 1].rot === 180 && snakeBody[index].rot === 270) {
+                        snakeBody[index].skin = curve + "_rd"
+                    } else if (snakeBody[index - 1].rot === 180 && snakeBody[index].rot === 90) {
+                        snakeBody[index].skin = curve + "_dl"
+                    } else if (snakeBody[index - 1].rot === 0 && snakeBody[index].rot === 90) {
+                        snakeBody[index].skin = curve + "_lt"
+                    } else if (snakeBody[index - 1].rot === 0 && snakeBody[index].rot === 270) {
+                        snakeBody[index].skin = curve + "_tr"
+                    } else {
+                        console. log("error")
+                    }
+                    
+                } else {
+                    snakeBody[index].skin = body + "_ver"
+                }
+            } 
         }
-        console.log(snakeBody)
         snakeElement.classList.add(snakeBody[index].skin)
         gameBoard.appendChild(snakeElement)
 
@@ -127,15 +149,12 @@ export function onSnake(position, { ignoreHead = false } = {}) {
 }
 
 export function snakeMiss (pos) {
-    console.log(missCounter)
-    console.log(equalPositions(snakeBody[0], pos))
     if (equalPositions(snakeBody[0], pos)) {
         missCounter = 0 
     }
 
     if (getDistance(snakeBody[0].x, snakeBody[0].y, pos.x, pos.y ) < 3) {
         if (missCounter <= 2) {
-            console.log("in range" + getDistance(snakeBody[0].x, snakeBody[0].y, pos.x, pos.y ))
             missCounter++
         } else {
             missCounter = 0

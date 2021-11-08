@@ -13,7 +13,7 @@
     $username = $row['username'];
     $email = $row['email'];
     $password = $row['password'];
-    $repass = $_POST['repass'];
+    //$repass = $_POST['repass'];
 
     //if field is empty
     if(empty($username) || empty($email) || empty($password)) {
