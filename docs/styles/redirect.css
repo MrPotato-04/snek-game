@@ -108,8 +108,11 @@ footer div {
     font-weight: 400;
     font-size: 20px;
     margin: 0 auto;
-    margin-left: 10vw;
-    margin-right: -5vw;
+    
+    
+}
+#loggedin {
+    margin-left: 15vw;
 }
 
 .header {

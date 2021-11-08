@@ -49,7 +49,7 @@
                             } else {
                                 $score = $row_scores['scores'];
                             };
-                            echo "<a class=\"a\">Logged in as: ". $row['username'] .", Highscore = ".$score."</a>";
+                            echo "<a class=\"a\" id=\"loggedin\">Logged in as: ". $row['username'] .", Highscore = ".$score."</a>";
                         }
                         if(isset($_POST["logout"])) {
                             unset($_COOKIE['userid']);
