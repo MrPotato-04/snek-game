@@ -40,6 +40,7 @@
                         echo "<form action=\"index.php\" method=\"post\"><input type=\"submit\" name=\"logout\" value=\"Logout\"></form>";
                         echo "<form action=\"gamemode.php\" method=\"post\"><input type=\"submit\" name=\"logout\" value=\"Gamemodes\"></form>";
                         echo "<form action=\"leaderboards/leadpage.php\" method=\"post\"><input type=\"submit\" name=\"logout\" value=\"Leaderboard\"></form>";
+                        echo "<form action=\"./../accountSystem/userinfo/userinfo.php\" method=\"post\"><input type=\"submit\" name=\"profile\" value=\"Profile\"></form>";
                     }
                     ?>    
                 </div>
