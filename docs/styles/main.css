@@ -3,10 +3,9 @@
     padding: 0;
     list-style: none;
     text-decoration: none;
+    /* tmp font till new font  */
+    font-family: Arial, Helvetica, sans-serif;
 }
-
-@import url('https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Play&display=swap');
 
 body {
     height: 100vh;
@@ -90,7 +89,6 @@ form {
 
 .header .a {
     color: rgb(136, 251, 255);
-    font-family: 'Play', sans-serif;
     font-weight: 400;
     font-size: 20px;
     margin: 0 auto;
@@ -124,7 +122,6 @@ footer #controls {
 }
 
 footer #scores {
-    font-family: 'ZCOOL', cursive;
     font-weight: 400;
     font-size: 20px;
     text-align: right;
