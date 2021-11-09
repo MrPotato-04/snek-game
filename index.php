@@ -9,7 +9,7 @@
 <body>
      <script>
         window.onload = function() {
-            window.location.href="docs/index.php"
+            window.location.href="docs/gamemode.php"
         }
     </script>
 </body>

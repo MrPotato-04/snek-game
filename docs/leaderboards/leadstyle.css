@@ -2,15 +2,36 @@ body {
     min-height: 450px;
     height: 100vh;
     margin: 0;
-    background: radial-gradient(ellipse farthest-corner at center top, #f39264 0%, darkslateblue 100%);
-    color: #fff;
+   background-color: darkslateblue;
+    color: white;
     font-family: 'Open Sans', sans-serif;
 }
-
 table{
+    margin-top: 20%;
+    border-radius: 25px;
+}
+
+table, th{
     background-color: black;
-border:solid crimson 1px;
+
     margin-left: auto;
     margin-right: auto;
+    border-collapse: collapse;
+    text-align: center;
 
+}
+td {
+    border-right: solid crimson 1px;
+    padding-left:3px;
+    padding-right: 3px;
+    border-radius: 25px;
+
+}
+td:last-child {border: 0px}
+tr:hover  {background-color: #d1b308;}
+tr:nth-child(even) {background-color: #212121;}
+
+th {
+    background-color: #ddff00;
+    color: black;
 }

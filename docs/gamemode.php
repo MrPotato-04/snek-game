@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>snekgame</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="styles/redirect.css">
+        <link rel="stylesheet" href="styles/gamemode.css">
         <script src="snekScript/gamemode.js" defer type="module"></script>
         
     </head>

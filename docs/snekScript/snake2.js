@@ -169,7 +169,7 @@ export function getSnakeHead() {
 }
 
 export function snakeIntersection() {
-    //return onSnake(snakeBody[0], { ignoreHead: true })
+    return onSnake(snakeBody[0], { ignoreHead: true })
 }
 
 function equalPositions(pos1, pos2) {
