@@ -43,7 +43,7 @@
             <label for="Username">Username <br>
             <?php echo "<input id='username' type='text' name='username' value='".$row['username']."' disabled>"; ?>
             <br>
-            <a href="">change Password</a>
+            <a href="changePass.php">Change Password</a>
             <br>
             <button type="button" onclick="changeData()">Edit</button> <button type="submit">Save</button>
             

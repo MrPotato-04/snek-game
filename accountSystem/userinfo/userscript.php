@@ -15,6 +15,12 @@
     $rs= mysqli_query($dbc, $userCheck);
     $data= mysqli_fetch_array($rs, MYSQLI_NUM);
 
+    $emailCheck = mysqli_query($dbc, "SELECT * FROM `user` WHERE `email`='{$_POST['email']}' LIMIT 1");
+    if ($emailCheck !== false) {
+        $_SESSION['errors']="email is already taken"; 
+        header("location: userinfo.php");
+    }
+
     //if field is empty
     if(empty($username) || empty($email)) {
         $_SESSION['errors'] = "Please fill all the fields in.";
