@@ -1,7 +1,9 @@
-import { getCookie, setCookie } from './game.js'
+import { getCookie, setCookie, getElementByID } from './public.js'
 
 let logged_in = getCookie('userid')
 let gamemode = false
+
+var gamemodeText = ""
 
 if (logged_in === null) {
     
@@ -16,23 +18,20 @@ if (logged_in === null) {
 }
 
 
-document.getElementById("button-multiplayer").addEventListener("click", setMultiplayer)
-document.getElementById("button-singleplayer").addEventListener("click", setSingleplayer)
-document.getElementById("button-speed").addEventListener("click", setModeSpeed)
+getElementByID("button-multiplayer").addEventListener("click", function(){
+    gamemodeText = this.innerText.replace('player', '').toLocaleLowerCase()
+    setGamemode(gamemodeText);
+});
+getElementByID("button-singleplayer").addEventListener("click", function(){
+    gamemodeText = this.innerText.replace('player', '').toLocaleLowerCase()
+    setGamemode(gamemodeText);
+})
+getElementByID("button-speed").addEventListener("click", function(){
+    gamemodeText = this.innerText.replace('user ', '').toLocaleLowerCase()
+    setGamemode(gamemodeText);
+})
 
-function setMultiplayer() {
-    gamemode = "single"
-    setCookie("gamemode", gamemode, 0)
+function setGamemode(game) {
+    setCookie("gamemode", game, 0)
     window.location = 'index.php'
-}
-function setSingleplayer() {
-    gamemode = "multi"
-    setCookie("gamemode", gamemode, 0)
-    window.location = 'index.php'
-    
-}
-
-function setModeSpeed() {
-    setCookie("gamemode", "speed", 0.1)
-    setSingleplayer
 }

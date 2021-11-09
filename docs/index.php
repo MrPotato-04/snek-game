@@ -26,9 +26,9 @@
                             echo "<form action=\"index.php\" method=\"post\"><input type=\"submit\" name=\"logout\" value=\"Logout\"></form>";
                             echo "<form action=\"gamemode.php\" method=\"post\"><input type=\"submit\" name=\"logout\" value=\"Gamemodes\"></form>";
                             echo "<form action=\"leaderboards/leadpage.php\" method=\"post\"><input type=\"submit\" name=\"logout\" value=\"Leaderboard\"></form>";
-                            if (isset($_COOKIE['demoExpire'])) {
+                            if (isset($_COOKIE['demo'])) {
                                 if(isset($_COOKIE['userid'])) {
-                                    unset($_COOKIE['demoExpire']);
+                                    unset($_COOKIE['demo']);
                                 } else {
                                     header("Location: ./../accountSystem/login/index.php");
                                 }
@@ -37,6 +37,9 @@
                         if ($userID === null) {
                             echo "<a class=\"a\"href=\"./../accountSystem/login/index.php\">Login</a>"; 
                             echo "<div class=\"progress_wrapper\"><a class=\"progress\">Time Left</a><progress value=\"0\" max=\"300\" id=\"progressBar\"></progress></div>";
+                            if (isset($_COOKIE['demo'])) {
+                                header("Location: ./../accountSystem/login/index.php");
+                            }
                         } else {
                             // session_start();
                             $dbc = require "./../database/db.php";

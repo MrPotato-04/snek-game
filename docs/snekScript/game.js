@@ -11,21 +11,22 @@ import {
 import { update as updateFood, draw as drawFood } from './food.js'
 import { GRID_HEIGTH, GRID_WIDTH, outsideGrid } from './grid.js'
 import { draw as drawBoard } from './board.js'
+import { getCookie, setCookie, getElementByID } from './public.js'
+
+let demoOver = getCookie("demo")
 
 if (getCookie('gamemode') !== null) {
     //const tmp = `repeat(${GRID_SIZE}, 1fr)` 
     var gamemode = "";
-
     gamemode = getCookie("gamemode")
-
+    
     window.onload = function () {
         gameBoard.style.gridTemplateColumns = `repeat(${GRID_WIDTH}, 1fr)`;
         gameBoard.style.gridTemplateRows = `repeat(${GRID_HEIGTH}, 1fr)`;
-        console.log(multiplayer)
-
+        console.log(demoOver)
     };
 
-    const scores = document.getElementById('scores');
+    const scores = getElementByID('scores');
     let SNAKE_SPEED = 3
     // const SNAKE_SPEED = 
     if (window.location.href.indexOf("index") > -1) { 
@@ -45,8 +46,8 @@ if (getCookie('gamemode') !== null) {
         if (timeleft <= 0) {
             clearInterval(downloadTimer);
         }
-        if (document.getElementById("progressBar")) {
-            document.getElementById("progressBar").value = (60*5) - timeleft;
+        if (getElementByID("progressBar")) {
+            getElementByID("progressBar").value = (60*5) - timeleft;
         }
 
         timeleft -= 1;
@@ -57,7 +58,7 @@ if (getCookie('gamemode') !== null) {
     let lastRenderTime = 0
     let redGameOver = false
     let blueGameOver = false
-    const gameBoard = document.getElementById('game-board')
+    const gameBoard = getElementByID('game-board')
 
     window.addEventListener('keydown', e => {
 
@@ -104,8 +105,8 @@ if (getCookie('gamemode') !== null) {
         let userid = getCookie('userid')
         if (userid === null) {
             if (timeleft === 0) {
-                console.log("nigga")
-                setCookie("demoExpire", true, 20)
+                console.log("time's up")
+                setCookie("demo", true, 200)
                 if(confirm("Demo time is up")){
                     window.location = "./../accountSystem/login/index.php"
                 } else {
@@ -146,25 +147,7 @@ if (getCookie('gamemode') !== null) {
 
     }
 }
-export function setCookie(name, value, days) {
-    var expires = "";
-    if (days) {
-        var date = new Date();
-        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-        expires = "; expires=" + date.toUTCString();
-    }
-    document.cookie = name + "=" + (value || "") + expires + "; path=/";
-}
-export function getCookie(name) {
-    var nameEQ = name + "=";
-    var ca = document.cookie.split(';');
-    for (var i = 0; i < ca.length; i++) {
-        var c = ca[i];
-        while (c.charAt(0) == ' ') c = c.substring(1, c.length);
-        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
-    }
-    return null;
-}
+
 function setScore (score1, score2) {
     if(score1<score2) return score2
     if(score2<score1) return score1

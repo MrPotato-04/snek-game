@@ -1,6 +1,6 @@
 import { getInputDirection_snake1, getRotation_snake1 } from "./input.js"
 import { GRID_HEIGTH, GRID_WIDTH } from "./grid.js"
-import { getCookie } from "./game.js"
+import { getCookie } from "./public.js"
 
 let gamemode = getCookie("gamemode")
 
@@ -112,7 +112,7 @@ export function draw(gameBoard) {
                 }
             } else if ((inputDirection.y === 1 || inputDirection.y === -1) && snakeBody[index - 1].x === snakeBody[index].x) {
                 if (snakeBody[index - 1].rot !== snakeBody[index].rot) {
-                    console.log(snakeBody[index-1].rot+" "+snakeBody[index].rot)
+
                     
                     if(snakeBody[index - 1].rot === 180 && snakeBody[index].rot === 270) {
                         snakeBody[index].skin = curve + "_rd"
