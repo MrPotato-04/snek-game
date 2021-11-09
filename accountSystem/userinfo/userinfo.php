@@ -10,7 +10,6 @@
     <script>
         function changeData() {
             document.getElementById("email").removeAttribute("disabled");
-            document.getElementById("username").removeAttribute("disabled");
         }
     </script>
     <?php
@@ -36,16 +35,16 @@
             <?php echo "<input type='text' value='".$row['iduser']."' disabled>";?>
             </label>
             <br>
-            <label for="Email">Email <br>
-            <?php echo "<input id='email' type='email' name='email' value='".$row['email']."' disabled>";?>
+            <label for="Username">Username <br>
+            <?php echo "<input id='username' type='text' name='username' value='".$row['username']."' disabled>";?>
             </label>
             <br>
-            <label for="Username">Username <br>
-            <?php echo "<input id='username' type='text' name='username' value='".$row['username']."' disabled>"; ?>
+            <label for="Email">Email <br>
+            <?php echo "<input id='email' type='email' name='email' value='".$row['email']."' disabled>"; ?> <button type="button" onclick="changeData()">Edit</button>
             <br>
             <a href="changePass.php">Change Password</a>
             <br>
-            <button type="button" onclick="changeData()">Edit</button> <button type="submit">Save</button>
+            <button type="submit">Save</button>
             
         <?php
         }

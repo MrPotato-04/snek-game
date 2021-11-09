@@ -17,9 +17,15 @@ $email = $_POST['email'];
 $repass = $_POST['repass'];
 $password = $_POST['password'];
 
+//user email check
 $userCheck ="SELECT COUNT(*) FROM user WHERE email = '$_POST[email]'";
 $rs= mysqli_query($dbc, $userCheck);
-$data= mysqli_fetch_array($rs, MYSQLI_NUM);
+$dataEmail= mysqli_fetch_array($rs, MYSQLI_NUM);
+
+//username check
+$usernameCheck ="SELECT COUNT(*) FROM user WHERE username = '$_POST[username]'";
+$rs= mysqli_query($dbc, $usernameCheck);
+$dataUser= mysqli_fetch_array($rs, MYSQLI_NUM);
 
 //if field is empty
 if(empty($username) || empty($email) || empty($password)) {
@@ -36,8 +42,12 @@ if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     $_SESSION['errors']="email is invalid"; 
     header("location: registerPage.php");
 }
-if($data[0] >=1) {
+if($dataEmail[0] >=1) {
     $_SESSION['errors']="An account with that email already exists.";
+    header("location: registerPage.php");
+}
+if($dataUser[0] >=1) {
+    $_SESSION['errors']="An account with that username already exists.";
     header("location: registerPage.php");
 }
 
