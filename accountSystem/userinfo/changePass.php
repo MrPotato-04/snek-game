@@ -7,6 +7,19 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <?php
+        if (isset($_SESSION['errors'])) {
+            $error_output = $_SESSION['errors'];
+            echo $error_output;
+            unset($_SESSION['errors']);
+        }
+    ?>
+    <form action="passScript.php">
+        <input type="password" name="password" placeholder="New Password">
+        <br>
+        <input type="password" name="repass" placeholder="Confirm Password">
+        <br>
+        <button type="submit">Submit</button>
+    </form>
 </body>
 </html>
