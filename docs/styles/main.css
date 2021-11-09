@@ -6,6 +6,7 @@
 }
 
 @import url('https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Play&display=swap');
 
 body {
     height: 100vh;
@@ -15,7 +16,11 @@ body {
     align-items: center; */
     background-color: darkslateblue;
 }
-
+.logo {
+    margin: 0 auto;
+    align-self: center;
+    margin-top: 10px;
+}
 
 #wrapper {
     float: left;
@@ -26,14 +31,14 @@ body {
     color: white;
 
 }
-h3 {
+/* h3 {
     font-family: 'ZCOOL', cursive;
     font-weight: 400;
     font-size: 60px;
     max-width: 30vw;
     align-self: center;
     margin: 0 auto;
-}
+} */
 
 input[type="submit"] {
     text-align: center;
@@ -85,15 +90,15 @@ form {
 
 .header .a {
     color: rgb(136, 251, 255);
-    font-family: 'ZCOOL', cursive;
+    font-family: 'Play', sans-serif;
     font-weight: 400;
     font-size: 20px;
     margin: 0 auto;
-    margin-left: 11vw;
+    /* margin-left: 11vw; */
 }
 
 #loggedin {
-    margin-left: 15vw;
+    margin-left: 10vw;
 }
 .header {
     width: 100%;

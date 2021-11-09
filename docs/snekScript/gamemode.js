@@ -27,7 +27,7 @@ getElementByID("button-singleplayer").addEventListener("click", function(){
     setGamemode(gamemodeText);
 })
 getElementByID("button-speed").addEventListener("click", function(){
-    gamemodeText = this.innerText.replace('user ', '').toLocaleLowerCase()
+    gamemodeText = this.innerText.replace('User ', '').toLocaleLowerCase()
     setGamemode(gamemodeText);
 })
 
