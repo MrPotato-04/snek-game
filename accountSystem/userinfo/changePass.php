@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./style/pass.css">
 </head>
 <body>
     <?php
@@ -27,9 +28,10 @@
         }
     ?>
     <form action="passScript.php" method="post" enctype="multipart/form-data">
-        <input type="password" name="password" placeholder="New Password">
+    <h2>New Password</h2>
+        <input type="password" class="form-control" name="password" placeholder="New Password">
         <br>
-        <input type="password" name="repass" placeholder="Confirm Password">
+        <input type="password" class="form-control" name="repass" placeholder="Confirm Password">
         <br>
         <button type="submit">Submit</button>
     </form>

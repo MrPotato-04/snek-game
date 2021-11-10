@@ -8,36 +8,40 @@
     }
 
     //variables
-    $username = $_POST['username'];
     $email = $_POST['email'];
-    
-    $userCheck ="SELECT COUNT(*) FROM user WHERE email = '$_POST[email]'";
-    $rs= mysqli_query($dbc, $userCheck);
-    $data= mysqli_fetch_array($rs, MYSQLI_NUM);
+    $error= [0];
+
 
     //check if email exists in database
-    $emailCheck = mysqli_query($dbc, "SELECT * FROM `user` WHERE `email`='{$_POST['email']}' LIMIT 1");
-    if ($emailCheck !== false) {
-        $_SESSION['errors']="Email is already taken"; 
-        header("location: userinfo.php");
+    $sql="SELECT * FROM user WHERE email='$email'";
+    $res = mysqli_query($dbc,$sql);
+
+    if (mysqli_num_rows($res) > 0) {
+        $row=mysqli_fetch_assoc($res);
+        if($email==isset($row['email'])) {
+            $error = [1];
+            $_SESSION['errors'] = "Email already used.";
+            header("location: userinfo.php");
+        }
     }
 
     //if field is empty
     if(empty($email)) {
+        $error=[1];
         $_SESSION['errors'] = "Please fill all the fields in.";
-        echo $_SESSION['errors'];
         header("location: userinfo.php");
     }
 
     //validate email
     if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $error=[1];
         $_SESSION['errors']="email is invalid"; 
         header("location: userinfo.php");
     }
 
     //if no errors insert into database
-    if(count($_SESSION['errors']) == 0) {
-        $query = "UPDATE `user` SET email= '$_POST[email]', username= '$_POST[username]' WHERE iduser=$userID";
+    if($error == [0]) {
+        $query = "UPDATE `user` SET email= '$_POST[email]' WHERE iduser=$userID";
         mysqli_query($dbc, $query);
         header("location: userinfo.php");
     }
