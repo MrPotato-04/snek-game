@@ -22,7 +22,7 @@
         }
     
         $dbc = require './../../database/db.php';
-        $res = $dbc->query("SELECT iduser, username, email, password FROM user WHERE iduser='{$userID}'");
+        $res = $dbc->query("SELECT iduser, username, email FROM user WHERE iduser='{$userID}'");
         $row = $res->fetch_assoc();
 
         
