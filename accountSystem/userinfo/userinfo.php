@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" type="text/css" href="./../../common_style/fonts.css">
+    <link rel="stylesheet" type="text/css" href="/common_style/fonts.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Info</title>
-    <link rel="stylesheet" href="./style/userinfo_css.css">
+    <link rel="stylesheet" href="./style/userinfo.css">
 </head>
 <body>
     <script>
@@ -25,8 +25,9 @@
         $dbc = require './../../database/db.php';
         $res = $dbc->query("SELECT iduser, username, email FROM user WHERE iduser='{$userID}'");
         $row = $res->fetch_assoc();
-
-        
+        $resIMG = $dbc->query("SELECT * FROM `profile-images` WHERE user_iduser=$userID");
+        $rowIMG = $resIMG->fetch_assoc();
+        $pfpicture = $rowIMG['image'];
 
         if (!isset($_COOKIE['userid'])) {
            echo "you can't acces this page without logging in."; 
@@ -34,6 +35,9 @@
             ?>
             <form action="userscript.php" method="post">
                 <h2>Profile</h2>
+                <div class="image-center">
+                <?php echo "<img src=\"/$pfpicture\" alt=\"Avatar\" class=\"\">"; ?><br>
+                </div>
             <label for="UniqueID">Unique ID <br>
             <?php echo "<input class='form-control' type='text' value='".$row['iduser']."' disabled>";?>
             </label>
@@ -51,6 +55,7 @@
             <button type="submit">Save</button>
             </div>
             <a href="changePass.php">Change Password</a>
+            <a href="./profilePicture/index.php">Change Profile Picture</a>
             
         <?php
         }

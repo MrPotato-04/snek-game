@@ -15,6 +15,13 @@ import { getCookie, setCookie, getElementByID } from './public.js'
 
 let demoOver = getCookie("demo")
 
+$(".hamburger,nav").click(function () {
+    $(".hamburger").toggleClass("focus");
+    $(".content").toggleClass("show");
+    $(".buttons").toggleClass("show")
+    $(".buttons").toggleClass("hide")
+});
+
 if (getCookie('gamemode') !== null) {
     //const tmp = `repeat(${GRID_SIZE}, 1fr)` 
     var gamemode = "";
