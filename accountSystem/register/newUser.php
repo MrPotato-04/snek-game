@@ -11,7 +11,7 @@
 <div class="container">
     <h1>Registration Successful! You can now log in.</h1>
     <a href="./../login/index.php">
-    <input type="submit" name="button" value="Main Menu" class="button">
+    <input type="submit" name="button" value="Go to Login" class="button">
     </a>
 </div>
 </body>

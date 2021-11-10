@@ -20,7 +20,7 @@
         <div class="header">
             <div class="inner_header">
                 <div>
-                    <svg width="350" height="80" viewBox="50% 50% 350 80" class="logo">
+                    <svg width="350" height="70" viewBox="50% 50% 350 80" class="logo">
                         <defs id="SvgjsDefs1183">
                             <linearGradient id="SvgjsLinearGradient1188">
                                 <stop id="SvgjsStop1189" stop-color="#fbb040" offset="0"></stop>

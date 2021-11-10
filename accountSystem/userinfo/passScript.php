@@ -1,5 +1,6 @@
 <?php
     session_start();
+
     $dbc = require './../../database/db.php';
 
     $userID = null;
@@ -22,9 +23,10 @@
     }
 
     //if no errors insert into database
-    if(isset($_SESSION['errors'])) {
-        $query = "UPDATE user SET password = `$password` WHERE iduser = $userID";
+    if(!isset($_SESSION['errors'])) {
+        $query = "UPDATE `user` SET `password` = '$password' WHERE iduser = $userID";
         mysqli_query($dbc, $query);
-        header("location: changePass.php");
+        header("location: pass_success.php");
+
     }
 ?>
