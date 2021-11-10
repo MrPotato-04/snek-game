@@ -29,8 +29,9 @@
     } else {
         // session_start();
         $dbc = require "./../database/db.php";
-        $res = $dbc->query("SELECT * FROM user WHERE iduser = $userID");
+        $res = $dbc->query("SELECT * FROM  `profile-images` WHERE `user_iduser` = $userID");
         $row = $res->fetch_assoc();
+        $pfpicture = $row['image'];
     }
     ?>
     <div id="wrapper">
@@ -49,7 +50,7 @@
                 <div class="flex">
                     <nav>
                         <ul id="links" class="navigation">
-                            <li><img src="avatar.png" alt="Avatar" class="avatar"></li>
+                            <li><img src="./../accountSystem/userinfo/profilePicture/<?php echo $pfpicture; ?>" alt="Avatar" class="avatar"></li>
                             <li><a href="./../index.php">Home</a></li>
                             <li><a href="./../accountSystem/userinfo/userinfo.php">Account</a></li>
                             <li><a href="leaderboards/leadpage.php">Leaderboard</a></li>

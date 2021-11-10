@@ -28,8 +28,8 @@
     $res = $dbc->query("SELECT * FROM `profile-images` WHERE `user_iduser` = $userID");
     $row = $res->fetch_assoc();
     //if no errors insert into database
-    if ($row['user_iduser'] !== $userID) {
-        $query = "INSERT INTO `profile-images` (`user_iduser`, `image`) VALUES ($userID, '".$folder."$idname')";
+    if ($row['image'] === null) {
+        $query = "INSERT INTO `profile-images` (`user_iduser`, `image`) VALUES ($userID, '$idname')";
     } else {
         $query = "UPDATE `profile-images` SET `image`='$idname' WHERE `user_iduser`=$userID";
     }
