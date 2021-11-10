@@ -143,7 +143,12 @@ if (getCookie('gamemode') !== null) {
         blueGameOver = outsideGrid(getSnakeHead_2()) || snakeIntersection_2()
     }
     function updateScores(score1, score2) {
-        scores.innerHTML = `Player 1 score: ${score1}, Player 2 score: ${score2}`
+        if (getCookie('gamemode') === 'multi') {
+            scores.innerHTML = `Player 1 score: ${score1}, Player 2 score: ${score2}`
+        } else {
+            scores.innerHTML = `Player 1 score: ${score1}`
+        }
+        
 
     }
 }

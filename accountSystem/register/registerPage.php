@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./../../common_style/fonts.css">
     <link rel="stylesheet" href="./styles/registerPageStyle.css">
     <title>Register</title>
     <script>
@@ -46,7 +47,7 @@
             <input type="text" name="username" class="form-control" id="username" placeholder="Username">
 
             <label for="password"><b>Password</b></label>
-            <input type="password" class="form-control" name="password" id="password" placeholder="Enter your password" required>
+            <input type="password" class="form-control" name="password" id="password" placeholder="Enter your password" required  minlength="6">
             <label for="repass"><b>Confirm Password</b></label>
             <input type="password" name="repass" class="form-control" id="repass" placeholder="Confirm Password" required>
             <input type="checkbox" onclick="myFunction()">Show Passwords

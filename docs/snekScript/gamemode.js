@@ -10,13 +10,15 @@ if (logged_in === null) {
     gamemode = "single"
     setCookie("gamemode", gamemode, 0.01)
     console.log(getCookie('gamemode'))
-    if(confirm('you are not logged in,\nyou cant choose a game mode and you have 5 min of play time')) {
-        window.location = 'index.php'
-    } else {
-        window.location = 'index.php'
-    }
+    alert('you are not logged in,\nyou cant choose a game mode and you have 5 min of play time')
 }
 
+$("button,nav").click(function() {
+    $(".hamburger").toggleClass("focus");
+    $(".content").toggleClass("show");
+    $(".buttons").toggleClass("show")
+    $(".buttons").toggleClass("hide")
+  });
 
 getElementByID("button-multiplayer").addEventListener("click", function(){
     gamemodeText = this.innerText.replace('player', '').toLocaleLowerCase()

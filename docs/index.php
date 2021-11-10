@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>snekgame</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./../common_style/fonts.css">
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/snake1.css">
     <link rel="stylesheet" href="styles/snake2.css">
@@ -19,7 +20,7 @@
     <div id="wrapper">
         <div class="header">
             <div class="inner_header">
-                <div>
+                <!-- <div>
                     <svg width="350" height="70" viewBox="50% 50% 350 80" class="logo">
                         <defs id="SvgjsDefs1183">
                             <linearGradient id="SvgjsLinearGradient1188">
@@ -60,7 +61,7 @@
                             </path>
                         </g>
                     </svg>
-                </div>
+                </div> -->
 
                 <?php
                         $userID = null;

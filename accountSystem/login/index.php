@@ -2,6 +2,7 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="./../../common_style/fonts.css">
     <link rel="stylesheet" type="text/css" href="./styles/login.css">
 </head>
     <body>
@@ -14,7 +15,7 @@
                 <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email">
 
                 <label for="name"><b>Password</b< /label>
-                        <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password" minlength="4" required>
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password" required>
 
                         <button type="submit">Login</button>
                         <button type="button" onclick="window.location.href='./../register/registerPage.php'" class="signup">
