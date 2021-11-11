@@ -43,11 +43,7 @@
         <div class="header">
             <div class="inner_header">
                 <h3>Snek on crack</h3>
-                <button id="hamburger" class="hamburger">
-                    <span class="burger"></span>
-                    <span class="burger"></span>
-                    <span class="burger"></span>
-                </button>
+                
             </div>
         </div>
         <div class="main_content">
