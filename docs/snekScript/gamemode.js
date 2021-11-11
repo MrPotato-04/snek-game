@@ -29,24 +29,28 @@ if (logged_in !== null) {
         gamemodeText = this.innerText.replace('User ', '').toLocaleLowerCase()
         setGamemode(gamemodeText);
     })
-        getElementByID("button-singleplayer").addEventListener("click", function () {
-        gamemodeText = this.innerText.replace('player', '').toLocaleLowerCase()
-        setGamemode(gamemodeText);
-    })
-}
-if (getCookie('demo') !== null) {
     getElementByID("button-singleplayer").addEventListener("click", function () {
         gamemodeText = this.innerText.replace('player', '').toLocaleLowerCase()
         setGamemode(gamemodeText);
     })
-}
-function setGamemode(game) {
-    setCookie("gamemode", game, 0)
-    window.location = 'index.php'
+} else {
+    getElementByID("button-login").addEventListener("click", function () {
+        window.location = '/snek-game-preview/accountSystem/login/index.php'
+    })
+    getElementByID("button-singleplayer").addEventListener("click", function () {
+        gamemodeText = this.innerText.replace('player', '').toLocaleLowerCase()
+        setGamemode(gamemodeText);
+    })
+    if (isset(getCookie('demo'))) {
+        window.location = '/snek-game-preview/accountSystem/login/index.php '
+    }
 }
 
-getElementByID("button-login").addEventListener("click", function () {
-    window.location = './../accountSystem/login/index.php'
-})
+
+
+function setGamemode(game) {
+    setCookie("gamemode", game, 0)
+    window.location = '/snek-game-preview/docs/index.php'
+}
 
 

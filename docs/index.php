@@ -5,9 +5,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>snekgame</title>
-    <script src="/node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="/snek-game-preview/node_modules/jquery/dist/jquery.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="./../common_style/fonts.css">
+    <link rel="stylesheet" type="text/css" href="/snek-game-preview/common_style/fonts.css">
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/snake1.css">
     <link rel="stylesheet" href="styles/snake2.css">
@@ -99,9 +99,9 @@
                     <nav>
                         <ul id="links" class="navigation">
                             <?php if ($pfpicture !== null) { echo "<li><a href=\"/accountSystem/userinfo/userinfo.php\"><img src=\"./../$pfpicture\" alt=\"Avatar\" class=\"avatar\"><h1>Welcome $username</h1></a></li>"; }; ?>
-                            <li><a href="/index.php">Home</a></li>
-                            <li><a href="/docs/gamemode.php">Gamemodes</a></li>
-                            <li><a href="/accountSystem/userinfo/userinfo.php">Account</a></li>
+                            <li><a href="/snek-game-preview/index.php">Home</a></li>
+                            <li><a href="/snek-game-preview/docs/gamemode.php">Gamemodes</a></li>
+                            <li><a href="/snek-game-preview/accountSystem/userinfo/userinfo.php">Account</a></li>
                             <li><a href="leaderboards/leadpage.php">Leaderboard</a></li>
                             <?php
                             if ($userID !== null) {

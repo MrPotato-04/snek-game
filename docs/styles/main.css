@@ -107,6 +107,14 @@ form {
     
 }
 
+h3 {
+  font-weight: 400;
+  font-size: 60px;
+  display: inline-block;
+  margin: 0 auto;
+  margin-top: 2vh;
+}
+
 
 
 footer {
