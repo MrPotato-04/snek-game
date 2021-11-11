@@ -60,7 +60,6 @@
                                 echo "<li><a href=\"/snek-game/accountSystem/userinfo/userinfo.php\"><img src=\"./../$pfpicture\" alt=\"Avatar\" class=\"avatar\"><h1>Welcome $username</h1></a></li>";
                             }; ?>
                             <li><a href="/index.php">Home</a></li>
-                            <li><a href="/snek-game/accountSystem/userinfo/userinfo.php">Account</a></li>
                             <li><a href="leaderboards/leadpage.php">Leaderboard</a></li>
                             <?php
                             if ($userID !== null) {
