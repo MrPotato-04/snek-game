@@ -77,7 +77,7 @@
             <div class="buttons show">
                 <?php
                 if ($userID !== null) {
-                    echo "<div class=\"buttons-mid\"><button id=\"button-multiplayer\">Multiplayer</button></div><div class=\"buttons-mid\"><button id=\"button-singleplayer\">Singleplayer</button></div><div class=\"buttons-mid\"><button id=\"button-speed\">User Speed</button></div>";
+                    echo "<div class=\"buttons-mid\"><button id=\"button-multiplayer\">Multiplayer</button></div><div class=\"buttons-mid\"><button id=\"button-singleplayer\">Singleplayer</button></div><div class=\"buttons-mid\"><button id=\"button-speed\">User Speed</button></div><div class=\"buttons-mid\"><button id=\"button-multiplayer\">Multiplayer</button></div>";
                 } else {
                     if (!isset($_COOKIE["demo"])) {
                         echo "<div class=\"buttons-mid\"><button id=\"button-singleplayer\">Singleplayer</button></div><div class=\"buttons-mid\"><button id=\"button-login\">Login</button></div>";
