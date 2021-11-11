@@ -11,6 +11,7 @@
     <link rel="stylesheet" type="text/css" href="/snek-game-preview/common_style/fonts.css?v=1">
     <script src="./snekScript/gamemode.js?v=1" defer type="module"></script>
 
+
 </head>
 
 <body>
@@ -62,7 +63,7 @@
                             if ($userID !== null) {
                                 echo "<li><form action=\"gamemode.php\" method=\"post\" id=\"logout\"><input type=\"hidden\" name=\"logout\" value=\"Gamemodes\"><a href=\"javascript:{}\" onclick=\"document.getElementById('logout').submit(); return false;\">Logout</a></form></li>";
                             } else {
-                                echo "<li><a href=\"accountSystem\login\index.php\">Login</a></li>";
+                                echo "<li><a href=\"/accountSystem/login/index.php\">Login</a></li>";
                             }
                             ?>
                             <!-- <li><a href="#0">placeholde</a></li>
