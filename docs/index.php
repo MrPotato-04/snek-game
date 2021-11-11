@@ -39,7 +39,7 @@ if ($userID === null) {
 
     $res_score = $dbc->query("SELECT * FROM  `scores` WHERE `iduser` = $userID");
     $row_score = $res_score->fetch_assoc();
-    $highscore = $res_score['scores']
+    $highscore = $res_score['scores'];
 };
 ?>
 
