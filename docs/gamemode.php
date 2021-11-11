@@ -6,10 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>snekgame</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="/node_modules/jquery/dist/jquery.min.js"></script>
-    <link rel="stylesheet" href="styles/gamemode.css">
-    <link rel="stylesheet" type="text/css" href="/common_style/fonts.css">
-    <script src="snekScript/gamemode.js" defer type="module"></script>
+    <script src="/node_modules/jquery/dist/jquery.min.js?v=1"></script>
+    <link rel="stylesheet" href="styles/gamemode.css?v=1">
+    <link rel="stylesheet" type="text/css" href="/common_style/fonts.css?v=1">
+    <script src="snekScript/gamemode.js?v=1" defer type="module"></script>
 
 </head>
 
@@ -62,7 +62,7 @@
                             if ($userID !== null) {
                                 echo "<li><form action=\"gamemode.php\" method=\"post\" id=\"logout\"><input type=\"hidden\" name=\"logout\" value=\"Gamemodes\"><a href=\"javascript:{}\" onclick=\"document.getElementById('logout').submit(); return false;\">Logout</a></form></li>";
                             } else {
-                                echo "<li><a href=\"accountSystem\login\index.php\">Login</a></li>";
+                                echo "<li><a href=\"/accountSystem/login/index.php\">Login</a></li>";
                             }
                             ?>
                             <!-- <li><a href="#0">placeholde</a></li>
