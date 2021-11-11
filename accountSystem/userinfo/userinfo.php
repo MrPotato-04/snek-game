@@ -36,7 +36,7 @@
             <form action="userscript.php" method="post">
                 <h2>Profile</h2>
                 <div class="image-center">
-                <?php echo "<img src=\"/$pfpicture\" alt=\"Avatar\" class=\"\">"; ?><br>
+                <?php echo "<img src=\"/snek-game/$pfpicture\" alt=\"Avatar\" class=\"\">"; ?><br>
                 </div>
             <label for="UniqueID">Unique ID <br>
             <?php echo "<input class='form-control' type='text' value='".$row['iduser']."' disabled>";?>
