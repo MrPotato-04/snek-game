@@ -35,14 +35,14 @@ if (logged_in !== null) {
     })
 } else {
     getElementByID("button-login").addEventListener("click", function () {
-        window.location = '/snek-game-preview/accountSystem/login/index.php'
+        window.location = '/snek-game/accountSystem/login/index.php'
     })
     getElementByID("button-singleplayer").addEventListener("click", function () {
         gamemodeText = this.innerText.replace('player', '').toLocaleLowerCase()
         setGamemode(gamemodeText);
     })
     if (isset(getCookie('demo'))) {
-        window.location = '/snek-game-preview/accountSystem/login/index.php '
+        window.location = '/snek-game/accountSystem/login/index.php '
     }
 }
 
@@ -50,7 +50,7 @@ if (logged_in !== null) {
 
 function setGamemode(game) {
     setCookie("gamemode", game, 0)
-    window.location = '/snek-game-preview/docs/index.php'
+    window.location = '/snek-game/docs/index.php'
 }
 
 
