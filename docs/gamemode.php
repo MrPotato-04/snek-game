@@ -6,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>snekgame</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="/snek-game-preview/node_modules/jquery/dist/jquery.min.js?v=1"></script>
+    <script src="/snek-game/node_modules/jquery/dist/jquery.min.js?v=1"></script>
     <link rel="stylesheet" href="./styles/gamemode.css?v=1">
-    <link rel="stylesheet" type="text/css" href="/snek-game-preview/common_style/fonts.css?v=1">
+    <link rel="stylesheet" type="text/css" href="/snek-game/common_style/fonts.css?v=1">
     <script src="./snekScript/gamemode.js?v=1" defer type="module"></script>
 
 </head>
@@ -33,7 +33,7 @@
         $res_image = $dbc->query("SELECT * FROM  `profile-images` WHERE `user_iduser` = $userID");
         $image_result = $res_image->fetch_assoc();
         $pfpicture = $image_result['image'];
-
+        if ($pfpicture === null) {$pfpicture = "#";};
         $res = $dbc->query("SELECT * FROM  `user` WHERE `iduser` = $userID");
         $row = $res->fetch_assoc();
         $username = $row['username'];
