@@ -55,7 +55,7 @@
                 <div class="flex">
                     <nav>
                         <ul id="links" class="navigation">
-                            <?php if ($pfpicture !== null) { echo "<li><a href=\"/accountSystem/userinfo/userinfo.php\"><img src=\"./../$pfpicture\" alt=\"Avatar\" class=\"avatar\"><h1>Welcome $username</h1></a></li>"; }; ?>
+                            <?php if ($userID !== null && $pfpicture !== null) { echo "<li><a href=\"/accountSystem/userinfo/userinfo.php\"><img src=\"./../$pfpicture\" alt=\"Avatar\" class=\"avatar\"><h1>Welcome $username</h1></a></li>"; }; ?>
                             <li><a href="/index.php">Home</a></li>
                             <li><a href="/accountSystem/userinfo/userinfo.php">Account</a></li>
                             <li><a href="leaderboards/leadpage.php">Leaderboard</a></li>
