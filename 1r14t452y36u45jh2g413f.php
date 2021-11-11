@@ -17,7 +17,7 @@ use envRead\DotEnv;
     if (isset($_POST['password'])) {
         if (("\"".$_POST["password"]."\"") === getenv('PASSWORD')) {
             exec("git pull origin main");
-            echo "nonononononoo";
+            echo "nonononononoo why you geuss my password";
             unset($_POST['password']);
             // header("location: index.php");
         } else {

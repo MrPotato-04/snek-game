@@ -12,7 +12,11 @@
     <link rel="stylesheet" href="styles/snake1.css">
     <link rel="stylesheet" href="styles/snake2.css">
     <script src="snekScript/game.js" defer type="module"></script>
-    
+    <script>
+        $(function() {
+            $("#includeburger").load("./../common_style/burger.html");
+        });
+    </script>
 
 </head>
 <?php
@@ -87,7 +91,7 @@
                 </div> -->
 
                     <h3>Snek on crack</h3>
-            <div id="#includeburger"></div>
+            <div id="includeburger"></div>
             </div>
         </div>
         <div class="wrapper2">

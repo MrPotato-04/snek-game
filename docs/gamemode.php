@@ -12,7 +12,7 @@
     <script src="./snekScript/gamemode.js?v=1" defer type="module"></script>
     <script>
         $(function() {
-            $("#includeburger").load("/snek-game/common_style/burger.html");
+            $("#includeburger").load("./../common_style/burger.html");
         });
     </script>
 </head>
@@ -49,7 +49,7 @@
         <div class="header">
             <div class="inner_header">
                 <h3>Snek on crack</h3>
-            <div id="#includeburger"></div>
+            <div id="includeburger"></div>
             </div>
         </div>
         <div class="main_content">
