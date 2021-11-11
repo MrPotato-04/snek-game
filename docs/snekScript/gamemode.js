@@ -41,7 +41,7 @@ if (logged_in !== null) {
         gamemodeText = this.innerText.replace('player', '').toLocaleLowerCase()
         setGamemode(gamemodeText);
     })
-    if (isset(getCookie('demo'))) {
+    if (getCookie('demo')!== null) {
         window.location = '/snek-game/accountSystem/login/index.php '
     }
 }
