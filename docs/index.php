@@ -36,6 +36,10 @@ if ($userID === null) {
     $res = $dbc->query("SELECT * FROM  `user` WHERE `iduser` = $userID");
     $row = $res->fetch_assoc();
     $username = $row['username'];
+
+    $res_score = $dbc->query("SELECT * FROM  `scores` WHERE `iduser` = $userID");
+    $row_score = $res_score->fetch_assoc();
+    $highscore = $res_score['scores']
 };
 ?>
 
@@ -105,6 +109,7 @@ if ($userID === null) {
                             <li><a href="/snek-game/index.php">Home</a></li>
                             <li><a href="/snek-game/docs/gamemode.php">Gamemodes</a></li>
                             <li><a href="leaderboards/leadpage.php">Leaderboard</a></li>
+                            <li><a>High Score: <?php echo $highscore;?></a></li>
                             <?php
                             if ($userID !== null) {
                                 echo "<li><form action=\"gamemode.php\" method=\"post\" id=\"logout\"><input type=\"hidden\" name=\"logout\" value=\"Gamemodes\"><a href=\"javascript:{}\" onclick=\"document.getElementById('logout').submit(); return false;\">Logout</a></form></li>";
