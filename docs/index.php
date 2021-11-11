@@ -87,7 +87,7 @@
                 </div> -->
 
                     <h3>Snek on crack</h3>
-                <div w3-include-html="/snek-game/common_style/burger.html"></div>
+            <div id="#includeburger"></div>
             </div>
         </div>
         <div class="wrapper2">

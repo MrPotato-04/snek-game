@@ -10,7 +10,11 @@
     <link rel="stylesheet" href="./styles/gamemode.css?v=1">
     <link rel="stylesheet" type="text/css" href="/snek-game/common_style/fonts.css?v=1">
     <script src="./snekScript/gamemode.js?v=1" defer type="module"></script>
-
+    <script>
+        $(function() {
+            $("#includeburger").load("/snek-game/common_style/burger.html");
+        });
+    </script>
 </head>
 
 <body>
@@ -33,7 +37,9 @@
         $res_image = $dbc->query("SELECT * FROM  `profile-images` WHERE `user_iduser` = $userID");
         $image_result = $res_image->fetch_assoc();
         $pfpicture = $image_result['image'];
-        if ($pfpicture === null) {$pfpicture = "#";};
+        if ($pfpicture === null) {
+            $pfpicture = "#";
+        };
         $res = $dbc->query("SELECT * FROM  `user` WHERE `iduser` = $userID");
         $row = $res->fetch_assoc();
         $username = $row['username'];
@@ -43,7 +49,7 @@
         <div class="header">
             <div class="inner_header">
                 <h3>Snek on crack</h3>
-                
+            <div id="#includeburger"></div>
             </div>
         </div>
         <div class="main_content">
@@ -51,7 +57,9 @@
                 <div class="flex">
                     <nav>
                         <ul id="links" class="navigation">
-                            <?php if ($userID !== null && $pfpicture !== null) { echo "<li><a href=\"/snek-game/accountSystem/userinfo/userinfo.php\"><img src=\"./../$pfpicture\" alt=\"Avatar\" class=\"avatar\"><h1>Welcome $username</h1></a></li>"; }; ?>
+                            <?php if ($userID !== null && $pfpicture !== null) {
+                                echo "<li><a href=\"/snek-game/accountSystem/userinfo/userinfo.php\"><img src=\"./../$pfpicture\" alt=\"Avatar\" class=\"avatar\"><h1>Welcome $username</h1></a></li>";
+                            }; ?>
                             <li><a href="/index.php">Home</a></li>
                             <li><a href="/snek-game/accountSystem/userinfo/userinfo.php">Account</a></li>
                             <li><a href="leaderboards/leadpage.php">Leaderboard</a></li>
