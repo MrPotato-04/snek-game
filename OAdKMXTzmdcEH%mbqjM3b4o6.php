@@ -1,4 +1,4 @@
 <?php
-exec(" git pull origin main");
-header("location: ./index.php");
+exec("git pull origin main");
+header("location: index.php");
 ?>
