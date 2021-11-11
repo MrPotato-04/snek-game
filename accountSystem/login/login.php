@@ -19,7 +19,7 @@
     //form validation errors
     if(!$row['email'] || !$row['password']) {
         $_SESSION['errors'] = 'Email or password is invalid';
-        header("location: ../login");
+        header("location: ./login");
         exit();
     }
 
@@ -27,6 +27,6 @@
     $_SESSION["userid"] = $row['iduser'];
     $_SESSION["email"] = $row['email'];
     setcookie("userid", $row['iduser'], 0 , "/"); /*time() + (86400)  = 1 day */
-    header("location: ./../../docs/gamemode.php");
+    header("location: /snek-game/docs/gamemode.php");
 
 ?>

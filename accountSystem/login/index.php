@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="./../../common_style/fonts.css">
+    <link rel="stylesheet" type="text/css" href="/snek-game/common_style/fonts.css">
     <link rel="stylesheet" type="text/css" href="./styles/login.css">
 </head>
     <body>
@@ -18,7 +18,7 @@
                         <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password" required>
 
                         <button type="submit">Login</button>
-                        <button type="button" onclick="window.location.href='./../register/registerPage.php'" class="signup">
+                        <button type="button" onclick="window.location.href='/snek-game/accountSystem/register/registerPage.php'" class="signup">
                             Sign Up
                         </button>
                         <!--//FIXME: <a href="./resetpassword.php">Forgot your password? </a> -->

@@ -98,7 +98,7 @@
                 <div class="flex">
                     <nav>
                         <ul id="links" class="navigation">
-                            <?php if ($pfpicture !== null) { echo "<li><a href=\"/accountSystem/userinfo/userinfo.php\"><img src=\"./../$pfpicture\" alt=\"Avatar\" class=\"avatar\"><h1>Welcome $username</h1></a></li>"; }; ?>
+                            <?php if ($pfpicture !== null) { echo "<li><a href=\"/snek-game/accountSystem/userinfo/userinfo.php\"><img src=\"./../$pfpicture\" alt=\"Avatar\" class=\"avatar\"><h1>Welcome $username</h1></a></li>"; }; ?>
                             <li><a href="/snek-game/index.php">Home</a></li>
                             <li><a href="/snek-game/docs/gamemode.php">Gamemodes</a></li>
                             <li><a href="/snek-game/accountSystem/userinfo/userinfo.php">Account</a></li>
@@ -107,7 +107,7 @@
                             if ($userID !== null) {
                                 echo "<li><form action=\"gamemode.php\" method=\"post\" id=\"logout\"><input type=\"hidden\" name=\"logout\" value=\"Gamemodes\"><a href=\"javascript:{}\" onclick=\"document.getElementById('logout').submit(); return false;\">Logout</a></form></li>";
                             } else {
-                                echo "<li><a href=\"accountSystem\login\index.php\">Login</a></li>";
+                                echo "<li><a href=\"/snek-game/accountSystem\login\index.php\">Login</a></li>";
                             }
                             ?>
                             <!-- <li><a href="#0">placeholde</a></li>
