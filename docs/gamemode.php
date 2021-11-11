@@ -11,7 +11,6 @@
     <link rel="stylesheet" type="text/css" href="/snek-game-preview/common_style/fonts.css?v=1">
     <script src="./snekScript/gamemode.js?v=1" defer type="module"></script>
 
-
 </head>
 
 <body>
@@ -27,6 +26,7 @@
     }
     if ($userID === null) {
         //do nothing
+        $pfpicture = "#";
     } else {
         // session_start();
         $dbc = require "./../database/db.php";
