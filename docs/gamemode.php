@@ -10,11 +10,6 @@
     <link rel="stylesheet" href="./styles/gamemode.css?v=1">
     <link rel="stylesheet" type="text/css" href="/snek-game/common_style/fonts.css?v=1">
     <script src="./snekScript/gamemode.js?v=1" defer type="module"></script>
-    <script>
-        $(function() {
-            $("#includeburger").load("./../common_style/burger.html");
-        });
-    </script>
 </head>
 
 <body>
@@ -49,7 +44,11 @@
         <div class="header">
             <div class="inner_header">
                 <h3>Snek on crack</h3>
-            <div id="includeburger"></div>
+                <button id="hamburger" class="hamburger">
+                    <span class="burger"></span>
+                    <span class="burger"></span>
+                    <span class="burger"></span>
+                </button>
             </div>
         </div>
         <div class="main_content">

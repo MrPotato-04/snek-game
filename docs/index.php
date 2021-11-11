@@ -12,37 +12,33 @@
     <link rel="stylesheet" href="styles/snake1.css">
     <link rel="stylesheet" href="styles/snake2.css">
     <script src="snekScript/game.js" defer type="module"></script>
-    <script>
-        $(function() {
-            $("#includeburger").load("./../common_style/burger.html");
-        });
-    </script>
 
 </head>
 <?php
-    $userID = null;
-    if (isset($_COOKIE['userid'])) {
-        $userID = $_COOKIE["userid"];
-    }
-    if (isset($_POST["logout"])) {
-        unset($_COOKIE['userid']);
-        setcookie('userid', null, -1, "/");
-        header("Location: index.php");
-    }
-    if ($userID === null) {
-        //do nothing
-    } else {
-        // session_start();
-        $dbc = require "./../database/db.php";
-        $res_image = $dbc->query("SELECT * FROM  `profile-images` WHERE `user_iduser` = $userID");
-        $image_result = $res_image->fetch_assoc();
-        $pfpicture = $image_result['image'];
+$userID = null;
+if (isset($_COOKIE['userid'])) {
+    $userID = $_COOKIE["userid"];
+}
+if (isset($_POST["logout"])) {
+    unset($_COOKIE['userid']);
+    setcookie('userid', null, -1, "/");
+    header("Location: index.php");
+}
+if ($userID === null) {
+    //do nothing
+} else {
+    // session_start();
+    $dbc = require "./../database/db.php";
+    $res_image = $dbc->query("SELECT * FROM  `profile-images` WHERE `user_iduser` = $userID");
+    $image_result = $res_image->fetch_assoc();
+    $pfpicture = $image_result['image'];
 
-        $res = $dbc->query("SELECT * FROM  `user` WHERE `iduser` = $userID");
-        $row = $res->fetch_assoc();
-        $username = $row['username'];
-    };
-    ?>
+    $res = $dbc->query("SELECT * FROM  `user` WHERE `iduser` = $userID");
+    $row = $res->fetch_assoc();
+    $username = $row['username'];
+};
+?>
+
 <body>
     <div id="wrapper">
         <div class="header">
@@ -90,16 +86,22 @@
                     </svg>
                 </div> -->
 
-                    <h3>Snek on crack</h3>
-            <div id="includeburger"></div>
+                <h3>Snek on crack</h3>
+                <button id="hamburger" class="hamburger">
+                    <span class="burger"></span>
+                    <span class="burger"></span>
+                    <span class="burger"></span>
+                </button>
             </div>
         </div>
         <div class="wrapper2">
-        <div class="content">
+            <div class="content">
                 <div class="flex">
                     <nav>
                         <ul id="links" class="navigation">
-                            <?php if ($pfpicture !== null) { echo "<li><a href=\"/snek-game/accountSystem/userinfo/userinfo.php\"><img src=\"./../$pfpicture\" alt=\"Avatar\" class=\"avatar\"><h1>Welcome $username</h1></a></li>"; }; ?>
+                            <?php if ($pfpicture !== null) {
+                                echo "<li><a href=\"/snek-game/accountSystem/userinfo/userinfo.php\"><img src=\"./../$pfpicture\" alt=\"Avatar\" class=\"avatar\"><h1>Welcome $username</h1></a></li>";
+                            }; ?>
                             <li><a href="/snek-game/index.php">Home</a></li>
                             <li><a href="/snek-game/docs/gamemode.php">Gamemodes</a></li>
                             <li><a href="leaderboards/leadpage.php">Leaderboard</a></li>
