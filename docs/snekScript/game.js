@@ -8,10 +8,11 @@ import {
     getSnakeHead as getSnakeHead_2, snakeIntersection as snakeIntersection_2
 } from './snake2.js'
 
-import { update as updateFood, draw as drawFood } from './food.js'
+import { update as updateFood, draw as drawFood, speed } from './food.js'
 import { GRID_HEIGTH, GRID_WIDTH, outsideGrid } from './grid.js'
 import { draw as drawBoard } from './board.js'
 import { getCookie, setCookie, getElementByID } from './public.js'
+
 
 let demoOver = getCookie("demo")
 
@@ -47,7 +48,7 @@ if (getCookie('gamemode') !== null) {
     if (window.location.href.indexOf("index") > -1) {
         if (gamemode === "speed") {
             SNAKE_SPEED = prompt('type snake speed')
-        } else {
+        }else {
             SNAKE_SPEED = 10
         }
 
@@ -102,8 +103,11 @@ if (getCookie('gamemode') !== null) {
         //cals data update and draw functions
         update()
         draw()
+        if(gamemode === "faster") {
+            SNAKE_SPEED = speed
+        }
 
-
+        console.log(SNAKE_SPEED)
         let userid = getCookie('userid')
         if (userid === null) {
             if (timeleft === 0) {

@@ -3,10 +3,7 @@
     background-repeat: no-repeat, repeat;
 }
 
-div[class^="snake_1"] {
-    filter: sepia(100%) hue-rotate(92deg) saturate(244%);
-    -webkit-filter: sepia(100%) hue-rotate(92deg) saturate(244%);
-    -moz-filter: sepia(100%) hue-rotate(92deg) saturate(244%);
+.snake1 {
 }
 .snake_1_body_ver {
     /* background-color: hsl(0, 57%, 45%); */

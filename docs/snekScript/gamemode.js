@@ -1,4 +1,4 @@
-import { getCookie, setCookie, getElementByID } from './public.js'
+import { getCookie, setCookie, getElementByID} from './public.js'
 
 let logged_in = getCookie('userid')
 let gamemode = false
@@ -26,6 +26,10 @@ if (logged_in !== null) {
         gamemodeText = this.innerText.replace('player', '').toLocaleLowerCase()
         setGamemode(gamemodeText);
     })
+    getElementByID("button-faster").addEventListener("click", function () {
+        gamemodeText = "faster"
+        setGamemode(gamemodeText);
+    });
 } else {
     getElementByID("button-login").addEventListener("click", function () {
         window.location = '/snek-game/accountSystem/login/index.php'

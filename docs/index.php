@@ -5,14 +5,16 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>snekgame</title>
-    <script src="/snek-game/node_modules/jquery/dist/jquery.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/snek-game/node_modules/jquery/dist/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="/snek-game/common_style/fonts.css?v=1">
     <link rel="stylesheet" href="styles/css/main.css?v=1">
     <link rel="stylesheet" href="styles/css/snake1.css?v=1">
     <link rel="stylesheet" href="styles/css/snake2.css?v=1">
+    <link rel="stylesheet" href="./../common_style/menu.css?v=1">
     <script src="snekScript/game.js?v=1" defer type="module"></script>
     <script src="snekScript/burger.js?v=1" defer type="module"></script>
+    
     </script>
 
 </head>
@@ -37,5 +39,5 @@
         </div>
 
 </body>
-
+<script src="./snekScript/snakecolor.js?v=1" defer type="module"></script>
 </html>

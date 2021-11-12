@@ -2,6 +2,10 @@
     background-size: cover;
     background-repeat: no-repeat, repeat;
 }
+.snake-1 {
+    filter: sepia(100%) saturate(217%);
+}
+
 .snake_2_body_ver {
     /* background-color: hsl(0, 57%, 45%); */
     background-image: url('./../snake/snake/tile007.png');

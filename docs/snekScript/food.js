@@ -8,6 +8,7 @@ let food = getRandomFoodPosition()
 const EXPANSION_RATE = 1
 var frankChance = 69;
 var foodclass = "food"
+export var speed = 10
 
 export function update() {
     if (snakeMiss_snake1(food) === true || snakeMiss_snake2(food) === true) {
@@ -17,10 +18,12 @@ export function update() {
 
     if (onSnake_1(food)) {
         expandSnake_1(EXPANSION_RATE)
+        speed++
         food = getRandomFoodPosition()
     }
     if (onSnake_2(food)) {
         expandSnake_2(EXPANSION_RATE)
+        speed++
         food = getRandomFoodPosition()
     }
 

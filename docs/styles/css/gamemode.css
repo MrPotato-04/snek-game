@@ -3,20 +3,77 @@
     padding: 0;
     list-style: none;
     text-decoration: none;
+    overflow: hidden;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&display=swap');
 
+.fill {
+    min-height: 30vh;
+    min-width: 100%;
+}
+  
+  /* The slider itself */
+  .slider {
 
+
+
+    -webkit-appearance: none;  /* Override default CSS styles */
+    appearance: none;
+    min-width: 30vw; /* Full-width */
+    height: 20px; /* Specified height */
+    background: #d3d3d3; /* Grey background */
+    outline: none; /* Remove outline */
+    opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    transition: opacity .2s;
+    border-radius: 8px;
+
+    
+  }
+  
+  /* Mouse-over effects */
+  .slider:hover {
+    opacity: 1; /* Fully shown on mouse-over */
+  }
+  
+  /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    width: 25px; /* Set a specific slider handle width */
+    height: 25px; /* Slider handle height */
+    background: #04AA6D; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+  }
+  
+  .slider::-moz-range-thumb {
+    width: 25px; /* Set a specific slider handle width */
+    height: 25px; /* Slider handle height */
+    background: #04AA6D; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+  }
 
 .buttons {
     opacity: 0;
     height: 85vh;
+    width: 45vw;
+    border-left: 2.5px solid black;
+}
+#settings {
+    min-width: 45vw;
+    min-height: 85vh;
+    border-right: 2.5px solid black;
+    font-size: unset;
+}
+.buttons, #settings {
+    display: inline-block;
+    vertical-align: middle;
 }
 
 .buttons-mid {
-    top: 40%;
-    height: 10%;
+    top: 30%;
+    min-height: 10%;
     margin: 0;
     position: relative;
     
@@ -87,6 +144,7 @@ h3 {
     min-width: 100vw;
     min-height: 85vmin;
 }
+
 #loggedin {
     margin-left: 15vw;
 }
@@ -105,124 +163,4 @@ footer {
     width: 100%;
     background-color: #000000;
 
-}
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:100,300,400,700);
-*,
-*::before,
-*::after {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-.flex {
-  min-height: 50vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.content {
-  width: 100%;
-  opacity: 0;
-  height: 88vh;
-  display: block;
-  position: absolute;
-  right: 100%;
-  transition: 0.5s;
-  background-color: #ffffff;
-}
-.content .navigation {
-  font-family: "Open Sans", sans-serif;
-  list-style-type: none;
-  padding-left: 0px;
-  text-align: center;
-  font-size: 30px;
-  font-weight: bold;
-}
-.content .navigation li {
-  padding: 15px;
-}
-.content .navigation a {
-  color: #525252;
-  text-decoration: none;
-  position: relative;
-  display: inline-block;
-  overflow-x: hidden;
-  transition: all 0.2s;
-  z-index: 10;
-}
-.content .navigation form {
-    all: initial;
-    all: unset;
-    color: #525252;
-    text-decoration: none;
-    position: relative;
-    display: inline-block;
-    overflow-x: hidden;
-    transition: all 0.2s;
-  }
-.content .navigation a:before {
-  content: "";
-  overflow: hidden;
-  width: 100%;
-  position: absolute;
-  left: -150%;
-  bottom: 0px;
-  height: 3px;
-  background-color: #FF5757;
-  transition: all 0.3s;
-}
-.content .navigation a:hover {
-  color: #FF5757;
-}
-.content .navigation a:hover:before {
-  left: 0px;
-}
-
-.content h1 {
-  color: #525252;
-  font-size: 0.98em;
-}
-
-.show {
-    transition:1s;
-  right: 0px;
-  opacity: 1;
-  z-index: 999;
-  
-}
-.hide {
-    transition:0.5s;
-    right: 0px;
-    opacity: 0;
-    z-index: 1;
-}
-
-.hamburger {
-  background-color: transparent;
-  border: 0px;
-  outline: 0px;
-  width: 100px;
-  height: 100px;
-
-  position: absolute;
-  top: 15px;
-  right: 50px;
-  cursor: pointer;
-  z-index: 9999;
-}
-.hamburger .burger {
-  transition: all 0.3s;
-  border-radius: 5px;
-  height: 8px;
-  width: 60px;
-  display: inline-block;
-  background-color: #FFF;
-}
-.avatar {
-  vertical-align: middle;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
 }
