@@ -3,101 +3,94 @@
     padding: 0;
     list-style: none;
     text-decoration: none;
-    /* tmp font till new font  */
+}
 
+@import url('https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&display=swap');
+
+
+
+.buttons {
+    opacity: 0;
+    height: 85vh;
+}
+
+.buttons-mid {
+    top: 40%;
+    height: 10%;
+    margin: 0;
+    position: relative;
+    
+}
+
+button {
+    top: 45%;
+    top: 45%;
+    text-align: center;
+    border: 2px solid #ffffff;
+    border-radius: 8px;
+    background: rgb(0, 0, 0);
+
+    padding: 15px 40px;
+    color: #ffffff;
+    font-size: 1.25rem;
+    cursor: pointer;
+    transition: all 150ms ease-in-out;
+    z-index: 1585;
+    width: 10vw;
+    height: 5.5vh;
 }
 
 body {
     height: 100vh;
     width: 100vw;
     display: flex;
-    /* justify-content: center;
-    align-items: center; */
     background-color: darkslateblue;
-}
-.logo {
-    margin: 0 auto;
-    align-self: center;
-    margin-top: 10px;
 }
 
 #wrapper {
     float: left;
     width: 100vw;
+    vertical-align: middle;
     height: 100%;
     clear: both;
     text-align: center;
     color: white;
 
 }
-/* h3 {
-    font-family: 'ZCOOL', cursive;
+h3 {
     font-weight: 400;
     font-size: 60px;
-    max-width: 30vw;
-    align-self: center;
+    display: inline-block;
     margin: 0 auto;
-} */
-
-input[type="submit"] {
-    text-align: center;
-    border: 4px solid white;
-    border-radius: 8px;
-    background: rgb(0, 0, 0);
-
-    
-    color: #ffffff;
-    font-size: 0.75rem;
-    cursor: pointer;
-    transition: all 150ms ease-in-out;
-
-    width: 4.5vw;
-    height: 2.5vh;
+    margin-top: 2vh;
 }
-progress {
-    max-width: 5vw;
-    margin: 0 auto;
-    float: right;
-    margin-right: 10px;
-
-}
-.progress {
-    max-width: 5vw;
-    margin: 0 auto;
-    float: left;
-
-}
-.progress_wrapper {
-    height: 2vh;
-    max-width: 11vw;
-    width: 11vw;
-    float: right;
-}
-
-form {
-    max-width: 10vw;
-    margin: 0 auto;
-    margin-right: 10px;
-    float: right;
-}
-
 .wrapper2 {
     display: inline-block;
     margin: 0 auto;
+    
+    position: relative;
 }
-
-
+.inner_header {
+  margin: 0 auto;
+  display: block;
+  height: 11vh;
+}
 .header .a {
     color: rgb(136, 251, 255);
     font-weight: 400;
     font-size: 20px;
     margin: 0 auto;
-    /* margin-left: 11vw; */
+    
+    
+}
+.main_content {
+    min-width: 100vw;
+    min-height: 85vmin;
+}
+#loggedin {
+    margin-left: 15vw;
 }
 
-#loggedin {
-    margin-left: 10vw;
-}
 .header {
     width: 100%;
     height: 12vh;
@@ -107,67 +100,12 @@ form {
     
 }
 
-h3 {
-  font-weight: 400;
-  font-size: 60px;
-  display: inline-block;
-  margin: 0 auto;
-  margin-top: 2vh;
-}
-
-
-
 footer {
-    height: 3vh;
+    min-height: 3vh;
     width: 100%;
     background-color: #000000;
 
 }
-
-footer #controls {
-    float: left;
-    
-}
-
-footer #scores {
-    font-weight: 400;
-    font-size: 20px;
-    text-align: right;
-    margin-right: 15px;
-    
-}
-
-#game-board {
-    background-color: rgb(46, 46, 46);
-    /* top: ; */
-    display: grid;
-    width: 100vw;
-    height: 85vmin;
-    position: relative;
-    /* grid-gap: 2px; */
-}
-
-
-.food {
-    /* background-color: hsl(50, 100%, 50%);
-    border: .25vmin solid black; */
-    background-image: url('./snake/tile015.png');
-    background-size: cover;
-    background-repeat: no-repeat, repeat;
-}
-
-.frank {
-    background-image: url('./snake/frank.png');
-    background-size: cover;
-    background-repeat: no-repeat, repeat;
-}
-
-
-.chunk {
-    background-color: hsl(0, 0%, 29%);
-    border: .10vmin solid grey;
-}
-
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:100,300,400,700);
 *,
 *::before,
@@ -187,7 +125,7 @@ footer #scores {
 .content {
   width: 100%;
   opacity: 0;
-  height: 85vh;
+  height: 88vh;
   display: block;
   position: absolute;
   right: 100%;

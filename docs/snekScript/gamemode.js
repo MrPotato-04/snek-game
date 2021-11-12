@@ -13,13 +13,6 @@ if (logged_in === null) {
     alert('you are not logged in,\nyou cant choose a game mode and you have 5 min of play time')
 }
 
-$(".hamburger,nav").click(function () {
-    $(".hamburger").toggleClass("focus");
-    $(".content").toggleClass("show");
-    $(".buttons").toggleClass("show")
-    $(".buttons").toggleClass("hide")
-});
-
 if (logged_in !== null) {
     getElementByID("button-multiplayer").addEventListener("click", function () {
         gamemodeText = this.innerText.replace('player', '').toLocaleLowerCase()

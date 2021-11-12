@@ -10,67 +10,67 @@ div[class^="snake_1"] {
 }
 .snake_1_body_ver {
     /* background-color: hsl(0, 57%, 45%); */
-    background-image: url('./snake/snake/tile007.png');
+    background-image: url('./../snake/snake/tile007.png');
     /* border: .25vmin solid black; */
     
 }
 .snake_1_body_hor {
     /* background-color: hsl(0, 57%, 45%); */
-    background-image: url('./snake/snake/tile001.png');
+    background-image: url('./../snake/snake/tile001.png');
     /* border: .25vmin solid black; */
     
 }
 
 .snake_1_head_up {
-    background-image: url('./snake/snake/tile003.png');
+    background-image: url('./../snake/snake/tile003.png');
     /* border: .25vmin solid hsl(0, 57%, 45%); */
 }
 .snake_1_head_right {
-    background-image: url('./snake/snake/tile004.png');
+    background-image: url('./../snake/snake/tile004.png');
     
     /* border: .25vmin solid hsl(0, 57%, 45%); */
 }
 .snake_1_head_down {
-    background-image: url('./snake/snake/tile009.png');
+    background-image: url('./../snake/snake/tile009.png');
     
     /* border: 
     .25vmin solid hsl(0, 57%, 45%); */
 }
 .snake_1_head_left {
-    background-image: url('./snake/snake/tile008.png');
+    background-image: url('./../snake/snake/tile008.png');
     /* border: .25vmin solid hsl(0, 57%, 45%); */
 }
 
 .snake_1_tail_up {
-    background-image: url('./snake/snake/tile013.png');
+    background-image: url('./../snake/snake/tile013.png');
     
 }
 .snake_1_tail_right {
-    background-image: url('./snake/snake/tile014.png');
+    background-image: url('./../snake/snake/tile014.png');
     
 }
 .snake_1_tail_down {
-    background-image: url('./snake/snake/tile019.png');
+    background-image: url('./../snake/snake/tile019.png');
     
 }
 .snake_1_tail_left {
-    background-image: url('./snake/snake/tile018.png');
+    background-image: url('./../snake/snake/tile018.png');
     
 }
 .snake_1_curve_lt {
-    background-image: url('./snake/snake/tile012.png');
+    background-image: url('./../snake/snake/tile012.png');
     
 }
 .snake_1_curve_tr {
-    background-image: url('./snake/snake/tile005.png');
+    background-image: url('./../snake/snake/tile005.png');
     
 }
 .snake_1_curve_rd {
-    background-image: url('./snake/snake/tile000.png');
+    background-image: url('./../snake/snake/tile000.png');
     
 }
 .snake_1_curve_dl {
-    background-image: url('./snake/snake/tile002.png');
+    background-image: url('./../snake/snake/tile002.png');
     
 }
 /* .snake_1 {
