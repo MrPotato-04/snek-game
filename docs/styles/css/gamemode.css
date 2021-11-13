@@ -1,0 +1,166 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    overflow: hidden;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&display=swap');
+
+.fill {
+    min-height: 30vh;
+    min-width: 100%;
+}
+  
+  /* The slider itself */
+  .slider {
+
+
+
+    -webkit-appearance: none;  /* Override default CSS styles */
+    appearance: none;
+    min-width: 30vw; /* Full-width */
+    height: 20px; /* Specified height */
+    background: #d3d3d3; /* Grey background */
+    outline: none; /* Remove outline */
+    opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    transition: opacity .2s;
+    border-radius: 8px;
+
+    
+  }
+  
+  /* Mouse-over effects */
+  .slider:hover {
+    opacity: 1; /* Fully shown on mouse-over */
+  }
+  
+  /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    width: 25px; /* Set a specific slider handle width */
+    height: 25px; /* Slider handle height */
+    background: #04AA6D; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+  }
+  
+  .slider::-moz-range-thumb {
+    width: 25px; /* Set a specific slider handle width */
+    height: 25px; /* Slider handle height */
+    background: #04AA6D; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+  }
+
+.buttons {
+    opacity: 0;
+    height: 85vh;
+    width: 45vw;
+    border-left: 2.5px solid black;
+}
+#settings {
+    min-width: 45vw;
+    min-height: 85vh;
+    border-right: 2.5px solid black;
+    font-size: unset;
+}
+.buttons, #settings {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.buttons-mid {
+    top: 30%;
+    min-height: 10%;
+    margin: 0;
+    position: relative;
+    
+}
+
+button {
+    top: 45%;
+    top: 45%;
+    text-align: center;
+    border: 2px solid #ffffff;
+    border-radius: 8px;
+    background: rgb(0, 0, 0);
+
+    padding: 15px 40px;
+    color: #ffffff;
+    font-size: 1.25rem;
+    cursor: pointer;
+    transition: all 150ms ease-in-out;
+    z-index: 1585;
+    width: 10vw;
+    height: 5.5vh;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    background-color: darkslateblue;
+}
+
+#wrapper {
+    float: left;
+    width: 100vw;
+    vertical-align: middle;
+    height: 100%;
+    clear: both;
+    text-align: center;
+    color: white;
+
+}
+h3 {
+    font-weight: 400;
+    font-size: 60px;
+    display: inline-block;
+    margin: 0 auto;
+    margin-top: 2vh;
+}
+.wrapper2 {
+    display: inline-block;
+    margin: 0 auto;
+    
+    position: relative;
+}
+.inner_header {
+  margin: 0 auto;
+  display: block;
+  height: 11vh;
+}
+.header .a {
+    color: rgb(136, 251, 255);
+    font-weight: 400;
+    font-size: 20px;
+    margin: 0 auto;
+    
+    
+}
+.main_content {
+    min-width: 100vw;
+    min-height: 85vmin;
+}
+
+#loggedin {
+    margin-left: 15vw;
+}
+
+.header {
+    width: 100%;
+    height: 12vh;
+    display: block;
+    position: relative;
+    background-color: #101010;
+    
+}
+
+footer {
+    min-height: 3vh;
+    width: 100%;
+    background-color: #000000;
+
+}

@@ -1,4 +1,4 @@
-import { getCookie, setCookie, getElementByID } from './public.js'
+import { getCookie, setCookie, getElementByID} from './public.js'
 
 let logged_in = getCookie('userid')
 let gamemode = false
@@ -13,13 +13,6 @@ if (logged_in === null) {
     alert('you are not logged in,\nyou cant choose a game mode and you have 5 min of play time')
 }
 
-$(".hamburger,nav").click(function () {
-    $(".hamburger").toggleClass("focus");
-    $(".content").toggleClass("show");
-    $(".buttons").toggleClass("show")
-    $(".buttons").toggleClass("hide")
-});
-
 if (logged_in !== null) {
     getElementByID("button-multiplayer").addEventListener("click", function () {
         gamemodeText = this.innerText.replace('player', '').toLocaleLowerCase()
@@ -33,6 +26,10 @@ if (logged_in !== null) {
         gamemodeText = this.innerText.replace('player', '').toLocaleLowerCase()
         setGamemode(gamemodeText);
     })
+    getElementByID("button-faster").addEventListener("click", function () {
+        gamemodeText = "faster"
+        setGamemode(gamemodeText);
+    });
 } else {
     getElementByID("button-login").addEventListener("click", function () {
         window.location = '/snek-game/accountSystem/login/index.php'
@@ -41,7 +38,7 @@ if (logged_in !== null) {
         gamemodeText = this.innerText.replace('player', '').toLocaleLowerCase()
         setGamemode(gamemodeText);
     })
-    if (isset(getCookie('demo'))) {
+    if (getCookie('demo')!== null) {
         window.location = '/snek-game/accountSystem/login/index.php '
     }
 }

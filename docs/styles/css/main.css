@@ -124,12 +124,12 @@ footer {
 
 }
 
-footer #controls {
+#controls {
     float: left;
     
 }
 
-footer #scores {
+#scores {
     font-weight: 400;
     font-size: 20px;
     text-align: right;
@@ -151,13 +151,13 @@ footer #scores {
 .food {
     /* background-color: hsl(50, 100%, 50%);
     border: .25vmin solid black; */
-    background-image: url('./snake/tile015.png');
+    background-image: url('./../snake/tile015.png');
     background-size: cover;
     background-repeat: no-repeat, repeat;
 }
 
 .frank {
-    background-image: url('./snake/frank.png');
+    background-image: url('./../snake/frank.png');
     background-size: cover;
     background-repeat: no-repeat, repeat;
 }
@@ -168,123 +168,3 @@ footer #scores {
     border: .10vmin solid grey;
 }
 
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:100,300,400,700);
-*,
-*::before,
-*::after {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-.flex {
-  min-height: 50vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.content {
-  width: 100%;
-  opacity: 0;
-  height: 85vh;
-  display: block;
-  position: absolute;
-  right: 100%;
-  transition: 0.5s;
-  background-color: #ffffff;
-}
-.content .navigation {
-  font-family: "Open Sans", sans-serif;
-  list-style-type: none;
-  padding-left: 0px;
-  text-align: center;
-  font-size: 30px;
-  font-weight: bold;
-}
-.content .navigation li {
-  padding: 15px;
-}
-.content .navigation a {
-  color: #525252;
-  text-decoration: none;
-  position: relative;
-  display: inline-block;
-  overflow-x: hidden;
-  transition: all 0.2s;
-  z-index: 10;
-}
-.content .navigation form {
-    all: initial;
-    all: unset;
-    color: #525252;
-    text-decoration: none;
-    position: relative;
-    display: inline-block;
-    overflow-x: hidden;
-    transition: all 0.2s;
-  }
-.content .navigation a:before {
-  content: "";
-  overflow: hidden;
-  width: 100%;
-  position: absolute;
-  left: -150%;
-  bottom: 0px;
-  height: 3px;
-  background-color: #FF5757;
-  transition: all 0.3s;
-}
-.content .navigation a:hover {
-  color: #FF5757;
-}
-.content .navigation a:hover:before {
-  left: 0px;
-}
-
-.content h1 {
-  color: #525252;
-  font-size: 0.98em;
-}
-
-.show {
-    transition:1s;
-  right: 0px;
-  opacity: 1;
-  z-index: 999;
-  
-}
-.hide {
-    transition:0.5s;
-    right: 0px;
-    opacity: 0;
-    z-index: 1;
-}
-
-.hamburger {
-  background-color: transparent;
-  border: 0px;
-  outline: 0px;
-  width: 100px;
-  height: 100px;
-
-  position: absolute;
-  top: 15px;
-  right: 50px;
-  cursor: pointer;
-  z-index: 9999;
-}
-.hamburger .burger {
-  transition: all 0.3s;
-  border-radius: 5px;
-  height: 8px;
-  width: 60px;
-  display: inline-block;
-  background-color: #FFF;
-}
-.avatar {
-  vertical-align: middle;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-}

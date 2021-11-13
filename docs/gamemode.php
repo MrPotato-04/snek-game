@@ -7,75 +7,40 @@
     <title>snekgame</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="/snek-game/node_modules/jquery/dist/jquery.min.js?v=1"></script>
-    <link rel="stylesheet" href="./styles/gamemode.css?v=1">
+    <link rel="stylesheet" href="./styles/css/gamemode.css?v=1">
+    <link rel="stylesheet" href="./../common_style/menu.css?v=1">
     <link rel="stylesheet" type="text/css" href="/snek-game/common_style/fonts.css?v=1">
     <script src="./snekScript/gamemode.js?v=1" defer type="module"></script>
-
+    <script src="./snekScript/burger.js?v=1" defer type="module"></script>
+    <script src="./snekScript/snakecolor.js?v=1" defer type="module"></script>
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
 </head>
 
 <body>
-    <?php
-    $userID = null;
-    if (isset($_COOKIE['userid'])) {
-        $userID = $_COOKIE["userid"];
-    }
-    if (isset($_POST["logout"])) {
-        unset($_COOKIE['userid']);
-        setcookie('userid', null, -1, "/");
-        header("Location: index.php");
-    }
-    if ($userID === null) {
-        //do nothing
-        $pfpicture = "#";
-    } else {
-        // session_start();
-        $dbc = require "./../database/db.php";
-        $res_image = $dbc->query("SELECT * FROM  `profile-images` WHERE `user_iduser` = $userID");
-        $image_result = $res_image->fetch_assoc();
-        $pfpicture = $image_result['image'];
-        if ($pfpicture === null) {$pfpicture = "#";};
-        $res = $dbc->query("SELECT * FROM  `user` WHERE `iduser` = $userID");
-        $row = $res->fetch_assoc();
-        $username = $row['username'];
-    };
-    ?>
+
     <div id="wrapper">
-        <div class="header">
-            <div class="inner_header">
-                <h3>Snek on crack</h3>
-                <button id="hamburger" class="hamburger">
-                    <span class="burger"></span>
-                    <span class="burger"></span>
-                    <span class="burger"></span>
-                </button>
-            </div>
+        <div id="header" class="header">
+            <?php require_once("./../common_style/header.php") ?>
         </div>
         <div class="main_content">
-            <div class="content">
-                <div class="flex">
-                    <nav>
-                        <ul id="links" class="navigation">
-                            <?php if ($userID !== null && $pfpicture !== null) { echo "<li><a href=\"/accountSystem/userinfo/userinfo.php\"><img src=\"./../$pfpicture\" alt=\"Avatar\" class=\"avatar\"><h1>Welcome $username</h1></a></li>"; }; ?>
-                            <li><a href="/index.php">Home</a></li>
-                            <li><a href="/snek-game/accountSystem/userinfo/userinfo.php">Account</a></li>
-                            <li><a href="leaderboards/leadpage.php">Leaderboard</a></li>
-                            <?php
-                            if ($userID !== null) {
-                                echo "<li><form action=\"gamemode.php\" method=\"post\" id=\"logout\"><input type=\"hidden\" name=\"logout\" value=\"Gamemodes\"><a href=\"javascript:{}\" onclick=\"document.getElementById('logout').submit(); return false;\">Logout</a></form></li>";
-                            } else {
-                                echo "<li><a href=\"/snek-game/accountSystem/login/index.php\">Login</a></li>";
-                            }
-                            ?>
-                            <!-- <li><a href="#0">placeholde</a></li>
-                            <li><a href="./../contact.php">Our Team</a></li> -->
-                        </ul>
-                    </nav>
+            <?php include_once('./../common_style/menu.php') ?>
+            <div id="settings">
+                <div class="buttons-mid">
+                    <div class="fill"><h1>Settings</h1></div>
+                    <h2>Set Snake color</h2>
+                    <br>
+                    <img id="snakePreview" src="./styles/snake/snake/tile003.png"></img>
+                    <br>
+                    <input type="range" min="1" max="360" value="180" class="slider" id="snakeColorSlider">
+                    <br>
+                    <button style="width: 10vw; height: 6vh;" id="submit-color-1">Confirm</button>
+                    
                 </div>
-            </div>
-            <div class="buttons show">
+            </div><div class="buttons show">
+            <h1>Gamemodes</h1>
                 <?php
                 if ($userID !== null) {
-                    echo "<div class=\"buttons-mid\"><button id=\"button-multiplayer\">Multiplayer</button></div><div class=\"buttons-mid\"><button id=\"button-singleplayer\">Singleplayer</button></div><div class=\"buttons-mid\"><button id=\"button-speed\">User Speed</button></div>";
+                    echo "<div class=\"buttons-mid\"><button id=\"button-multiplayer\">Multiplayer</button></div><div class=\"buttons-mid\"><button id=\"button-singleplayer\">Singleplayer</button></div><div class=\"buttons-mid\"><button id=\"button-speed\">User Speed</button></div><div class=\"buttons-mid\"><button id=\"button-faster\">Faster!</button></div>";
                 } else {
                     if (!isset($_COOKIE["demo"])) {
                         echo "<div class=\"buttons-mid\"><button id=\"button-singleplayer\">Singleplayer</button></div><div class=\"buttons-mid\"><button id=\"button-login\">Login</button></div>";
@@ -86,11 +51,9 @@
                 ?>
             </div>
         </div>
-    </div>
-    <div class="wrapper-footer">
-
-        <footer>
-        </footer>
+        <div class="wrapper-footer">
+            <?php include_once("./../common_style/footer.php"); ?>
+        </div>
 
     </div>
 

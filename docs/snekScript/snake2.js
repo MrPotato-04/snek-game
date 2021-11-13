@@ -126,6 +126,7 @@ export function draw(gameBoard) {
             } 
         }
         snakeElement.classList.add(snakeBody[index].skin)
+        snakeElement.classList.add('snake-2')
         gameBoard.appendChild(snakeElement)
 
     })
