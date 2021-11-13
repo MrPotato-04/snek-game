@@ -7,7 +7,7 @@ body {
 }
 table{
     margin-top: 20%;
-    border-radius: 25px;
+    font-size: 2em;
 }
 
 table, th{
@@ -21,10 +21,10 @@ table, th{
 }
 td {
     border-right: solid crimson 1px;
-    padding-left:3px;
+   padding-left:3px;
     padding-right: 3px;
     border-radius: 25px;
-
+   ;
 }
 td:last-child {border: 0px}
 tr:hover  {background-color: #d1b308;}

@@ -16,6 +16,8 @@ $username = $_POST['username'];
 $email = $_POST['email'];
 $repass = $_POST['repass'];
 $password = $_POST['password'];
+// sanitize this
+
 
 //user email check
 $userCheck ="SELECT COUNT(*) FROM user WHERE email = '$_POST[email]'";
