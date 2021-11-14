@@ -2,7 +2,7 @@
 import { onSnake as onSnake_1, expandSnake as expandSnake_1, snakeMiss_snake1 } from './snake.js'
 import { onSnake as onSnake_2, expandSnake as expandSnake_2, snakeMiss_snake2 } from './snake2.js'
 
-import { randomGridPosition } from './grid.js'
+import { randomGridPosition, outsideGrid } from './grid.js'
 
 let food = getRandomFoodPosition()
 const EXPANSION_RATE = 1
@@ -47,7 +47,7 @@ function getRandomFoodPosition(){
     }
 
     let newFoodPosition
-    while (newFoodPosition == null || onSnake_1(newFoodPosition) || onSnake_2(newFoodPosition)) {
+    while (newFoodPosition == null || onSnake_1(newFoodPosition) || onSnake_2(newFoodPosition) || outsideGrid(newFoodPosition)) {
         newFoodPosition = randomGridPosition()
     }
     return newFoodPosition

@@ -30,22 +30,22 @@ export function update() {
 
 
     //  checks if snake out of bounds for infinite loop
-    if (snakeBody[0].x === GRID_WIDTH && inputDirection.x === 1) {
-        snakeBody[0].x = 1
-    } else if (snakeBody[0].x === 1 && inputDirection.x === -1) {
-        snakeBody[0].x = GRID_WIDTH
-    } else if (snakeBody[0].y === GRID_HEIGTH && inputDirection.y === 1) {
-        snakeBody[0].y = 1
-    } else if (snakeBody[0].y === 1 && inputDirection.y === -1) {
-        snakeBody[0].y = GRID_HEIGTH
-    }
+    // if (snakeBody[0].x === GRID_WIDTH && inputDirection.x === 1) {
+    //     snakeBody[0].x = 1
+    // } else if (snakeBody[0].x === 1 && inputDirection.x === -1) {
+    //     snakeBody[0].x = GRID_WIDTH
+    // } else if (snakeBody[0].y === GRID_HEIGTH && inputDirection.y === 1) {
+    //     snakeBody[0].y = 1
+    // } else if (snakeBody[0].y === 1 && inputDirection.y === -1) {
+    //     snakeBody[0].y = GRID_HEIGTH
+    // }
     // sets direction of snake
-    else {
+    //else {
         snakeBody[0].x += inputDirection.x
         snakeBody[0].y += inputDirection.y
         // snakeSkinRotation[0].x = inputDirection.x
         // snakeSkinRotation[0].y = inputDirection.y
-    }
+    //}
 
 
 
