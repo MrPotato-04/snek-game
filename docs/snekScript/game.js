@@ -67,7 +67,7 @@ if (getCookie('gamemode') !== null) {
     }, 1000);
 
 
-
+    let framecount = 0
     let lastRenderTime = 0
     let redGameOver = false
     let blueGameOver = false
@@ -144,6 +144,7 @@ if (getCookie('gamemode') !== null) {
 
         //draw new data
         drawBoard(gameBoard)
+        
 
         drawSnake_1(gameBoard)
         if (gamemode === "multi") { drawSnake_2(gameBoard) }

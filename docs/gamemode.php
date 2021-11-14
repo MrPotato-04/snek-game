@@ -26,18 +26,32 @@
             <?php include_once('./../common_style/menu.php') ?>
             <div id="settings">
                 <div class="buttons-mid">
-                    <div class="fill"><h1>Settings</h1></div>
-                    <h2>Set Snake color</h2>
+                    <div class="fill">
+                        <h1>Settings</h1>
+                    </div>
+                    <div class="snakecolor2">
+                        <h2>Set Snake 1 color</h2>
+                        <br>
+                        <img id="snake-1-Preview" src="./styles/snake/snake/tile003.png"></img>
+                        <br>
+                        <input type="range" min="1" max="360" value="180" class="slider" id="snake-1-ColorSlider">
+                        <br>
+                        <button style="width: 10vw; height: 6vh;" id="submit-color-1">Confirm</button>
+                    </div>
                     <br>
-                    <img id="snakePreview" src="./styles/snake/snake/tile003.png"></img>
-                    <br>
-                    <input type="range" min="1" max="360" value="180" class="slider" id="snakeColorSlider">
-                    <br>
-                    <button style="width: 10vw; height: 6vh;" id="submit-color-1">Confirm</button>
-                    
+                    <div class="snakecolor1">
+                        <h2>Set Snake 2 color</h2>
+                        <br>
+                        <img id="snake-2-Preview" src="./styles/snake/snake/tile003.png"></img>
+                        <br>
+                        <input type="range" min="1" max="360" value="180" class="slider" id="snake-2-ColorSlider">
+                        <br>
+                        <button style="width: 10vw; height: 6vh;" id="submit-color-2">Confirm</button>
+                    </div>
                 </div>
-            </div><div class="buttons show">
-            <h1>Gamemodes</h1>
+            </div>
+            <div class="buttons show">
+                <h1>Gamemodes</h1>
                 <?php
                 if ($userID !== null) {
                     echo "<div class=\"buttons-mid\"><button id=\"button-multiplayer\">Multiplayer</button></div><div class=\"buttons-mid\"><button id=\"button-singleplayer\">Singleplayer</button></div><div class=\"buttons-mid\"><button id=\"button-speed\">User Speed</button></div><div class=\"buttons-mid\"><button id=\"button-faster\">Faster!</button></div>";

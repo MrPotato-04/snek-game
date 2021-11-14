@@ -1,6 +1,6 @@
 import { getInputDirection_snake2, getRotation_snake2 } from "./input.js"
 import { GRID_HEIGTH, GRID_WIDTH } from "./grid.js"
-
+import { setSnakeColor } from './snakecolor.js'
 
 export let blueScore = 0;
 
@@ -126,7 +126,7 @@ export function draw(gameBoard) {
             } 
         }
         snakeElement.classList.add(snakeBody[index].skin)
-        snakeElement.classList.add('snake-2')
+        snakeElement.style.filter = setSnakeColor(2)
         gameBoard.appendChild(snakeElement)
 
     })
