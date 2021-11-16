@@ -26,7 +26,7 @@
     while ($row = mysqli_fetch_array($res)) {
         echo " 
         <td>{$ranking}</td>
-        <td>{$row['username']}</td>
+        <td>{$row['username']}#{$row['iduser']}</td>
         <td>{$row['scores']}</td>
         </tr>
 ";
