@@ -16,6 +16,7 @@ $username = $_POST['username'];
 $email = $_POST['email'];
 $repass = $_POST['repass'];
 $password = $_POST['password'];
+$fourDigitRandomNumber = rand(1111,9999);
 // sanitize this
 
 
@@ -55,7 +56,7 @@ if($dataUser[0] >=1) {
 
 //insert into db 
 if(count($_SESSION['errors']) == 0) {
-    $query = "INSERT INTO user (username, email, password) VALUES ('$username', '$email', '$password')";
+    $query = "INSERT INTO user (iduser, username, email, password) VALUES ('$fourDigitRandomNumber', '$username', '$email', '$password')";
     mysqli_query($dbc, $query);
     header("location: newUser.php");
 }

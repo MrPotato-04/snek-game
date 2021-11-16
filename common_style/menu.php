@@ -14,12 +14,7 @@ if ($userID === null) {
 } else {
     // session_start();
     $dbc = require "./../database/db.php";
-    $res_image = $dbc->query("SELECT * FROM  `profile-images` WHERE `user_iduser` = $userID");
-    $image_result = $res_image->fetch_assoc();
-    $pfpicture = $image_result['image'];
-    if ($pfpicture === null) {
-        $pfpicture = "#";
-    };
+
     $res = $dbc->query("SELECT * FROM  `user` WHERE `iduser` = $userID");
     $row = $res->fetch_assoc();
     $username = $row['username'];
@@ -27,6 +22,10 @@ if ($userID === null) {
     $res_scores = $dbc->query("SELECT * FROM  `scores` WHERE `user_iduser` = $userID");
     $row_scores = $res_scores->fetch_assoc();
     $highscore = $row_scores['scores'];
+    $pfpicture = $row['image'];
+    if ($pfpicture === null) {
+        $pfpicture = "#";
+    };
 };
 ?>
 <div class="content">
