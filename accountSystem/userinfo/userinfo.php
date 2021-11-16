@@ -23,11 +23,9 @@
         }
     
         $dbc = require './../../database/db.php';
-        $res = $dbc->query("SELECT iduser, username, email FROM user WHERE iduser='{$userID}'");
+        $res = $dbc->query("SELECT iduser, username, email, `image` FROM user WHERE iduser='{$userID}'");
         $row = $res->fetch_assoc();
-        $resIMG = $dbc->query("SELECT * FROM `profile-images` WHERE user_iduser=$userID");
-        $rowIMG = $resIMG->fetch_assoc();
-        $pfpicture = $rowIMG['image'];
+        $pfpicture = $row['image'];
 
         if (!isset($_COOKIE['userid'])) {
            echo "you can't acces this page without logging in."; 
