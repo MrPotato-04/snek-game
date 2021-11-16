@@ -4,6 +4,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="/snek-game/common_style/fonts.css">
     <link rel="stylesheet" type="text/css" href="./styles/login.css">
+    <script>
+        function mySubmit(obj) {
+            var pwdObj = document.getElementById('password');
+            var hashObj = new jsSHA("SHA-512", "TEXT", {numRounds: 1});
+            hashObj.update(pwdObj.value);
+            var hash = hashObj.getHash("HEX");
+            pwdObj.value = hash;
+            console.log(pwdObj.value)
+        }
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsSHA/2.0.2/sha.js"></script>
 </head>
     <body>
         <form action="login.php" method="POST" enctype="multipart/form">
