@@ -26,7 +26,7 @@
     $folder = "./../../../image/" . $filename;
 
 
-    $res = $dbc->query("SELECT * FROM `profile-images` WHERE `user_iduser` = $userID");
+    $res = $dbc->query("SELECT * FROM `user` WHERE `iduser` = $userID");
     $row = $res->fetch_assoc();
 
     if (!isset($_FILES['picture'])) {
@@ -38,9 +38,9 @@
     //if no errors insert into database
     if ($error == [0]) {
         if ($row['image'] === null) {
-            $query = "INSERT INTO `profile-images` (`user_iduser`, `image`) VALUES ($userID, '$idname')";
+            $query = "INSERT INTO `user` (`image`) VALUES ($userID)";
         } else {
-            $query = "UPDATE `profile-images` SET `image`='image/$filename' WHERE `user_iduser`=$userID";
+            $query = "UPDATE `user` SET `image`='image/$filename' WHERE `iduser`=$userID";
         }
 
         mysqli_query($dbc, $query);
