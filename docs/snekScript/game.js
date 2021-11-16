@@ -134,7 +134,7 @@ if (getCookie('gamemode') !== null) {
     // update data
     function update() {
 
-        //updateSnake_1()
+        updateSnake_1()
         if (gamemode === "multi") { updateSnake_2() }
 
         updateFood()
@@ -151,7 +151,7 @@ if (getCookie('gamemode') !== null) {
         drawBoard(gameBoard)
 
 
-        //drawSnake_1(gameBoard)
+        drawSnake_1(gameBoard)
         if (gamemode === "multi") { drawSnake_2(gameBoard) }
 
         drawFood(gameBoard)
