@@ -12,14 +12,14 @@ import { update as updateFood, draw as drawFood, speed } from './food.js'
 import { GRID_HEIGTH, GRID_WIDTH, outsideGrid } from './grid.js'
 import { draw as drawBoard } from './board.js'
 import { getCookie, setCookie, getElementByID } from './public.js'
-
+import { pauze as menu_pauze } from './burger.js'
 
 let demoOver = getCookie("demo")
+
 
 var gameBoard = getElementByID('game-board')
 var scores = getElementByID('scores')
 var controls = document.getElementById("controls")
-
 if (getCookie('gamemode') !== null) {
 
     //set gamemode var from cookie
@@ -30,6 +30,7 @@ if (getCookie('gamemode') !== null) {
         gameBoard.style.gridTemplateColumns = `repeat(${GRID_WIDTH}, 1fr)`;
         gameBoard.style.gridTemplateRows = `repeat(${GRID_HEIGTH}, 1fr)`;
         console.log(demoOver)
+        
     };
 
 
@@ -39,7 +40,7 @@ if (getCookie('gamemode') !== null) {
         } else {
             controls.innerHTML = `Player 1 = Up,Down,Left,Right`
         }
-    
+
     }
 
 
@@ -48,8 +49,8 @@ if (getCookie('gamemode') !== null) {
     if (window.location.href.indexOf("index") > -1) {
         if (gamemode === "speed") {
             SNAKE_SPEED = prompt('type snake speed')
-        }else {
-            SNAKE_SPEED = 10
+        } else {
+            SNAKE_SPEED = 1
         }
 
     }
@@ -103,7 +104,7 @@ if (getCookie('gamemode') !== null) {
         //cals data update and draw functions
         update()
         draw()
-        if(gamemode === "faster") {
+        if (gamemode === "faster") {
             SNAKE_SPEED = speed
         }
 
@@ -122,14 +123,18 @@ if (getCookie('gamemode') !== null) {
             }
         }
     }
+ //name says it why 2 times i don't know'
+    if(menu_pauze !== true) {
+        window.requestAnimationFrame(main)
 
-    //name says it why 2 times i don't know'
-    window.requestAnimationFrame(main)
+    }
+    
+
 
     // update data
     function update() {
 
-        updateSnake_1()
+        //updateSnake_1()
         if (gamemode === "multi") { updateSnake_2() }
 
         updateFood()
@@ -144,9 +149,9 @@ if (getCookie('gamemode') !== null) {
 
         //draw new data
         drawBoard(gameBoard)
-        
 
-        drawSnake_1(gameBoard)
+
+        //drawSnake_1(gameBoard)
         if (gamemode === "multi") { drawSnake_2(gameBoard) }
 
         drawFood(gameBoard)

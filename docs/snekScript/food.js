@@ -2,7 +2,7 @@
 import { onSnake as onSnake_1, expandSnake as expandSnake_1, snakeMiss_snake1 } from './snake.js'
 import { onSnake as onSnake_2, expandSnake as expandSnake_2, snakeMiss_snake2 } from './snake2.js'
 
-import { randomGridPosition, outsideGrid } from './grid.js'
+import { randomGridPosition, outsideGrid, GRID_HEIGTH } from './grid.js'
 
 let food = getRandomFoodPosition()
 const EXPANSION_RATE = 1
@@ -47,9 +47,16 @@ function getRandomFoodPosition(){
     }
 
     let newFoodPosition
-    while (newFoodPosition == null || onSnake_1(newFoodPosition) || onSnake_2(newFoodPosition) || outsideGrid(newFoodPosition)) {
+    while (newFoodPosition == null || onSnake_1(newFoodPosition) || onSnake_2(newFoodPosition) || outsideGrid(newFoodPosition) || foodInWater(newFoodPosition, newFoodPosition.x * GRID_HEIGTH + newFoodPosition.y)) {
         newFoodPosition = randomGridPosition()
     }
     return newFoodPosition
 }
-
+function foodInWater(foodPos, pos){
+    if (foodPos.x * GRID_HEIGTH + foodPos.y === pos) {
+        let tmp = document.getElementById(pos).className
+        if ( tmp === "water") {
+            return true
+        } else {return false}
+    } else return false
+}

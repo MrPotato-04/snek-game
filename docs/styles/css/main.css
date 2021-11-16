@@ -206,5 +206,33 @@ footer {
     background-repeat: no-repeat, repeat;
     
 }
+.chunkBorder1 {
+    background-image: url('./../Textures/board/TileSet_77.png');
+    background-size: fill;
+    background-repeat: no-repeat, repeat;
+}
+.chunkBorder2 {
+    background-image: url('./../Textures/board/TileSet_73.png');
+    background-size: fill;
+    background-repeat: no-repeat, repeat;
+}
+.chunkBorder3 {
+    background-image: url('./../Textures/board/TileSet_81.png');
+    background-size: fill;
+    background-repeat: no-repeat, repeat;
+}
+.chunkBorder4 {
+    background-image: url('./../Textures/board/TileSet_85.png');
+    background-size: fill;
+    background-repeat: no-repeat, repeat;
+}
+.water {
+    background-image: url('./../Textures/board/TileSet_105.png');
+    background-size: fill;
+    background-repeat: no-repeat, repeat;
+}
 
-
+.chunkBorderTmp {
+    background-color: hsl(50, 100%, 50%);
+    border: .25vmin solid black;
+}

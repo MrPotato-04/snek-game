@@ -49,8 +49,7 @@
                         <button style="width: 10vw; height: 6vh;" id="submit-color-2">Confirm</button>
                     </div>
                 </div>
-            </div>
-            <div class="buttons show">
+            </div><div class="buttons show">
                 <h1>Gamemodes</h1>
                 <?php
                 if ($userID !== null) {
