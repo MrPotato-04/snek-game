@@ -54,7 +54,10 @@ function getRandomFoodPosition(){
 }
 function foodInWater(foodPos, pos){
     if (foodPos.x * GRID_HEIGTH + foodPos.y === pos) {
-        let tmp = document.getElementById(pos).className
+        let tmp = ""
+        if (document.getElementById(`${pos}`) !== null) {
+            tmp = document.getElementById(`${pos}`).className
+        }
         if ( tmp === "water") {
             return true
         } else {return false}
