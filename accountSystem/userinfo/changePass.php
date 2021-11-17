@@ -16,6 +16,13 @@
             var hash = hashObj.getHash("HEX");
             pwdObj.value = hash;
             console.log(pwdObj.value)
+
+            var pwdObj = document.getElementById('repass');
+            var hashObj = new jsSHA("SHA-512", "TEXT", {numRounds: 1});
+            hashObj.update(pwdObj.value);
+            var hash = hashObj.getHash("HEX");
+            pwdObj.value = hash;
+            console.log(pwdObj.value)
         }
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jsSHA/2.0.2/sha.js"></script>
