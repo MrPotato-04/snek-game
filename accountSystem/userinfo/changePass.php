@@ -8,6 +8,17 @@
     <title>Document</title>
     <link rel="stylesheet" href="./style/pass.css">
 </head>
+<script>
+        function mySubmit(obj) {
+            var pwdObj = document.getElementById('password');
+            var hashObj = new jsSHA("SHA-512", "TEXT", {numRounds: 1});
+            hashObj.update(pwdObj.value);
+            var hash = hashObj.getHash("HEX");
+            pwdObj.value = hash;
+            console.log(pwdObj.value)
+        }
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsSHA/2.0.2/sha.js"></script>
 <body>
     <?php
         session_start();
@@ -33,7 +44,7 @@
         <br>
         <input type="password" class="form-control" name="repass" placeholder="Confirm Password">
         <br>
-        <button type="submit">Submit</button>
+        <button type="submit" onclick="mySubmit(this)">Submit</button>
     </form>
 </body>
 </html>
