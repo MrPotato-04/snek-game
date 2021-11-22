@@ -1,4 +1,4 @@
-<div id="header" class="header">
+
     <div class="inner_header">
         <!-- <div>
             <svg width="350" height="70" viewBox="50% 50% 350 80" class="logo">
@@ -49,4 +49,3 @@
             <span class="burger"></span>
         </button>
     </div>
-</div>

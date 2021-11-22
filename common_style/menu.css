@@ -107,7 +107,6 @@
   right: 50px;
   cursor: pointer;
   z-index: 9999;
-  box-shadow: none;
 }
 .hamburger .burger {
   transition: all 0.3s;

@@ -8,7 +8,7 @@ var waterArray = [0]
 for (let j = 1; j <= GRID_WIDTH; j++) {
     for (let i = 1; i <= (GRID_HEIGTH); i++) {
         var RandomNumber1 = Math.floor(Math.random() * 4) + 1;
-        var waterChance = Math.floor(Math.random() * 30) + 1;
+        var waterChance = Math.floor(Math.random() * 15) + 1;
         if (i === GRID_HEIGTH || i === 1 || j === GRID_WIDTH || j === 1) { chunkNr.push(0); waterArray.push(" ") }
         else { chunkNr.push(RandomNumber1); waterArray.push(waterChance) }
 
@@ -24,37 +24,19 @@ export function draw(gameBoard) {
             chunk.style.gridRowStart = y + 1
             chunk.style.gridColumnStart = x + 1
             chunk.id = x * GRID_HEIGTH + y
-            if (y === 0 || y === GRID_HEIGTH - 1 ) {
-                // if (y === GRID_HEIGTH || y === 0) {
-                    if(y === 0 && x === 0) {
-                        chunk.classList.add(`chunkBorder4`)
-                    }else if (y === 0) {
-                        chunk.classList.add(`chunkBorder4`)
-                    } else {
-                        chunk.classList.add(`chunkBorder1`)
-                    }
-               // }
-                }else if(x === 0 || x === GRID_WIDTH - 1) {
-                    if (x === 0) {
-                        chunk.classList.add(`chunkBorder3`)
-                    } else {
-                        chunk.classList.add(`chunkBorder2`)
-                    }
+            if (waterArray[index] === 3) {
+                chunk.classList.add(`water`)
             } else {
-                if (waterArray[index] === 3) {
-                    chunk.classList.add(`water2`)
-                } else {
-                    chunk.classList.add(`chunk${chunkNr[index]}`)
-                }
+                chunk.classList.add(`chunk${chunkNr[index]}`)
             }
-
-
+            
+            //}
             gameBoard.appendChild(chunk)
             index++
         }
-        //if (x === GRID_WIDTH) {
-            //index = 1
-        //}
+        if (x === GRID_WIDTH) {
+            index = 1
+        }
     }
 }
 function createRandObject() {
@@ -69,28 +51,17 @@ function getDistance(x1, y1, x2, y2) {
     return Math.sqrt(x * x + y * y);
 }
 
-export function inWater(pos) {
-    //console.log(objectPos.x * GRID_HEIGTH + objectPos.y)
-
-    let tmp = ""
-    let tmpPos = (pos.x - 1) * GRID_HEIGTH + (pos.y - 1)
-    if (document.getElementById(`${tmpPos}`) !== null) {
-        tmp = document.getElementById(`${tmpPos}`).className
-    }
-    if (tmp === "water" || tmp === "water2") {
-        return true
-    } else { return false }
-}
-
-
-function getX(index) {
-    return Math.floor(index / GRID_HEIGTH) + 1
-}
-function getY(index) {
-    return index % GRID_HEIGTH + 1
-}
 
 
 
+// if (i === 1 || i === GRID_HEIGTH) {
+            //     if (i === GRID_HEIGTH || i === 1) {
+            //         if (i === 1) {
+            //             chunk.classList.add(`chunkBorder4`)
+            //         } else {
+            //             chunk.classList.add(`chunkBorder1`)
+            //         }
+            //     }
+            // } else if (1 === 2 + 1) {
 
-
+            // }else {

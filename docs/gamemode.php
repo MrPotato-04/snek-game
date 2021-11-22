@@ -19,24 +19,11 @@
 <body>
 
     <div id="wrapper">
-        
+        <div id="header" class="header">
             <?php require_once("./../common_style/header.php") ?>
+        </div>
         <div class="main_content">
             <?php include_once('./../common_style/menu.php') ?>
-            <div class="buttons show">
-                <h1>Gamemodes</h1>
-                <?php
-                if ($userID !== null) {
-                    echo "<div class=\"buttons-mid\"><button id=\"button-multiplayer\">Multiplayer</button></div><div class=\"buttons-mid\"><button id=\"button-singleplayer\">Singleplayer</button></div><div class=\"buttons-mid\"><button id=\"button-speed\">User Speed</button></div><div class=\"buttons-mid\"><button id=\"button-faster\">Faster!</button></div>";
-                } else {
-                    if (!isset($_COOKIE["demo"])) {
-                        echo "<div class=\"buttons-mid\"><button id=\"button-singleplayer\">Singleplayer</button></div><div class=\"buttons-mid\"><button id=\"button-login\">Login</button></div>";
-                    } else {
-                        echo "<div class=\"buttons-mid\"><button id=\"button-login\">Login</button></div>";
-                    }
-                }
-                ?>
-            </div>
             <div id="settings">
                 <div class="buttons-mid">
                     <div class="fill">
@@ -62,9 +49,21 @@
                         <button style="width: 10vw; height: 6vh;" id="submit-color-2">Confirm</button>
                     </div>
                 </div>
+            </div><div class="buttons show">
+                <h1>Gamemodes</h1>
+                <?php
+                if ($userID !== null) {
+                    echo "<div class=\"buttons-mid\"><button id=\"button-multiplayer\">Multiplayer</button></div><div class=\"buttons-mid\"><button id=\"button-singleplayer\">Singleplayer</button></div><div class=\"buttons-mid\"><button id=\"button-speed\">User Speed</button></div><div class=\"buttons-mid\"><button id=\"button-faster\">Faster!</button></div>";
+                } else {
+                    if (!isset($_COOKIE["demo"])) {
+                        echo "<div class=\"buttons-mid\"><button id=\"button-singleplayer\">Singleplayer</button></div><div class=\"buttons-mid\"><button id=\"button-login\">Login</button></div>";
+                    } else {
+                        echo "<div class=\"buttons-mid\"><button id=\"button-login\">Login</button></div>";
+                    }
+                }
+                ?>
             </div>
         </div>
-
         <div class="wrapper-footer">
             <?php include_once("./../common_style/footer.php"); ?>
         </div>

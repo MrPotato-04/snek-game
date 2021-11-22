@@ -14,7 +14,6 @@
     <link rel="stylesheet" href="./../common_style/menu.css?v=1">
     <script src="snekScript/game.js?v=1" defer type="module"></script>
     <script src="snekScript/burger.js?v=1" defer type="module"></script>
-    <link rel="stylesheet" href="/snek-game/common_style/header.css"
     
     </script>
 
@@ -22,9 +21,9 @@
 
 <body>
     <div id="wrapper">
-
+        <div class="header" id="header">
         <?php require_once("./../common_style/header.php") ?>
-        
+        </div>
         <div class="wrapper2">
             <?php include_once('./../common_style/menu.php') ?>
             <div id="game-board" class="game-board"></div>

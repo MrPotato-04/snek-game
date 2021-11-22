@@ -1,17 +1,18 @@
 import {
     update as updateSnake_1, draw as drawSnake_1, redScore,
-    getSnakeHead as getSnakeHead_1, snakeIntersection as snakeIntersection_1, onSnake as onSnake_1
+    getSnakeHead as getSnakeHead_1, snakeIntersection as snakeIntersection_1
 } from './snake.js'
 
 import {
     update as updateSnake_2, draw as drawSnake_2, blueScore,
-    getSnakeHead as getSnakeHead_2, snakeIntersection as snakeIntersection_2, onSnake as onSnake_2
+    getSnakeHead as getSnakeHead_2, snakeIntersection as snakeIntersection_2
 } from './snake2.js'
 
 import { update as updateFood, draw as drawFood, speed } from './food.js'
 import { GRID_HEIGTH, GRID_WIDTH, outsideGrid } from './grid.js'
-import { draw as drawBoard, inWater } from './board.js'
+import { draw as drawBoard } from './board.js'
 import { getCookie, setCookie, getElementByID } from './public.js'
+import { pauze as menu_pauze } from './burger.js'
 
 let demoOver = getCookie("demo")
 
@@ -29,7 +30,7 @@ if (getCookie('gamemode') !== null) {
         gameBoard.style.gridTemplateColumns = `repeat(${GRID_WIDTH}, 1fr)`;
         gameBoard.style.gridTemplateRows = `repeat(${GRID_HEIGTH}, 1fr)`;
         console.log(demoOver)
-
+        
     };
 
 
@@ -49,7 +50,7 @@ if (getCookie('gamemode') !== null) {
         if (gamemode === "speed") {
             SNAKE_SPEED = prompt('type snake speed')
         } else {
-            SNAKE_SPEED = 2
+            SNAKE_SPEED = 1
         }
 
     }
@@ -71,18 +72,13 @@ if (getCookie('gamemode') !== null) {
     let lastRenderTime = 0
     let redGameOver = false
     let blueGameOver = false
-    let pauze = false
+
 
     function main(currentTime) {
-
-        $(".hamburger,nav").on("click",function () {
-            pauze = !pauze;
-            console.log("sss")
-        });
         { //check if a snake is dead
             if (redGameOver) {
                 setCookie("highscore", redScore, "1");
-                if (confirm('Player 1 lost! press ok to restart')) {
+                if (confirm('Red lost! press ok to restart')) {
                     window.location = 'highscore.php'
                 } else {
                     window.location = 'highscore.php'
@@ -91,7 +87,7 @@ if (getCookie('gamemode') !== null) {
             }
             if (blueGameOver) {
                 setCookie("highscore", blueScore, "1");
-                if (confirm('Player 2 lost! press ok to restart')) {
+                if (confirm('Blue lost! press ok to restart')) {
                     window.location = 'highscore.php'
                 } else {
                     window.location = 'highscore.php'
@@ -99,11 +95,10 @@ if (getCookie('gamemode') !== null) {
                 return
             }
         }
-        console.log(pauze)
         //dont touch this is part of rendering function
         window.requestAnimationFrame(main)
         const secondsSinceLastRender = (currentTime - lastRenderTime) / 1000
-        if (secondsSinceLastRender < 1 / SNAKE_SPEED || pauze === true) return
+        if (secondsSinceLastRender < 1 / SNAKE_SPEED) return
         lastRenderTime = currentTime
 
         //cals data update and draw functions
@@ -113,6 +108,7 @@ if (getCookie('gamemode') !== null) {
             SNAKE_SPEED = speed
         }
 
+        console.log(SNAKE_SPEED)
         let userid = getCookie('userid')
         if (userid === null) {
             if (timeleft === 0) {
@@ -127,9 +123,12 @@ if (getCookie('gamemode') !== null) {
             }
         }
     }
-    //name says it why 2 times i don't know'
+ //name says it why 2 times i don't know'
+    if(menu_pauze !== true) {
         window.requestAnimationFrame(main)
 
+    }
+    
 
 
     // update data
@@ -159,8 +158,9 @@ if (getCookie('gamemode') !== null) {
     }
 
     function checkDeath() {
-        redGameOver = outsideGrid(getSnakeHead_1()) || snakeIntersection_1() || inWater(getSnakeHead_1()) || (onSnake_1(getSnakeHead_2()))
-        blueGameOver = outsideGrid(getSnakeHead_2()) || snakeIntersection_2() || inWater(getSnakeHead_2()) || onSnake_2(getSnakeHead_1())
+
+        redGameOver = outsideGrid(getSnakeHead_1()) || snakeIntersection_1()
+        blueGameOver = outsideGrid(getSnakeHead_2()) || snakeIntersection_2()
     }
 
     function updateScores(score1, score2) {
@@ -189,12 +189,3 @@ function setScore(score1, score2) {
     if (score1 < score2) return score2
     if (score2 < score1) return score1
 }
-// function inWater(snakeNr) {
-//     let dir = ['up','down','right', 'left']
-//     for(let i = 0; i <= 4; i++) {
-//         if 
-//         let snakeHead = document.getElementById(`snake_${snakeNr}_head_${dir[i]}`)
-//     }
-//         let headX = snakeHead.style.gridColumnStart
-//     console.log(headX)
-// }
