@@ -19,7 +19,7 @@
     //form validation errors
     if(!$row['email'] || !$row['password']) {
         $_SESSION['errors'] = 'Email or password is invalid';
-        header("location: ./login");
+        header("location: index.php");
         exit();
     }
 
