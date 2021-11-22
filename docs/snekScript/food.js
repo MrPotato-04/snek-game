@@ -53,3 +53,5 @@ function getRandomFoodPosition(){
     }
     return newFoodPosition
 }
+
+
