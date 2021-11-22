@@ -14,14 +14,6 @@
             console.log(pwdObj.value)
         }
     </script>
-    <?php
-    session_start();
-    if(isset($_SESSION['errors'])){
-        $error_output = $_SESSION['errors'];
-        echo $error_output;
-        unset ($_SESSION['errors']);
-    }
-    ?>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jsSHA/2.0.2/sha.js"></script>
 </head>
     <body>
