@@ -38,7 +38,7 @@
     //if no errors insert into database
     if ($error == [0]) {
         if ($row['image'] === null) {
-            $query = "INSERT INTO `user` (`image`) WHERE iduser = $userID VALUES ('image/$filename')";
+            $query = "INSERT INTO `user` (`image`) WHERE iduser = $userID VALUES ('/snek-game/image/$filename')";
         } else {
             $query = "UPDATE `user` SET `image`='image/$filename' WHERE `iduser`=$userID";
         }
