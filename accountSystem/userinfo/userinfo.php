@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="./style/userinfo.css">
     <link rel="stylesheet" href="/snek-game/common_style/header.css">
     <link rel="stylesheet" href="/snek-game/common_style/menu.css">
+    <script src="/snek-game/docs/snekScript/burger.js"></script>
 </head>
 
 <body>
