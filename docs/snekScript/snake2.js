@@ -1,7 +1,7 @@
 import { getInputDirection_snake2, getRotation_snake2 } from "./input.js"
 import { GRID_HEIGTH, GRID_WIDTH } from "./grid.js"
 import { setSnakeColor } from './snakecolor.js'
-
+import { onPortal } from './board.js'
 export let blueScore = 0;
 
 
