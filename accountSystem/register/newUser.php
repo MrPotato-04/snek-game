@@ -6,7 +6,7 @@
     <link rel="stylesheet" type="text/css" href="/snek-game/common_style/fonts.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/newUserStyle.css">
-    <title>Document</title>
+    <title>Welcome</title>
 </head>
 <body>
 <div class="container">

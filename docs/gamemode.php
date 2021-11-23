@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>snekgame</title>
+    <title>Snek on Crack</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="/snek-game/node_modules/jquery/dist/jquery.min.js?v=1"></script>
     <link rel="stylesheet" href="./styles/css/gamemode.css?v=1">
