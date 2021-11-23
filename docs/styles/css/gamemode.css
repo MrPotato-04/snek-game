@@ -58,13 +58,11 @@
     opacity: 0;
     height: 85vh;
     width: 45vw;
-    border-right: 2.5px solid black;
     border-left: 2.5px solid black;
 }
 #settings {
     min-width: 45vw;
     min-height: 85vh;
-    border-left: 2.5px solid black;
     border-right: 2.5px solid black;
     font-size: unset;
 }
@@ -74,7 +72,7 @@
 }
 
 .buttons-mid {
-    top: 20%;
+    top: 30%;
     min-height: 10%;
     margin: 0;
     position: relative;
@@ -165,11 +163,4 @@ footer {
     width: 100%;
     background-color: #000000;
 
-}
-.loginAlert {
-    z-index: 9000;
-    display: inline-block;
-    position: relative;
-    top: 45%;
-    margin: 0 auto;
 }

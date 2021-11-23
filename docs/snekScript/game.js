@@ -49,7 +49,7 @@ if (getCookie('gamemode') !== null) {
         if (gamemode === "speed") {
             SNAKE_SPEED = prompt('type snake speed')
         } else {
-            SNAKE_SPEED = 8
+            SNAKE_SPEED = 2
         }
 
     }
@@ -75,12 +75,9 @@ if (getCookie('gamemode') !== null) {
 
     function main(currentTime) {
 
-        $(".hamburger,nav").unbind().on("click",function () {
+        $(".hamburger,nav").on("click",function () {
             pauze = !pauze;
-            $(".hamburger").addClass("focus");
-            $(".content").toggleClass("show");
-            $(".buttons").toggleClass("show")
-            $(".buttons").toggleClass("hide")
+            console.log("sss")
         });
         { //check if a snake is dead
             if (redGameOver) {
@@ -102,15 +99,11 @@ if (getCookie('gamemode') !== null) {
                 return
             }
         }
-
+        console.log(pauze)
         //dont touch this is part of rendering function
         window.requestAnimationFrame(main)
         const secondsSinceLastRender = (currentTime - lastRenderTime) / 1000
-
-        //check if game is pauzed
-        if(pauze) return
-
-        if (secondsSinceLastRender < 1 / SNAKE_SPEED) return
+        if (secondsSinceLastRender < 1 / SNAKE_SPEED || pauze === true) return
         lastRenderTime = currentTime
 
         //cals data update and draw functions
@@ -166,8 +159,8 @@ if (getCookie('gamemode') !== null) {
     }
 
     function checkDeath() {
-        redGameOver = /*outsideGrid(getSnakeHead_1()) ||*/ snakeIntersection_1() || inWater(getSnakeHead_1()) || (onSnake_1(getSnakeHead_2()))
-        blueGameOver = /*outsideGrid(getSnakeHead_2()) ||*/ snakeIntersection_2() || inWater(getSnakeHead_2()) || onSnake_2(getSnakeHead_1())
+        redGameOver = outsideGrid(getSnakeHead_1()) || snakeIntersection_1() || inWater(getSnakeHead_1()) || (onSnake_1(getSnakeHead_2()))
+        blueGameOver = outsideGrid(getSnakeHead_2()) || snakeIntersection_2() || inWater(getSnakeHead_2()) || onSnake_2(getSnakeHead_1())
     }
 
     function updateScores(score1, score2) {
