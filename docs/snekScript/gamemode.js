@@ -10,6 +10,7 @@ if (logged_in === null) {
     // gamemode = "single"
     // setCookie("gamemode", gamemode, 0.01)
     $(document).ready(function(){
+        
         alert("you are not logged in you have 5 min to play")
     })
 }
