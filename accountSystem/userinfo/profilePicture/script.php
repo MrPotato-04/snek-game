@@ -49,7 +49,7 @@
         
         if (move_uploaded_file($tempname, "$folder")) {
             $msg = "Image uploaded successfully";
-            header("location: ./../userinfo.php");
+            //header("location: ./../userinfo.php");
         } else {
             $msg = "Failed to upload image";
         }
