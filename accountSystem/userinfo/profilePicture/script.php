@@ -37,7 +37,7 @@
 
     //if no errors insert into database
     if ($error == [0]) {
-        $query = "UPDATE `user` SET `image`='/snek-game/image/$filename' WHERE `iduser`=$userID";
+        $query = "UPDATE `user` SET `image`='image/$filename' WHERE `iduser`=$userID";
 
         $q=mysqli_query($dbc, $query);
         if(!$q){echo mysqli_error($dbc);}
