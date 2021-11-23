@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Info</title>
+    <title>Profile</title>
     <link rel="stylesheet" href="./style/userinfo.css">
     <link rel="stylesheet" href="/snek-game/common_style/header.css">
     <link rel="stylesheet" href="/snek-game/common_style/menu.css">

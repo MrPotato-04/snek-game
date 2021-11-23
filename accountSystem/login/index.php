@@ -4,6 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="/snek-game/common_style/fonts.css">
     <link rel="stylesheet" type="text/css" href="./styles/login.css">
+    <title>Sign In</title>
     <script>
         function mySubmit(obj) {
             var pwdObj = document.getElementById('password');
