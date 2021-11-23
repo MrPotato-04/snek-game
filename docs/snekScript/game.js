@@ -49,7 +49,7 @@ if (getCookie('gamemode') !== null) {
         if (gamemode === "speed") {
             SNAKE_SPEED = prompt('type snake speed')
         } else {
-            SNAKE_SPEED = 1
+            SNAKE_SPEED = 6
         }
 
     }
@@ -75,7 +75,11 @@ if (getCookie('gamemode') !== null) {
 
     function main(currentTime) {
 
-        $(".hamburger,nav").on("click",function () {
+        $(".hamburger,nav").unbind().on("click",function () {
+            $(".hamburger").addClass("focus");
+            $(".content").toggleClass("show");
+            $(".buttons").toggleClass("show")
+            $(".buttons").toggleClass("hide")
             pauze = !pauze;
             console.log("sss")
         });
@@ -103,6 +107,9 @@ if (getCookie('gamemode') !== null) {
         //dont touch this is part of rendering function
         window.requestAnimationFrame(main)
         const secondsSinceLastRender = (currentTime - lastRenderTime) / 1000
+
+        if(pauze) return
+
         if (secondsSinceLastRender < 1 / SNAKE_SPEED || pauze === true) return
         lastRenderTime = currentTime
 
