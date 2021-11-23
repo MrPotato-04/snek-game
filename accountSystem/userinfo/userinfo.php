@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <script src="/snek-game/node_modules/jquery/dist/jquery.js"></script>
     <link rel="stylesheet" type="text/css" href="/common_style/fonts.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
