@@ -59,10 +59,12 @@
     height: 85vh;
     width: 45vw;
     border-left: 2.5px solid black;
+    border-right: 2.5px solid black;
 }
 #settings {
     min-width: 45vw;
     min-height: 85vh;
+    border-left: 2.5px solid black;
     border-right: 2.5px solid black;
     font-size: unset;
 }

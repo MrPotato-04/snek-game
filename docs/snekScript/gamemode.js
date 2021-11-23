@@ -43,6 +43,9 @@ if (logged_in !== null) {
         window.location = '/snek-game/accountSystem/login/index.php '
     }
 }
+getElementByID("start").addEventListener("click", function () {
+    window.location = 'index.php '
+})
 
 
 

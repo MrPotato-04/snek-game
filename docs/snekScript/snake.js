@@ -18,10 +18,10 @@ if (gamemode === "multi") {
 
 const snakeBody = [
     { x: Math.floor(GRID_WIDTH / startPos), y: Math.floor(GRID_HEIGTH / 2), skin: "snake_1", rot: 0 },
-    { x: Math.floor(GRID_WIDTH / startPos), y: (Math.floor(GRID_HEIGTH / 2) - 1), skin: "snake_1", rot: 0 }
+    { x: Math.floor(GRID_WIDTH / startPos), y: (Math.floor(GRID_HEIGTH / 2) + 1), skin: "snake_1", rot: 0 }
 ]
 
-let newSegments = 3
+let newSegments = 1
 let missCounter = 0
 
 export function update() {

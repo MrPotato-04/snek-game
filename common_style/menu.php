@@ -13,9 +13,9 @@ if ($userID === null) {
     $pfpicture = "#";
 } else {
     // session_start();
-    if (!isset($dbc)) {
-        $dbc = require "./../database/db.php";
-    } 
+    if(!isset($dbc)) {$dbc = require "./../database/db.php";    }
+    
+
     $res = $dbc->query("SELECT * FROM  `user` WHERE `iduser` = $userID");
     $row = $res->fetch_assoc();
     $username = $row['username'];

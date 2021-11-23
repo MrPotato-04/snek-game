@@ -49,7 +49,7 @@ if (getCookie('gamemode') !== null) {
         if (gamemode === "speed") {
             SNAKE_SPEED = prompt('type snake speed')
         } else {
-            SNAKE_SPEED = 2
+            SNAKE_SPEED = 7
         }
 
     }
