@@ -47,9 +47,9 @@
     ?>
     <form action="passScript.php" method="post" enctype="multipart/form-data">
     <h2>New Password</h2>
-        <input type="password" class="form-control" name="password" placeholder="New Password">
+        <input type="password" class="form-control" id="password" name="password" placeholder="New Password">
         <br>
-        <input type="password" class="form-control" name="repass" placeholder="Confirm Password">
+        <input type="password" class="form-control" id="repass" name="repass" placeholder="Confirm Password">
         <br>
         <button type="submit" onclick="mySubmit(this)">Submit</button>
     </form>
