@@ -5,9 +5,10 @@ if (isset($_COOKIE['userid'])) {
 }
 if (isset($_POST["logout"])) {
     unset($_COOKIE['userid']);
-    setcookie('userid', null, -1, "/");
-    header("Location: index.php");
+    //setcookie('userid', null, -1, "/");
+    exit(header("Location: gamemode.php"));
 }
+
 if ($userID === null) {
     //do nothing
     $pfpicture = "#";
@@ -23,17 +24,16 @@ if ($userID === null) {
     $row_scores = $res_scores->fetch_assoc();
     $highscore = $row_scores['scores'];
     $pfpicture = $row['image'];
-    if($pfpicture !== null) {
-        $image = "<img src=\"./../".$pfpicture."\" alt=\"Avatar\"class=\"avatar\">";
-     } else {
-         $image = null;
-        };
+    if ($pfpicture !== null) {
+        $image = "<img src=\"./../" . $pfpicture . "\" alt=\"Avatar\"class=\"avatar\">";
+    } else {
+        $image = null;
+    };
     // if ($pfpicture === null) {
     //     $pfpicture = "#";
     // };
 };
-?>
-<div class="content">
+?><div class="content">
     <div class="flex">
         <nav>
             <ul id="links" class="navigation">
@@ -44,7 +44,7 @@ if ($userID === null) {
                 <li><a href="leaderboards/leadpage.php">Leaderboard</a></li>
                 <?php
                 if ($userID !== null) {
-                    echo "<li><form action=\"gamemode.php\" method=\"post\" id=\"logout\"><input type=\"hidden\" name=\"logout\" value=\"Gamemodes\"><a href=\"javascript:{}\" onclick=\"document.getElementById('logout').submit(); return false;\">Logout</a></form></li>";
+                    echo "<li><a id=\"logout\">Logout</a></li>";
                 } else {
                     echo "<li><a href=\"/snek-game/accountSystem/login/index.php\">Login</a></li>";
                 }
