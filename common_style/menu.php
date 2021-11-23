@@ -14,10 +14,10 @@ if ($userID === null) {
     $pfpicture = "#";
 } else {
     // session_start();
-    if ($dbc !== null) {
-
-    } else {
+    if (!isset($dbc)) {
         $dbc = require "./../database/db.php";
+    } else {
+
     };
     
 
