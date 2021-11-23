@@ -43,6 +43,7 @@
             </svg>
         </div> -->
         <h3>Snek on crack</h3>
+        <div id="sneklogo"> <img src="sneklogo.png" alt="sneklogo" width="80px" height="80px"></div>
         <button id="hamburger" class="hamburger">
             <span class="burger"></span>
             <span class="burger"></span>
