@@ -8,9 +8,10 @@ export let blueScore = 0;
 var startPos = 3
 
 
-const snakeBody = [{ x: Math.floor(GRID_WIDTH / startPos) * 2, y: Math.floor(GRID_HEIGTH / 2), skin: "snake_2", rot: 0 }]
+const snakeBody = [{ x: Math.floor(GRID_WIDTH / startPos) * 2, y: Math.floor(GRID_HEIGTH / 2), skin: "snake_2", rot: 0 },
+{ x: Math.floor(GRID_WIDTH / startPos) * 2, y: Math.floor(GRID_HEIGTH / 2 + 1), skin: "snake_2", rot: 0 }]
 
-let newSegments = 3
+let newSegments = 1
 let missCounter = 0
 
 export function update() {

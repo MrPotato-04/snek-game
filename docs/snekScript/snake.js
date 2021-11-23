@@ -2,7 +2,7 @@ import { getInputDirection_snake1, getRotation_snake1 } from "./input.js"
 import { GRID_HEIGTH, GRID_WIDTH } from "./grid.js"
 import { getCookie } from "./public.js"
 import { setSnakeColor } from './snakecolor.js'
-
+import { onPortal } from './board.js'
 let gamemode = getCookie("gamemode")
 
 export var redScore = 0;
@@ -25,31 +25,26 @@ let newSegments = 1
 let missCounter = 0
 
 export function update() {
+    let randomTeleport = Math.floor(Math.random() * GRID_WIDTH - 1) + 1;
     addSegments()
     const inputDirection = getInputDirection_snake1()
     for (let i = snakeBody.length - 2; i >= 0; i--) {
         snakeBody[i + 1] = { ...snakeBody[i] }
         // snakeSkinRotation[i + 1] = { ...snakeSkinRotation[i] }
     }
-
-
-    //  checks if snake out of bounds for infinite loop
-    // if (snakeBody[0].x === GRID_WIDTH && inputDirection.x === 1) {
-    //     snakeBody[0].x = 1
-    // } else if (snakeBody[0].x === 1 && inputDirection.x === -1) {
-    //     snakeBody[0].x = GRID_WIDTH
-    // } else if (snakeBody[0].y === GRID_HEIGTH && inputDirection.y === 1) {
-    //     snakeBody[0].y = 1
-    // } else if (snakeBody[0].y === 1 && inputDirection.y === -1) {
-    //     snakeBody[0].y = GRID_HEIGTH
-    // }
-    // sets direction of snake
-    //else {
+    //checks if snake out of bounds for infinite loop
+    if (onPortal(snakeBody[0])) {
+        snakeBody[0].x = randomTeleport
+        snakeBody[0].y = GRID_HEIGTH - 1
+    }
+    
+    //sets direction of snake
+    else {
         snakeBody[0].x += inputDirection.x
         snakeBody[0].y += inputDirection.y
         // snakeSkinRotation[0].x = inputDirection.x
         // snakeSkinRotation[0].y = inputDirection.y
-    //}
+    }
 
 
 

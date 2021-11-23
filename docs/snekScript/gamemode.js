@@ -51,7 +51,6 @@ getElementByID("start").addEventListener("click", function () {
 
 function setGamemode(game) {
     setCookie("gamemode", game, 0)
-    window.location = '/snek-game/docs/index.php'
 }
 
 
