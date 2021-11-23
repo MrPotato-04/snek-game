@@ -6,7 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Snek on Crack</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="/snek-game/node_modules/jquery/dist/jquery.min.js?v=1"></script>
+
+    <script src="/snek-game/node_modules/jquery/dist/jquery.js?v=1  "></script>
     <link rel="stylesheet" href="./styles/css/gamemode.css?v=1">
     <link rel="stylesheet" href="./../common_style/menu.css?v=1">
     <link rel="stylesheet" type="text/css" href="/snek-game/common_style/fonts.css?v=1">
@@ -31,6 +32,7 @@
                 } else {
                     if (!isset($_COOKIE["demo"])) {
                         echo "<div class=\"buttons-mid\"><button id=\"button-singleplayer\">Singleplayer</button></div><div class=\"buttons-mid\"><button id=\"button-login\">Login</button></div>";
+
                     } else {
                         echo "<div class=\"buttons-mid\"><button id=\"button-login\">Login</button></div>";
                     }
