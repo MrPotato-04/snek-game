@@ -2,16 +2,17 @@
 <html lang="en">
 
 <head>
-    <script src="/snek-game/node_modules/jquery/dist/jquery.js"></script>
+    
     <link rel="stylesheet" type="text/css" href="/common_style/fonts.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile</title>
+    <script src="/snek-game/node_modules/jquery/dist/jquery.min.js"></script>
     <link rel="stylesheet" href="./style/userinfo.css">
     <link rel="stylesheet" href="/snek-game/common_style/header.css">
     <link rel="stylesheet" href="/snek-game/common_style/menu.css">
-    <script src="/snek-game/docs/snekScript/burger.js"></script>
+    <script src="/snek-game/docs/snekScript/burger.js" defer type="module"></script>
 </head>
 
 <body>
@@ -43,6 +44,7 @@
     ?>
         <?php
         include_once './../../common_style/header.php';
+        include_once './../../common_style/menu.php';
         ?>
         <form action="userscript.php" method="post">
             <h2>Profile</h2>
