@@ -199,6 +199,30 @@ footer {
     background-size: fill;
     background-repeat: no-repeat, repeat;
 }
+
+.chunkCorner1 {
+    background-image: url('./../Textures/board/TileSet_61.png');
+    background-size: fill;
+    background-repeat: no-repeat, repeat;
+}
+.chunkCorner2 {
+    background-image: url('./../Textures/board/TileSet_65.png');
+    background-size: fill;
+    background-repeat: no-repeat, repeat;
+}
+.chunkCorner3 {
+    background-image: url('./../Textures/board/TileSet_59.png');
+    background-size: fill;
+    background-repeat: no-repeat, repeat;
+}
+.chunkCorner4 {
+    background-image: url('./../Textures/board/TileSet_58.png');
+    background-size: fill;
+    background-repeat: no-repeat, repeat;
+}
+
+
+
 .water {
     background-image: url('./../Textures/board/TileSet_105.png');
     background-size: fill;
@@ -210,7 +234,10 @@ footer {
     background-repeat: no-repeat, repeat;
 }
 
-.chunkBorderTmp {
-    background-color: hsl(50, 100%, 50%);
-    border: .25vmin solid black;
+.portal {
+    background-image: url('./../Warp_Pipe_down.png'), url('./../Textures/board/TileSet_85.png');
+    background-size: fill;
+    background-repeat: no-repeat, repeat;
+    transform: rotate(180deg), rotate(0deg);
+    z-index: 2;
 }

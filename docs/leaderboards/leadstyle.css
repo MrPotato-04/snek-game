@@ -1,10 +1,12 @@
 body {
+    text-align: center;
     min-height: 450px;
     height: 100vh;
     margin: 0;
     background-color: darkslateblue;
     color: white;
     font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
 }
 
 table {

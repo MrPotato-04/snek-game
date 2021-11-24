@@ -37,13 +37,12 @@
 
     //if no errors insert into database
     if ($error == [0]) {
-        if ($row['image'] === null) {
-            $query = "INSERT INTO `user` (`image`) VALUES ($userID)";
-        } else {
-            $query = "UPDATE `user` SET `image`='image/$filename' WHERE `iduser`=$userID";
-        }
+        $query = "UPDATE `user` SET `image`='image/$filename' WHERE `iduser`=$userID";
 
         mysqli_query($dbc, $query);
+        //if(!$q){echo mysqli_error($dbc);}
+        //else{echo"u shuld be gud". mysqli_error($dbc);}
+        
         if (move_uploaded_file($tempname, "$folder")) {
             $msg = "Image uploaded successfully";
             header("location: ./../userinfo.php");
