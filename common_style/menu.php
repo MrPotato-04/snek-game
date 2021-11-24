@@ -31,9 +31,9 @@ if ($userID === null) {
     } else {
         $image = null;
     };
-    // if ($pfpicture === null) {
-    //     $pfpicture = "#";
-    // };
+    if ($pfpicture === null) {
+        $pfpicture = "#";
+    };
 };
 ?>
 <div class="content">
@@ -52,8 +52,6 @@ if ($userID === null) {
                     echo "<li><a href=\"/snek-game/accountSystem/login/index.php\">Login</a></li>";
                 }
                 ?>
-                <!-- <li><a href="#0">placeholde</a></li>
-                            <li><a href="./../contact.php">Our Team</a></li> -->
             </ul>
         </nav>
     </div>

@@ -16,7 +16,7 @@
 
     <?php
     $dbc = require './../../database/db.php';
-    $res = $dbc->query("SELECT * FROM `scores`, `user` WHERE iduser = scores.user_iduser GROUP BY user_iduser ORDER BY scores DESC LIMIT 10");
+    $res_leaderbord = $dbc->query("SELECT * FROM `scores`, `user` WHERE iduser = scores.user_iduser GROUP BY user_iduser ORDER BY scores DESC LIMIT 10");
     //require_once('leadData.php');
     require_once('./../../common_style/header.php');
     require_once('./../../common_style/menu.php');
@@ -32,11 +32,11 @@
         <th>High Score</th>
         </tr>
         <tr>";
-        while ($row = mysqli_fetch_array($res)) {
+        while ($row_leaderbord = mysqli_fetch_array($res_leaderbord)) {
             echo " 
         <td>{$ranking}</td>
-        <td>{$row['username']}#{$row['iduser']}</td>
-        <td>{$row['scores']}</td>
+        <td>{$row_leaderbord['username']}#{$row_leaderbord['iduser']}</td>
+        <td>{$row_leaderbord['scores']}</td>
         </tr>
 ";
             $ranking++;
