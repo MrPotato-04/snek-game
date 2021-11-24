@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="/snek-game/common_style/header.css">
     <link rel="stylesheet" href="/snek-game/common_style/menu.css">
     <script src="./../snekScript/burger.js?v=1" defer type="module"></script>
-
+    <link rel="icon" type="image/x-icon" href="/snek-game/docs//sneklogo.png">
     <title>Leaderboard</title>
 </head>
 
@@ -18,10 +18,10 @@
     $dbc = require './../../database/db.php';
     $res = $dbc->query("SELECT * FROM `scores`, `user` WHERE iduser = scores.user_iduser GROUP BY user_iduser ORDER BY scores DESC LIMIT 10");
     //require_once('leadData.php');
-    require_once './../../common_style/header.php';
-    require_once './../../common_style/menu.php';
+    require_once('./../../common_style/header.php');
+    require_once('./../../common_style/menu.php');
     ?>
-    
+
     <div>
         <?php
 
@@ -45,7 +45,6 @@
         echo "</table>"
         ?>
     </div>
-
 </body>
 
 </html>

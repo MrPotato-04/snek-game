@@ -13,8 +13,10 @@ if ($userID === null) {
     $pfpicture = "#";
 } else {
     // session_start();
-    if(!isset($dbc)) {$dbc = require "./../database/db.php";    }
-    
+    if (!isset($dbc)) {
+        $dbc = require "./../database/db.php";
+    }
+
 
     $res = $dbc->query("SELECT * FROM  `user` WHERE `iduser` = $userID");
     $row = $res->fetch_assoc();
@@ -24,11 +26,11 @@ if ($userID === null) {
     $row_scores = $res_scores->fetch_assoc();
     $highscore = $row_scores['scores'];
     $pfpicture = $row['image'];
-    if($pfpicture !== null) {
-        $image = "<img src=\"./../".$pfpicture."\" alt=\"Avatar\"class=\"avatar\">";
-     } else {
-         $image = null;
-        };
+    if ($pfpicture !== null) {
+        $image = "<img src=\"/snek-game/" . $pfpicture . "\" alt=\"Avatar\"class=\"avatar\">";
+    } else {
+        $image = null;
+    };
     // if ($pfpicture === null) {
     //     $pfpicture = "#";
     // };
