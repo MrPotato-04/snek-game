@@ -17,7 +17,7 @@
     <link rel="icon" href="data:;base64,iVBORw0KGgo=">
     
     <script type="module">
-        
+        $('#settings').hide();
     </script>
 </head>
 
@@ -74,7 +74,6 @@
     <script>
         let bool = false;
         $(document).ready(function() {
-            $('#settings').hide();
             $('#showSettings').on('click', function() {
                 if (bool) {
                     $('#settings').show().fadeOut('slow');
