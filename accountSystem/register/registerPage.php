@@ -58,16 +58,16 @@
         <p>Register</p>
         <div class="container">
             <label for="email"><b>Email</b></label>
-            <input type="email" class="form-control" name="email" id="email" placeholder="Enter your email">
+            <input type="email" class="form-control" autocomplete="off" name="email" id="email" placeholder="Enter your email">
 
             <label for="name"><b>User Name</b></label>
-            <input type="text" name="username" class="form-control" id="username" placeholder="Username">
+            <input type="text" autocomplete="off" name="username" class="form-control" id="username" placeholder="Username">
 
             <label for="password"><b>Password</b></label>
-            <input type="password" class="form-control" name="password" id="password" placeholder="Enter your password" required  minlength="6">
+            <input type="password" class="form-control" autocomplete="off" name="password" id="password" placeholder="Enter your password" required  minlength="6">
 
             <label for="repass"><b>Confirm Password</b></label>
-            <input type="password" name="repass" class="form-control" id="repass" placeholder="Confirm Password" required>
+            <input type="password" autocomplete="off" name="repass" class="form-control" id="repass" placeholder="Confirm Password" required>
             <input type="checkbox" onclick="myFunction()">Show Passwords
 
 

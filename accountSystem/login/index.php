@@ -32,10 +32,10 @@
             <div class="container">
 
                 <label for="email"><b>Email</b></label>
-                <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email">
+                <input type="email" class="form-control" id="email" autocomplete="off" name="email" placeholder="Enter your email">
 
                 <label for="name"><b>Password</b</label>
-                        <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password" required>
+                        <input type="password" class="form-control" id="password" autocomplete="off" name="password" placeholder="Enter your password" required>
 
                         <button type="submit" onclick="mySubmit(this)">Login</button>
                         <button type="button" onclick="window.location.href='/snek-game/accountSystem/register/registerPage.php'" class="signup">
