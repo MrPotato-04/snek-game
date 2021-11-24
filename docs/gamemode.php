@@ -29,10 +29,10 @@
                 <h1>Gamemodes</h1>
                 <?php
                 if ($userID !== null) {
-                    echo "<div class=\"buttons-mid\"><button id=\"button-multiplayer\">Multiplayer</button></div><div class=\"buttons-mid\"><button id=\"button-singleplayer\">Singleplayer</button></div><div class=\"buttons-mid\"><button id=\"button-speed\">User Speed</button></div><div class=\"buttons-mid\"><button id=\"button-faster\">Faster!</button></div><div class=\"buttons-mid\"><button id=\"showSettings\">Settings</button></div><div class=\"buttons-mid\"><button id=\"start\">Start</button></div>";
+                    echo "<div class=\"buttons-mid\"><button id=\"button-multiplayer\">Multiplayer</button></div><div class=\"buttons-mid\"><button id=\"button-singleplayer\">Singleplayer</button></div><div class=\"buttons-mid\"><button id=\"button-speed\">User Speed</button></div><div class=\"buttons-mid\"><button id=\"button-faster\">Faster!</button></div><div class=\"buttons-mid\"><button id=\"showSettings\">Color</button></div><div class=\"buttons-mid\"><button id=\"start\">Start</button></div>";
                 } else {
                     if (!isset($_COOKIE["demo"])) {
-                        echo "<div class=\"buttons-mid\"><button id=\"button-singleplayer\">Singleplayer</button></div><div class=\"buttons-mid\"><button id=\"button-login\">Login</button></div><div class=\"buttons-mid\"><button id=\"showSettings\">Settings</button></div><div class=\"buttons-mid\"><button id=\"start\">Start</button></div>";
+                        echo "<div class=\"buttons-mid\"><button id=\"button-singleplayer\">Singleplayer</button></div><div class=\"buttons-mid\"><button id=\"button-login\">Login</button></div><div class=\"buttons-mid\"><button id=\"showSettings\">Color</button></div><div class=\"buttons-mid\"><button id=\"start\">Start</button></div>";
                     } else {
                         echo "<div class=\"buttons-mid\"><button id=\"button-login\">Login</button></div>";
                     }
