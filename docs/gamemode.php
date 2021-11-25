@@ -32,6 +32,7 @@
                     echo "<div class=\"buttons-mid\"><button id=\"button-multiplayer\">Multiplayer</button></div><div class=\"buttons-mid\"><button id=\"button-singleplayer\">Singleplayer</button></div><div class=\"buttons-mid\"><button id=\"button-speed\">User Speed</button></div><div class=\"buttons-mid\"><button id=\"button-faster\">Faster!</button></div><div class=\"buttons-mid\"><button id=\"showSettings\">Settings</button></div><div class=\"buttons-mid\"><button id=\"start\">Start</button></div>";
                 } else {
                     if (!isset($_COOKIE["demo"])) {
+                        echo "<br><br><div id='loginstatus'></div>";
                         echo "<div class=\"buttons-mid\"><button id=\"button-singleplayer\">Singleplayer</button></div><div class=\"buttons-mid\"><button id=\"button-login\">Login</button></div><div class=\"buttons-mid\"><button id=\"showSettings\">Settings</button></div><div class=\"buttons-mid\"><button id=\"start\">Start</button></div>";
                     } else {
                         echo "<div class=\"buttons-mid\"><button id=\"button-login\">Login</button></div>";
@@ -75,6 +76,7 @@
         let bool = false;
         $(document).ready(function() {
             $('#showSettings').on('click', function() {
+                $(this).toggleClass('active')
                 if (bool) {
                     $('#settings').show().fadeOut('slow');
                     console.log("ssssssss")

@@ -170,3 +170,10 @@ footer p {
     position: relative;
     top: -10px;
 }
+#loginstatus {
+    top: 10%;
+}
+.active {
+    /* background-color: #2147ad; */
+    border: #2147ad;
+}

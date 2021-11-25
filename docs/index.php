@@ -14,9 +14,8 @@
     <link rel="stylesheet" href="styles/css/snake2.css?v=1">
     <link rel="stylesheet" href="./../common_style/menu.css?v=1">
     <script src="snekScript/game.js?v=1" defer type="module"></script>
-    <link rel="stylesheet" href="/snek-game/common_style/header.css"
-    
-    </script>
+    <link rel="stylesheet" href="/snek-game/common_style/header.css">
+
 
 </head>
 
@@ -33,6 +32,7 @@
             <footer>
                 <div id="footer" class="footer">
                     <div id="controls"></div>
+                    <div class="progress_wrapper"><p>Time left</p><progress value="0" max="300" id="progressBar"></progress></div>
                     <div id="scores"></div>
 
                 </div>

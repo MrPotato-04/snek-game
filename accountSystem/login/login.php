@@ -27,6 +27,7 @@
     $_SESSION["userid"] = $row['iduser'];
     $_SESSION["email"] = $row['email'];
     setcookie("userid", $row['iduser'], 0 , "/"); /*time() + (86400)  = 1 day */
+    setcookie("demo", "", -1, "/");
     header("location: /snek-game/docs/gamemode.php");
 
 ?>

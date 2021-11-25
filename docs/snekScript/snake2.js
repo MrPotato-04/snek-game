@@ -15,7 +15,7 @@ let newSegments = 1
 let missCounter = 0
 
 export function update() {
-    let randomTeleport = Math.floor(Math.random() * GRID_WIDTH - 1) + 1;
+    let randomTeleport = Math.floor(Math.random() * GRID_WIDTH - 2) + 2;
     addSegments()
     const inputDirection = getInputDirection_snake2()
     for (let i = snakeBody.length - 2; i >= 0; i--) {

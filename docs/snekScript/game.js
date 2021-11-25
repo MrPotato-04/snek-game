@@ -49,7 +49,7 @@ if (getCookie('gamemode') !== null) {
         if (gamemode === "speed") {
             SNAKE_SPEED = prompt('type snake speed')
         } else {
-            SNAKE_SPEED = 6
+            SNAKE_SPEED = 7
         }
 
     }
@@ -57,7 +57,7 @@ if (getCookie('gamemode') !== null) {
     var timeleft = (60 * 5);
     var downloadTimer = setInterval(function () {
         if (timeleft <= 0) {
-            clearInterval(downloadTimer);
+            onTimesUp();
         }
         if (getElementByID("progressBar")) {
             getElementByID("progressBar").value = (60 * 5) - timeleft;
@@ -65,6 +65,10 @@ if (getCookie('gamemode') !== null) {
 
         timeleft -= 1;
     }, 1000);
+
+    function onTimesUp() {
+        clearInterval(downloadTimer);
+    }
 
 
     let framecount = 0
@@ -75,7 +79,7 @@ if (getCookie('gamemode') !== null) {
 
     function main(currentTime) {
 
-        $(".hamburger,nav").unbind().on("click",function () {
+        $(".hamburger,nav").unbind().on("click", function () {
             $(".hamburger").addClass("focus");
             $(".content").toggleClass("show");
             $(".buttons").toggleClass("show")
@@ -108,7 +112,7 @@ if (getCookie('gamemode') !== null) {
         window.requestAnimationFrame(main)
         const secondsSinceLastRender = (currentTime - lastRenderTime) / 1000
 
-        if(pauze) return
+        if (pauze) return
 
         if (secondsSinceLastRender < 1 / SNAKE_SPEED || pauze === true) return
         lastRenderTime = currentTime
@@ -135,7 +139,7 @@ if (getCookie('gamemode') !== null) {
         }
     }
     //name says it why 2 times i don't know'
-        window.requestAnimationFrame(main)
+    window.requestAnimationFrame(main)
 
 
 
@@ -166,8 +170,8 @@ if (getCookie('gamemode') !== null) {
     }
 
     function checkDeath() {
-        redGameOver =  snakeIntersection_1() || inWater(getSnakeHead_1()) || (onSnake_1(getSnakeHead_2()))
-        blueGameOver =  snakeIntersection_2() || inWater(getSnakeHead_2()) || onSnake_2(getSnakeHead_1())
+        redGameOver = snakeIntersection_1() || inWater(getSnakeHead_1()) || ((gamemode === "multi") ? onSnake_1(getSnakeHead_2()) : '');
+        if (gamemode === "multi") { blueGameOver = snakeIntersection_2() || inWater(getSnakeHead_2()) || onSnake_2(getSnakeHead_1()) }
     }
 
     function updateScores(score1, score2) {

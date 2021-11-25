@@ -70,14 +70,19 @@ progress {
 .progress {
     max-width: 5vw;
     margin: 0 auto;
-    float: left;
+    align-self: center;
+    display: flex;
 
 }
 .progress_wrapper {
     height: 2vh;
     max-width: 11vw;
-    width: 11vw;
-    float: right;
+    width: 10%;
+    display: flex;
+    text-align: center;
+    margin: 0 auto;
+    position: absolute;
+    right: 48%;
 }
 
 form {

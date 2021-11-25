@@ -111,6 +111,7 @@ export function inWater(pos) {
     let tmp = ""
     let tmpClass = ""
     let tmpPos = (pos.x - 1) * GRID_HEIGTH + (pos.y - 1)
+    console.log(pos.x * GRID_HEIGTH + pos.y)
     if (document.getElementById(`${tmpPos}`) !== null) {
         tmp = document.getElementById(`${tmpPos}`).className
     }
