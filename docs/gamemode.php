@@ -7,7 +7,7 @@
     <title>Snek on Crack</title>
     <link rel="icon" type="image/x-icon" href="favicon-32x32">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="/snek-game/node_modules/jquery/dist/jquery.js?v=1"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="./styles/css/gamemode.css?v=1">
     <link rel="stylesheet" href="./../common_style/menu.css?v=1">
     <link rel="stylesheet" type="text/css" href="/snek-game/common_style/fonts.css?v=1">
