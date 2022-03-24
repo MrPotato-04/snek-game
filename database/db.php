@@ -1,10 +1,10 @@
 <?php
-$dbhost ="snekoncrack.privatedns.org:3306";
-$dbuser ="snekuser";
-$dbpass ="";
-$dbname ="snekdatabase";
+$dbhost ="rdbms.strato.de";
+$dbuser ="dbu1046605";
+$dbpass ="N5%?gKC3_aU4s!6";
+$dbname ="dbs5352653";
 
-$dbc = mysqli_connect($dbhost,$dbuser,$dbpass,$dbname) or die('Could not connect: ' . mysqli_error($con));
-
-return $dbc;
+$dbc = new mysqli($dbhost,$dbuser,$dbpass,$dbname);
+echo $dbc->host_info . "\n";
+//return $dbc;    
 ?>
