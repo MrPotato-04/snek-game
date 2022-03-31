@@ -8,19 +8,19 @@ SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
 
 -- -----------------------------------------------------
--- Schema snekDatabase
+-- Schema dbs5845598
 -- -----------------------------------------------------
 
 -- -----------------------------------------------------
--- Schema snekDatabase
+-- Schema dbs5845598
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `snekDatabase` DEFAULT CHARACTER SET utf8 ;
-USE `snekDatabase` ;
+CREATE SCHEMA IF NOT EXISTS `dbs5845598` DEFAULT CHARACTER SET utf8 ;
+USE `dbs5845598` ;
 
 -- -----------------------------------------------------
--- Table `snekDatabase`.`user`
+-- Table `dbs5845598`.`user`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `snekDatabase`.`user` (
+CREATE TABLE IF NOT EXISTS `dbs5845598`.`user` (
   `iduser` INT NOT NULL AUTO_INCREMENT,
   `email` VARCHAR(45) NULL,
   `username` VARCHAR(15) NULL,
@@ -30,16 +30,16 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `snekDatabase`.`scores`
+-- Table `dbs5845598`.`scores`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `snekDatabase`.`scores` (
+CREATE TABLE IF NOT EXISTS `dbs5845598`.`scores` (
   `scores` INT NOT NULL AUTO_INCREMENT,
   `user_iduser` INT NOT NULL,
   PRIMARY KEY (`scores`),
   INDEX `fk_scores_user_idx` (`user_iduser` ASC),
   CONSTRAINT `fk_scores_user`
     FOREIGN KEY (`user_iduser`)
-    REFERENCES `snekDatabase`.`user` (`iduser`)
+    REFERENCES `dbs5845598`.`user` (`iduser`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;

@@ -2,13 +2,13 @@
 <html lang="en">
 
 <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-    <script src="./../../node_modules/jquery/dist/jquery.min.js?v=1"></script>
     <link rel="stylesheet" href="leadstyle.css">
-    <link rel="stylesheet" href="/snek-game/common_style/header.css">
-    <link rel="stylesheet" href="/snek-game/common_style/menu.css">
+    <link rel="stylesheet" href="/common_style/header.css">
+    <link rel="stylesheet" href="/common_style/menu.css">
     <script src="./../snekScript/burger.js?v=1" defer type="module"></script>
-    <link rel="icon" type="image/x-icon" href="/snek-game/docs//sneklogo.png">
+    <link rel="icon" type="image/x-icon" href="/docs//sneklogo.png">
     <title>Leaderboard</title>
 </head>
 

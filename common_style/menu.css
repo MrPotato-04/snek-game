@@ -128,6 +128,8 @@
 .hamburger .burger {
   transition: all 0.3s;
   border-radius: 5px;
+  margin-bottom: 5px;
+  margin-top: 5px;
   height: 8px;
   width: 60px;
   display: inline-block;

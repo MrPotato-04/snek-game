@@ -15,7 +15,7 @@ if (logged_in === null) {
     })
 }
 if (getCookie('demo') !== null) {
-    window.location = '/snek-game/accountSystem/login/index.php '
+    window.location = '/accountSystem/login/index.php '
 } else if (logged_in !== null) {
     getElementByID("button-multiplayer").addEventListener("click", function () {
         gamemodeText = this.innerText.replace('player', '').toLocaleLowerCase()
@@ -39,7 +39,7 @@ if (getCookie('demo') !== null) {
     });
 } else {
         getElementByID("button-login").addEventListener("click", function () {
-            window.location = '/snek-game/accountSystem/login/index.php'
+            window.location = '/accountSystem/login/index.php'
         })
         getElementByID("button-singleplayer").addEventListener("click", function () {
             gamemodeText = this.innerText.replace('player', '').toLocaleLowerCase()

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="/snek-game/common_style/fonts.css">
+    <link rel="stylesheet" type="text/css" href="/common_style/fonts.css">
     <link rel="stylesheet" href="./styles/registerPageStyle.css">
     <title>Register</title>
     <script>
@@ -23,21 +23,6 @@
                 y.type = "password";
             }
 
-        }
-        function mySubmit(obj) {
-            var pwdObj = document.getElementById('password');
-            var hashObj = new jsSHA("SHA-512", "TEXT", {numRounds: 1});
-            hashObj.update(pwdObj.value);
-            var hash = hashObj.getHash("HEX");
-            pwdObj.value = hash;
-            console.log(pwdObj.value)
-
-            var pwdObj = document.getElementById('repass');
-            var hashObj = new jsSHA("SHA-512", "TEXT", {numRounds: 1});
-            hashObj.update(pwdObj.value);
-            var hash = hashObj.getHash("HEX");
-            pwdObj.value = hash;
-            console.log(pwdObj.value)
         }
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jsSHA/2.0.2/sha.js"></script>
@@ -71,7 +56,7 @@
             <input type="checkbox" onclick="myFunction()">Show Passwords
 
 
-            <button type="submit" name="button" onclick="mySubmit(this)" value="Register">Register</button>
+            <button type="submit" name="button" value="Register">Register</button>
             <button type="button" onclick="window.location.href='./../login/index.php'" class="signup">
                 Log in
             </button>

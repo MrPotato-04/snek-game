@@ -7,10 +7,10 @@
     <title>Snek on Crack</title>
     <link rel="icon" type="image/x-icon" href="favicon-32x32">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="./styles/css/gamemode.css?v=1">
     <link rel="stylesheet" href="./../common_style/menu.css?v=1">
-    <link rel="stylesheet" type="text/css" href="/snek-game/common_style/fonts.css?v=1">
+    <link rel="stylesheet" type="text/css" href="./../common_style/fonts.css?v=1">
     <script src="./snekScript/gamemode.js?v=1" defer type="module"></script>
     <script src="./snekScript/burger.js?v=1" defer type="module"></script>
     <script src="./snekScript/snakecolor.js?v=1" defer type="module"></script>
@@ -28,7 +28,7 @@
             <div class="buttons show">
                 <h1>Gamemodes</h1>
                 <?php
-                if ($userID !== null) {
+                if ($_COOKIE['userid'] !== null) {
                     echo "<div class=\"buttons-mid\"><button id=\"button-multiplayer\">Multiplayer</button></div><div class=\"buttons-mid\"><button id=\"button-singleplayer\">Singleplayer</button></div><div class=\"buttons-mid\"><button id=\"button-speed\">User Speed</button></div><div class=\"buttons-mid\"><button id=\"button-faster\">Faster!</button></div><div class=\"buttons-mid\"><button id=\"showSettings\">Color</button></div><div class=\"buttons-mid\"><button id=\"start\">Start</button></div>";
                 } else {
                     if (!isset($_COOKIE["demo"])) {

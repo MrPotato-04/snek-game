@@ -1,57 +1,41 @@
-<!DOCTYPE html>
-<html lang="en">
-
 <head>
-    
+
     <link rel="stylesheet" type="text/css" href="/common_style/fonts.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile</title>
-    <script src="/snek-game/node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="./style/userinfo.css">
-    <link rel="stylesheet" href="/snek-game/common_style/header.css">
-    <link rel="stylesheet" href="/snek-game/common_style/menu.css">
-    <script src="/snek-game/docs/snekScript/burger.js" defer type="module"></script>
+    <link rel="stylesheet" href="/common_style/header.css">
+    <link rel="stylesheet" href="/common_style/menu.css">
+    <script src="/docs/snekScript/burger.js" defer type="module"></script>
 </head>
 
 <body>
     <div id="wrapper">
-    <script>
-        function changeData() {
-            document.getElementById("email").removeAttribute("disabled");
-        }
-    </script>
-    <?php
-    session_start();
-
-    $userID = null;
-    if (isset($_COOKIE['userid'])) {
-        $userID = $_COOKIE["userid"];
-    }
-
-    $dbc = require './../../database/db.php';
-    $res = $dbc->query("SELECT iduser, username, email, `image` FROM user WHERE iduser='{$userID}'");
-    $row = $res->fetch_assoc();
-    $pfpicture = $row['image'];
-    if ($pfpicture === null) {
-        $pfpicture = 's';
-    }
-
-    if (!isset($_COOKIE['userid'])) {
-        echo "you can't acces this page without logging in.";
-    } else {
-    ?>
+        <script>
+            function changeData() {
+                document.getElementById("email").removeAttribute("disabled");
+            }
+        </script>
         <?php
+        session_start();
+        $userID = $_COOKIE['userid'];
+
+        mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+
+        $conn = require './../../database/db.php';
+
+        $res = $conn->query("SELECT `iduser`, `username`, `email` FROM `user` WHERE `iduser` = '$userID' ");
+        $row = $res->fetch_assoc();
+
         include_once './../../common_style/header.php';
         include_once './../../common_style/menu.php';
         ?>
         <form action="userscript.php" method="post">
             <h2>Profile</h2>
             <br>
-            <div class="image-center">
-                <?php echo "<img src=\"/snek-game/$pfpicture\"  class=\"\">"; ?><br>
-            </div>
             <label for="UniqueID">Unique ID <br>
                 <?php echo "<input class='form-control' type='text' value='" . $row['iduser'] . "' disabled>"; ?>
             </label>
@@ -70,24 +54,9 @@
 
                 <button type="button" class='small' onclick="window.location='changePass.php'">Change password</button>
 
-                <button type="button" class='small' onclick="window.location='./profilePicture/index.php'">Change profile picture
             </div>
-            <!-- <div class="form-control no-border">
-            <a href="changePass.php">Change Password</a></div><div class="form-control no-border"><a href="./profilePicture/index.php">Change Profile Picture</a>
-            </div> -->
 
-        <?php
-    }
-        ?>
-        </label>
         </form>
-        <?php
-        if (isset($_SESSION['errors'])) {
-            $error_output = $_SESSION['errors'];
-            echo $error_output;
-            unset($_SESSION['errors']);
-        }
-        ?>
     </div>
 </body>
 

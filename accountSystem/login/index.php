@@ -2,10 +2,10 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="/snek-game/common_style/fonts.css">
+    <link rel="stylesheet" type="text/css" href="/common_style/fonts.css">
     <link rel="stylesheet" type="text/css" href="./styles/login.css">
     <title>Sign In</title>
-    <script>
+    <!-- <script>
         function mySubmit(obj) {
             var pwdObj = document.getElementById('password');
             var hashObj = new jsSHA("SHA-512", "TEXT", {numRounds: 1});
@@ -14,7 +14,7 @@
             pwdObj.value = hash;
             console.log(pwdObj.value)
         }
-    </script>
+    </script> -->
     <?php
     session_start();
     if(isset($_SESSION['errors'])){
@@ -32,13 +32,13 @@
             <div class="container">
 
                 <label for="email"><b>Email</b></label>
-                <input type="email" class="form-control" id="email" autocomplete="off" name="email" placeholder="Enter your email">
+                <input type="email" class="form-control" id="email" autocomplete="on" name="email" placeholder="Enter your email">
 
                 <label for="name"><b>Password</b</label>
-                        <input type="password" class="form-control" id="password" autocomplete="off" name="password" placeholder="Enter your password" required>
+                        <input type="password" class="form-control" id="password" autocomplete="on" name="password" placeholder="Enter your password" required>
 
-                        <button type="submit" onclick="mySubmit(this)">Login</button>
-                        <button type="button" onclick="window.location.href='/snek-game/accountSystem/register/registerPage.php'" class="signup">
+                        <button type="submit">Login</button>
+                        <button type="button" onclick="window.location.href='/accountSystem/register/registerPage.php'" class="signup">
                             Sign Up
                         </button>
                         <!--//FIXME: <a href="./resetpassword.php">Forgot your password? </a> -->
