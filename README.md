@@ -8,5 +8,4 @@
   
   Saddly the project is currently offline (indefinitely)
 </p>
-<a href='https://snek-on-crack.mrpotato-04.nl/'>~~Website~~</a>
 <a><img src='/snake-game.jpg' width="200"></a>
