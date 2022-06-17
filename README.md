@@ -9,6 +9,6 @@
   Saddly the original project is currently offline (indefinitely)
 </p>
 
-### New (scaled down) live version: <a href='snek-on-crack.mrpotato-04.nl/'>Link</a> | <a href='https://mrpotato-04.github.io/snek-game/'>Mirror</a>
+### New (scaled down) live version: <a href='https://snek-on-crack.mrpotato-04.nl/'>Link</a> | <a href='https://mrpotato-04.github.io/snek-game/'>Mirror</a>
 <br>
 <a><img src='/snake-game.jpg' width="400"></a>
