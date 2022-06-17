@@ -8,9 +8,7 @@
   
   Saddly the original project is currently offline (indefinitely)
 </p>
-## New (scaled down) live version
+
+### New (scaled down) live version: <a href='https://mrpotato-04.github.io/snek-game/'>Link</a> | <a href='https://mrpotato-04.github.io/snek-game/'>Mirror</a>
 <br>
-<a href='https://mrpotato-04.github.io/snek-game/'>Link</a>
-<br>
-<a href='https://mrpotato-04.github.io/snek-game/'>Mirror</a>
 <a><img src='/snake-game.jpg' width="200"></a>
