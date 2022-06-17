@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,16 +7,16 @@
     <link rel="icon" type="image/x-icon" href="favicon-32x32">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <link rel="stylesheet" href="./styles/css/gamemode.css?v=1">
-    <link rel="stylesheet" href="./common_style/menu.css?v=1">
-    <link rel="stylesheet" href="./common_style/fonts.css?v=1">
+    <link rel="stylesheet" href="/snek-game/docs/styles/css/gamemode.css">
+    <link rel="stylesheet" href="/snek-game/common_style/menu.css">
+    <link rel="stylesheet" href="/snek-game/common_style/fonts.css"> 
     <script src="./snekScript/gamemode.js?v=1" defer type="module"></script>
     <script src="./snekScript/burger.js?v=1" defer type="module"></script>
     <script src="./snekScript/snakecolor.js?v=1" defer type="module"></script>
     <link rel="icon" href="data:;base64,iVBORw0KGgo=">
 
     <script type="module">
-        
+                                    
         $('#settings').hide();
     </script>
 </head>
@@ -42,7 +41,7 @@
                 <div class="flex">
                     <nav>
                         <ul id="links" class="navigation">
-                            <li><a href="/index.php">Home</a></li>
+                            <li><a href="/snek-game/index.html">Home</a></li>
                             <li><a id="high-score">High score: <script type="module">
                                 import { getCookie } from "./snekScript/public.js";
                                 document.getElementById("high-score").innerHTML += getCookie('highscore')</script></a></li>
@@ -67,7 +66,7 @@
                 <div class="snakecolor2">
                     <h2>Set Snake 1 color</h2>
                     <br>
-                    <img id="snake-1-Preview" src="./styles/snake/snake/tile003.png"></img>
+                    <img id="snake-1-Preview" src="/snek-game/docs/styles/snake/snake/tile003.png"></img>
                     <br>
                     <input type="range" min="1" max="360" value="180" class="slider" id="snake-1-ColorSlider">
                     <br>
@@ -77,7 +76,7 @@
                 <div class="snakecolor1">
                     <h2>Set Snake 2 color</h2>
                     <br>
-                    <img id="snake-2-Preview" src="./styles/snake/snake/tile003.png"></img>
+                    <img id="snake-2-Preview" src="/snek-game/docs/styles/snake/snake/tile003.png"></img>
                     <br>
                     <input type="range" min="1" max="360" value="180" class="slider" id="snake-2-ColorSlider">
                     <br>

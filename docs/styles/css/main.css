@@ -7,7 +7,7 @@
 
 }
 #preload {
-    display: none;
+    display: none !important;
 }
 
 div[class^="chunk"] {
@@ -143,13 +143,13 @@ footer {
 .food {
     /* background-color: hsl(50, 100%, 50%);
     border: .25vmin solid black; */
-    background-image: url('./../snake/tile015.png');
+    background-image: url('/snek-game/docs/styles/snake/tile015.png');
     background-size: contain;
     background-repeat: no-repeat, repeat;
 }
 
 .frank {
-    background-image: url('./../snake/frank.png');
+    background-image: url('/snek-game/docs/styles/snake/frank.png');
     background-size: cover;
     background-repeat: no-repeat, repeat;
 }
@@ -158,7 +158,7 @@ footer {
 .chunk1 {
     /* background-color: hsl(0, 0%, 29%);
     */
-    background-image: url('./../Textures/board/TileSet_49.png');
+    background-image: url('/snek-game/docs/styles/Textures/board/TileSet_49.png');
     background-size: cover;
     background-repeat: no-repeat, repeat;
     
@@ -166,7 +166,7 @@ footer {
 .chunk2 {
     /* background-color: hsl(0, 0%, 29%);
     */
-    background-image: url('./../Textures/board/TileSet_50.png');
+    background-image: url('/snek-game/docs/styles/Textures/board/TileSet_50.png');
     background-size: cover;
     background-repeat: no-repeat, repeat;
     
@@ -174,7 +174,7 @@ footer {
 .chunk3 {
     /* background-color: hsl(0, 0%, 29%);
     */
-    background-image: url('./../Textures/board/TileSet_51.png');
+    background-image: url('/snek-game/docs/styles/Textures/board/TileSet_51.png');
     background-size: cover;
     background-repeat: no-repeat, repeat;
     
@@ -182,49 +182,49 @@ footer {
 .chunk4 {
     /* background-color: hsl(0, 0%, 29%);
     */
-    background-image: url('./../Textures/board/TileSet_50.png');
+    background-image: url('/snek-game/docs/styles/Textures/board/TileSet_50.png');
     background-size: cover;
     background-repeat: no-repeat, repeat;
     
 }
 .chunkBorder1 {
-    background-image: url('./../Textures/board/TileSet_77.png');
+    background-image: url('/snek-game/docs/styles/Textures/board/TileSet_77.png');
     background-size: fill;
     background-repeat: no-repeat, repeat;
 }
 .chunkBorder2 {
-    background-image: url('./../Textures/board/TileSet_73.png');
+    background-image: url('/snek-game/docs/styles/Textures/board/TileSet_73.png');
     background-size: fill;
     background-repeat: no-repeat, repeat;
 }
 .chunkBorder3 {
-    background-image: url('./../Textures/board/TileSet_81.png');
+    background-image: url('/snek-game/docs/styles/Textures/board/TileSet_81.png');
     background-size: fill;
     background-repeat: no-repeat, repeat;
 }
 .chunkBorder4 {
-    background-image: url('./../Textures/board/TileSet_85.png');
+    background-image: url('/snek-game/docs/styles/Textures/board/TileSet_85.png');
     background-size: fill;
     background-repeat: no-repeat, repeat;
 }
 
 .chunkCorner1 {
-    background-image: url('./../Textures/board/TileSet_61.png');
+    background-image: url('/snek-game/docs/styles/Textures/board/TileSet_61.png');
     background-size: fill;
     background-repeat: no-repeat, repeat;
 }
 .chunkCorner2 {
-    background-image: url('./../Textures/board/TileSet_65.png');
+    background-image: url('/snek-game/docs/styles/Textures/board/TileSet_65.png');
     background-size: fill;
     background-repeat: no-repeat, repeat;
 }
 .chunkCorner3 {
-    background-image: url('./../Textures/board/TileSet_59.png');
+    background-image: url('/snek-game/docs/styles/Textures/board/TileSet_59.png');
     background-size: fill;
     background-repeat: no-repeat, repeat;
 }
 .chunkCorner4 {
-    background-image: url('./../Textures/board/TileSet_58.png');
+    background-image: url('/snek-game/docs/styles/Textures/board/TileSet_58.png');
     background-size: fill;
     background-repeat: no-repeat, repeat;
 }
@@ -232,18 +232,18 @@ footer {
 
 
 .water {
-    background-image: url('./../Textures/board/TileSet_105.png');
+    background-image: url('/snek-game/docs/styles/Textures/board/TileSet_105.png');
     background-size: fill;
     background-repeat: no-repeat, repeat;
 }
 .water2 {
-    background-image: url('./../Textures/board/TileSet_103.png');
+    background-image: url('/snek-game/docs/styles/Textures/board/TileSet_103.png');
     background-size: fill;
     background-repeat: no-repeat, repeat;
 }
 
 .portal {
-    background-image: url('./../Warp_Pipe_down.png'), url('./../Textures/board/TileSet_85.png');
+    background-image: url('/snek-game/docs/styles/Warp_Pipe_down.png'), url('/snek-game/docs/styles/Textures/board/TileSet_85.png');
     background-size: fill;
     background-repeat: no-repeat, repeat;
     transform: rotate(180deg), rotate(0deg);

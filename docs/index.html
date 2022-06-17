@@ -1,20 +1,19 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Snek on Crack</title>
     <link rel="icon" type="image/x-icon" href="favicon-32x32">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="/common_style/fonts.css?v=1">
-    <link rel="stylesheet" href="./styles/css/main.css?v=1">
-    <link rel="stylesheet" href="./styles/css/snake1.css?v=1">
-    <link rel="stylesheet" href="./styles/css/snake2.css?v=1">
-    <link rel="stylesheet" href="./../common_style/menu.css?v=1">
-    <script src="snekScript/game.js?v=1" defer type="module"></script>
-    <link rel="stylesheet" href="/common_style/header.css">
+    <link rel="stylesheet" href="/snek-game/common_style/fonts.css">
+    <link rel="stylesheet" href="/snek-game/docs/styles/css/main.css">
+    <link rel="stylesheet" href="/snek-game/docs/styles/css/snake1.css">
+    <link rel="stylesheet" href="/snek-game/docs/styles/css/snake2.css">
+    <link rel="stylesheet" href="/snek-game/common_style/menu.css">
+    <script src="/snek-game/docs/snekScript/game.js?v=1" defer type="module"></script>
+    <link rel="stylesheet" href="/snek-game/common_style/header.css">
 
 
 </head>
@@ -25,7 +24,7 @@
     <div id="header" class="header">
     <div class="inner_header">
         <h3>Snek on crack</h3>
-        <div id="sneklogo"> <img src="/docs/sneklogo.png" alt="sneklogo" width="80px" height="80px"></div>
+        <div id="sneklogo"> <img src="/snek-game/docs/sneklogo.png" alt="sneklogo" width="80px" height="80px"></div>
         <button id="hamburger" class="hamburger">
             <span class="burger"></span>
             <span class="burger"></span>
@@ -40,7 +39,7 @@
     <div class="flex">
         <nav>
             <ul id="links" class="navigation">
-                <li><a href="/index.php">Home</a></li>
+                <li><a href="/snek-game/index.html">Home</a></li>
                 <li><a id="high-score">High score: <script type="module">
                     import { getCookie } from "./snekScript/public.js";
                     document.getElementById("high-score").innerHTML += getCookie('highscore')</script></a></li>
@@ -50,20 +49,20 @@
 </div>
             <div id="game-board" class="game-board"></div>
             <div id="preload">
-                <img src="./../snake/snake/tile000.png">
-                <img src="./../snake/snake/tile001.png">
-                <img src="./../snake/snake/tile002.png">
-                <img src="./../snake/snake/tile003.png">
-                <img src="./../snake/snake/tile004.png">
-                <img src="./../snake/snake/tile005.png">
-                <img src="./../snake/snake/tile007.png">
-                <img src="./../snake/snake/tile008.png">
-                <img src="./../snake/snake/tile009.png">
-                <img src="./../snake/snake/tile012.png">
-                <img src="./../snake/snake/tile013.png">
-                <img src="./../snake/snake/tile014.png">
-                <img src="./../snake/snake/tile018.png">
-                <img src="./../snake/snake/tile019.png">
+                <img src="/snek-game/docs/styles/snake/snake/tile000.png">
+                <img src="/snek-game/docs/styles/snake/snake/tile001.png">
+                <img src="/snek-game/docs/styles/snake/snake/tile002.png">
+                <img src="/snek-game/docs/styles/snake/snake/tile003.png">
+                <img src="/snek-game/docs/styles/snake/snake/tile004.png">
+                <img src="/snek-game/docs/styles/snake/snake/tile005.png">
+                <img src="/snek-game/docs/styles/snake/snake/tile007.png">
+                <img src="/snek-game/docs/styles/snake/snake/tile008.png">
+                <img src="/snek-game/docs/styles/snake/snake/tile009.png">
+                <img src="/snek-game/docs/styles/snake/snake/tile012.png">
+                <img src="/snek-game/docs/styles/snake/snake/tile013.png">
+                <img src="/snek-game/docs/styles/snake/snake/tile014.png">
+                <img src="/snek-game/docs/styles/snake/snake/tile018.png">
+                <img src="/snek-game/docs/styles/snake/snake/tile019.png">
                 </div>
         </div>
         <div class="wrapper-footer">
@@ -80,3 +79,4 @@
 </body>
 <script src="./snekScript/snakecolor.js?v=1" defer type="module"></script>
 </html>
+
