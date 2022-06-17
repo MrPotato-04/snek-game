@@ -13,8 +13,6 @@ import { GRID_HEIGTH, GRID_WIDTH, outsideGrid } from './grid.js'
 import { draw as drawBoard, inWater } from './board.js'
 import { getCookie, setCookie, getElementByID } from './public.js'
 
-let demoOver = getCookie("demo")
-
 
 var gameBoard = getElementByID('game-board')
 var scores = getElementByID('scores')
@@ -28,7 +26,6 @@ if (getCookie('gamemode') !== null) {
     window.onload = function () {
         gameBoard.style.gridTemplateColumns = `repeat(${GRID_WIDTH}, 1fr)`;
         gameBoard.style.gridTemplateRows = `repeat(${GRID_HEIGTH}, 1fr)`;
-        console.log(demoOver)
 
     };
 
@@ -53,25 +50,9 @@ if (getCookie('gamemode') !== null) {
         }
 
     }
-    // demo timer
-    var timeleft = (60 * 5);
-    var downloadTimer = setInterval(function () {
-        if (timeleft <= 0) {
-            onTimesUp();
-        }
-        if (getElementByID("progressBar")) {
-            getElementByID("progressBar").value = (60 * 5) - timeleft;
-        }
-
-        timeleft -= 1;
-    }, 1000);
-
-    function onTimesUp() {
-        clearInterval(downloadTimer);
-    }
 
 
-    let framecount = 0
+
     let lastRenderTime = 0
     let redGameOver = false
     let blueGameOver = false
@@ -91,18 +72,18 @@ if (getCookie('gamemode') !== null) {
             if (redGameOver) {
                 setCookie("highscore", redScore, "1");
                 if (confirm('Player 1 lost! press ok to restart')) {
-                    window.location = 'highscore.php'
+                    window.location = 'gamemode.html'
                 } else {
-                    window.location = 'highscore.php'
+                    window.location = 'gamemode.html'
                 }
                 return
             }
             if (blueGameOver) {
                 setCookie("highscore", blueScore, "1");
                 if (confirm('Player 2 lost! press ok to restart')) {
-                    window.location = 'highscore.php'
+                    window.location = 'gamemode.html'
                 } else {
-                    window.location = 'highscore.php'
+                    window.location = 'gamemode.html'
                 }
                 return
             }
@@ -122,20 +103,6 @@ if (getCookie('gamemode') !== null) {
         draw()
         if (gamemode === "faster") {
             SNAKE_SPEED = speed
-        }
-
-        let userid = getCookie('userid')
-        if (userid === null) {
-            if (timeleft === 0) {
-                console.log("time's up")
-                setCookie("demo", true, 200)
-                if (confirm("Demo time is up")) {
-                    window.location = "./../accountSystem/login/index.php"
-                } else {
-                    window.location = "./../accountSystem/login/index.php"
-                }
-
-            }
         }
     }
     //name says it why 2 times i don't know'
@@ -190,22 +157,7 @@ window.addEventListener('keydown', e => {
 
     switch (e.key) {
         case 'g':
-            window.location = './gamemode.php'
+            window.location = './gamemode.html'
             break
     }
 })
-
-// unused but dont delete YET...
-function setScore(score1, score2) {
-    if (score1 < score2) return score2
-    if (score2 < score1) return score1
-}
-// function inWater(snakeNr) {
-//     let dir = ['up','down','right', 'left']
-//     for(let i = 0; i <= 4; i++) {
-//         if 
-//         let snakeHead = document.getElementById(`snake_${snakeNr}_head_${dir[i]}`)
-//     }
-//         let headX = snakeHead.style.gridColumnStart
-//     console.log(headX)
-// }

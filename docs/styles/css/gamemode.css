@@ -74,7 +74,7 @@
 }
 
 .buttons-mid {
-    top: 30%;
+    top: 10em;
     min-height: 10%;
     margin: 0;
     position: relative;
@@ -95,7 +95,7 @@ button {
     cursor: pointer;
     transition: all 150ms ease-in-out;
     z-index: 1585;
-    width: 10vw;
+    width: 12em;
     height: 5.5vh;
 }
 
