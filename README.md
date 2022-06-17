@@ -11,4 +11,4 @@
 
 ### New (scaled down) live version: <a href='https://mrpotato-04.github.io/snek-game/'>Link</a> | <a href='https://mrpotato-04.github.io/snek-game/'>Mirror</a>
 <br>
-<a><img src='/snake-game.jpg' width="200"></a>
+<a><img src='/snake-game.jpg' width="400"></a>
